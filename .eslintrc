@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "react/react-in-jsx-scope": "off", // Evite d'ajouter "import React from 'react'" (surtout dans la v17)
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], // Permet de faire du JSX dans du js
+    "import/no-extraneous-dependencies": ["off", { "devDependencies": true }],
+    "react/prop-types": "off",
+    "react/no-unescaped-entities": "off",
+    "no-console": "off",
+    "react/prefer-stateless-function": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ]
+  },
+  "extends": ["airbnb", "airbnb/hooks", "prettier"]
+}

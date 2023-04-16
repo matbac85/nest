@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* classes css custom */
+.button {
+  background-color: #467971;
+  padding: 5px;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid #2E4C48;
+}
+
+.card {
+  border: 2px solid #2E4C48;
+  background: white;
+  -webkit-box-shadow: 4px 7px 30px -10px rgba(46, 76, 72, 1);
+  -moz-box-shadow: 4px 7px 30px -10px rgba(46, 76, 72, 1);
+  box-shadow: 4px 7px 30px -10px rgba(46, 76, 72, 1);
+  border-radius: 15px;
+}
