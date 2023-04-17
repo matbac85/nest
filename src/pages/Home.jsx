@@ -1,9 +1,13 @@
 import React from 'react';
+import Footer from '../components/Footer';
 
 const Home = () => (
-    <div>
-        <div className="bg-cover h-screen bg-[url('./public/illus/home_bg.svg')] object-fill bg-top" />
-    </div>
+    <>
+        <div className='relative'>
+            <div className="bg-cover h-screen bg-[url('./public/illus/home_bg.svg')] bg-top" />
+        </div>
+        <Footer/>
+    </>
 );
 
 export default Home;
