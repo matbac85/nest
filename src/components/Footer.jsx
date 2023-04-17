@@ -1,4 +1,4 @@
-import { IconInstagram, IconFacebook } from "./iconssvg"
+import { IconInstagram, IconFacebook } from "./Iconssvg"
 
 const Footer = () => (
     <footer className="w-screen h-16 px-20 flex justify-between bg-white border-t-2 border-beige absolute bottom-0 items-center">
