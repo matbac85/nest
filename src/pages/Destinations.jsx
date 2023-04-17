@@ -40,7 +40,7 @@ const Destinations = () => {
                         <li className='filters'>+6 pers.</li>
                     </ul>
                 </div>
-                <div className='flex flex-wrap gap-8 gap-y-28 justify-between'>
+                <div className='flex flex-wrap gap-6 gap-y-28 justify-between'>
                     {data.map((cabin) =>
                         <CabinCard cabin={cabin} key={cabin.id} />
                     )}
