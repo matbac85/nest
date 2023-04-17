@@ -27,6 +27,7 @@ const Destinations = () => {
                 <h1 className='text-4xl font-bold mb-8'>Choisissez votre <span className='text-midGreen'> destination</span></h1>
                 <div className='flex justify-center w-full mb-16'>
                     <ul className='flex gap-3 font-semibold'>
+                        <li className='filters'>Toute les cabanes</li>
                         <li className='filters'>Région wallone</li>
                         <li className='filters'>Région flamande</li>
                         <li className='filters'>Région bruxelloise</li>
@@ -46,6 +47,7 @@ const Destinations = () => {
                 </div>
             </div>
         </ div>
+
     )
 };
 
