@@ -2,8 +2,8 @@ import React from 'react';
 
 
 const CabinCard = ({ cabin }) => (
-    <div className='card w-96 overflow-hidden'>
-        <img src={cabin.images[0]} alt="" className='h-80 w-100 object-cover mb-4' />
+    <div className='card  overflow-hidden w-1/4'>
+        <img src={cabin.images[0]} alt="" className='h-80  object-cover mb-4' />
         <div className='flex items-center justify-between p-4'>
             <div>
                 <h2 className='text-xl font-bold'>{cabin.name}</h2>
