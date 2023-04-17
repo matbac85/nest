@@ -14,6 +14,7 @@ module.exports = {
         midGreen: '#467971',
         darkGreen: '#2E4C48',
       },
+      
     },
   },
   variants: {
