@@ -3,7 +3,7 @@ import Footer from '../components/Footer';
 
 const Home = () => (
     <>
-        <div>
+        <div className="relative">
             <h1>hello world</h1>
         </div>
         <Footer />
