@@ -15,6 +15,7 @@ module.exports = {
         darkGreen: '#2E4C48',
         backgroundColor: '#f9fefb'
       },
+      
     },
   },
   variants: {

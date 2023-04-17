@@ -3,10 +3,10 @@ import Footer from '../components/Footer';
 
 const Home = () => (
     <>
-        <div className="relative">
-            <h1>hello world</h1>
+        <div className='relative'>
+            <div className="bg-cover h-screen bg-[url('./public/illus/home_bg.svg')] bg-top" />
         </div>
-        <Footer />
+        <Footer/>
     </>
 );
 
