@@ -13,6 +13,7 @@ module.exports = {
         lightGreen: '#87C1B9',
         midGreen: '#467971',
         darkGreen: '#2E4C48',
+        backgroundColor: '#f9fefb'
       },
     },
   },
