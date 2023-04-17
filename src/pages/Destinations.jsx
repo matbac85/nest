@@ -11,7 +11,7 @@ const Destinations = () => {
         const Data = await response.json();
         return Data;
     }
-    console.log(data)
+
 
     useEffect(() => {
         async function getData() {
