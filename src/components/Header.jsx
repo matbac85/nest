@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Search, User } from './Iconssvg';
+import { ArrowExpand, Search, User } from './Iconssvg';
 
 const Header = () => 
   (
@@ -11,11 +11,11 @@ const Header = () =>
       <div className='flex flex-row justify-between'>
         <nav>
             <ul className="flex flex-row items-center gap-x-20">
-            <li className="text-midGreen text-xl font-light"><NavLink to="/">Accueil</NavLink></li>
-            <li className="text-midGreen text-xl font-light"><NavLink to="/destinations">Destinations</NavLink></li>
-            <li className="text-midGreen text-xl font-light"><NavLink to="/proposez">Proposez votre cabane</NavLink></li>
+            <li className="text-midGreen text-xl font-light"><NavLink className="underline-nav"to="/">Accueil</NavLink></li>
+            <li className="text-midGreen text-xl font-light"><NavLink className="underline-nav" to="/destinations">Destinations</NavLink></li>
+            <li className="text-midGreen text-xl font-light"><NavLink className="underline-nav" to="/proposez">Proposez votre cabane</NavLink></li>
             <li className="flex flex-row items-center text-midGreen border-midGreen border-2 rounded-3xl pr-1"><input type="text" placeholder="Recherche" className="px-4 m-0 rounded-3xl border-0 bg-transparent"/><Search /></li>
-            <li className= "text-midGreen border-midGreen border-2 rounded-3xl py-0.5 pl-8 pr-1.5"><User /></li>
+            <li className= " text-midGreen border-midGreen border-2 rounded-3xl py-0.5 px-1.5"><NavLink className="flex" to="/user"><User /> <ArrowExpand /></ NavLink></li>
             </ul>
         </nav>
       </div>
