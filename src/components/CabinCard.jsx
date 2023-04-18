@@ -1,8 +1,10 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 
 const CabinCard = ({ cabin }) => (
-    <div className='card  overflow-hidden w-1/4 hover:scale-105 duration-75 hover:cursor-pointer'>
+    <div className='card  overflow-hidden w-1/4 hover:scale-105 duration-75 hover:cursor-pointer' >
+        <NavLink to={`/cabin/${cabin.id}`}>
         <img src={cabin.images[0]} alt="" className='h-80  object-cover mb-4' />
         <div className='flex  justify-between p-4'>
             <div>
@@ -19,6 +21,7 @@ const CabinCard = ({ cabin }) => (
             <h2 className='text-xl text-black font-bold bg-lightGreen py-2 px-6 rounded-xl'>{cabin.price_per_night}€/nuit</h2>
         </div>
         <div />
+        </NavLink>
     </div>
 );
 
