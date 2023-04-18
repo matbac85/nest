@@ -9,11 +9,19 @@ const Home = () => {
         try {
             const response = await fetch('./public/db.json');
             const data = await response.json();
-            const cabinsCommune = data.cabins.map(cabin => cabin.commune);
+            const cabins = data.cabins
+            // const cabinsCommune = data.cabins.map(cabin => cabin.commune);
 
-            console.log(cabinsCommune.filter (commune => commune === location));
+            // console.log(cabinsCommune.filter (commune => commune === location));
 
-            setData(cabinsCommune);
+            const searchForACabin = cabins.map(searchHome => {
+                let cabinByCommune = searchHome.commune;
+                let cabinByGuests = searchHome.bookings
+
+                console.log(cabinByCommune, cabinByGuests);
+            })
+
+            setData(cabins);
         } catch (error) {
             console.log(error.message);
         }
