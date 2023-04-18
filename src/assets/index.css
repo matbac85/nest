@@ -58,7 +58,7 @@ h1>span {
 
 .underline-nav {
   position: relative;
-  border-bottom: 2px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .underline-nav:before {
@@ -67,7 +67,7 @@ h1>span {
   bottom: -6px;
   left: 0;
   width: 0%;
-  height: 2px;
+  height: 1px;
   background-color: #467971;
   transition: width 0.3s ease-in-out;
 }
