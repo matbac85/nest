@@ -1,7 +1,7 @@
 import { IconInstagram, IconFacebook } from "./Iconssvg"
 
 const Footer = () => (
-    <footer className="w-full h-16 px-20 flex justify-between bg-white border-t-2 border-beige items-center">
+    <footer className="w-full h-16 px-20 flex justify-between bg-white border-t-2 border-beige items-center fixed bottom-0">
         <div>
             <p className="text-sm">© Copyright 2023 - Formation développeur web frontend - Technocité Hornu</p>
         </div>
