@@ -47,3 +47,40 @@ h1>span {
   color: #2E4C48;
   cursor: pointer
 }
+
+/* .background{
+ height: 83vh; 
+} */
+
+:root {
+  --header-height: 6rem;
+}
+
+.underline-nav {
+  position: relative;
+  border-bottom: 1px solid transparent;
+}
+
+.underline-nav:before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: #467971;
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-nav:hover:before {
+  width: 100%;
+}
+
+.home-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - var(--header-height));
+  margin-top: var(--header-height);
+}
