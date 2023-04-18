@@ -22,7 +22,7 @@ const Destinations = () => {
     }, []);
 
     return (
-        < div className='px-auto flex justify-center bg-backgroundColor bg-cover bg-center h-full' >
+        < div className='px-auto flex justify-center bg-backgroundColor bg-cover bg-center h-full mb-24' >
             <div className='w-2/3 f-full flex flex-col'>
                 <h1 className='text-4xl font-bold mb-8'>Choisissez votre <span className='text-midGreen'> destination</span></h1>
                 <div className='flex justify-center w-full mb-16'>
@@ -36,8 +36,7 @@ const Destinations = () => {
                         <li className='filters'>-150€ la nuit</li>
                         <li className='filters'>2 pers.</li>
                         <li className='filters'>4 pers.</li>
-                        <li className='filters'>6 pers.</li>
-                        <li className='filters'>+6 pers.</li>
+                        
                     </ul>
                 </div>
                 <div className='flex flex-wrap gap-6 gap-y-28 justify-between'>
