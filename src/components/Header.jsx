@@ -19,7 +19,7 @@ const Header = () =>
               </ul>
         </nav>
       </header>
-      <div className='z-10'>
+      <div className='z-10 '>
         <label htmlFor="">E-mail</label>
         <input type="text" className='focus:ring-0 border-0 px-4 m-0 rounded-l bg-transparent'/>
         <label htmlFor="">Mot de passe</label>
