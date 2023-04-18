@@ -6,16 +6,16 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 
 const App = () => (
-
-      <BrowserRouter>
-      <Header/>
+  <>
+    <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destinations" element={<Destinations />} />
       </Routes>
-      <Footer/>
-      </BrowserRouter>
-
+    </BrowserRouter>
+    <Footer />
+  </>
 );
 
 export default App;
