@@ -7,9 +7,9 @@ const Destinations = () => {
     const [data, setData] = useState([]);
 
     async function fetchData() {
-        const response = await fetch('http://localhost:3000/cabins');
+        const response = await fetch('./public/db.json');
         const Data = await response.json();
-        return Data;
+        return Data.cabins;
     }
 
 
@@ -27,6 +27,7 @@ const Destinations = () => {
                 <h1 className='text-4xl font-bold mb-8'>Choisissez votre <span className='text-midGreen'> destination</span></h1>
                 <div className='flex justify-center w-full mb-16'>
                     <ul className='flex gap-3 font-semibold'>
+                        <li className='filters'>Toute les cabanes</li>
                         <li className='filters'>Région wallone</li>
                         <li className='filters'>Région flamande</li>
                         <li className='filters'>Région bruxelloise</li>
@@ -39,13 +40,14 @@ const Destinations = () => {
                         <li className='filters'>+6 pers.</li>
                     </ul>
                 </div>
-                <div className='flex flex-wrap gap-8 gap-y-28 justify-between'>
+                <div className='flex flex-wrap gap-6 gap-y-28 justify-between'>
                     {data.map((cabin) =>
                         <CabinCard cabin={cabin} key={cabin.id} />
                     )}
                 </div>
             </div>
         </ div>
+
     )
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Home = () => (
-    <div className="bg-cover h-screen bg-[url('./public/illus/home_bg.svg')] bg-top" />
+            <div className="home-background bg-cover bg-center bg-[url('./public/illus/home_bg.svg')]" />
 );
 
 export default Home;
