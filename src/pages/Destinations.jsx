@@ -7,9 +7,9 @@ const Destinations = () => {
     const [data, setData] = useState([]);
 
     async function fetchData() {
-        const response = await fetch('http://localhost:3000/cabins');
+        const response = await fetch('./public/db.json');
         const Data = await response.json();
-        return Data;
+        return Data.cabins;
     }
 
 
