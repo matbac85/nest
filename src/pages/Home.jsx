@@ -37,8 +37,12 @@ return (
                     <input type="text" name="where" id="where" placeholder="région ou commune" className="rounded-lg w-[250px] border border-midGreen" onChange={handleLocation} />
                 </div>
                 <div className="flex flex-col">
-                    <label htmlFor="when" className="text-darkGreen pb-1 pl-1">Quand ?</label>
-                    <input type="date" name="when" id="when" className="rounded-lg w-[250px] border border-midGreen" />
+                    <label htmlFor="dateStart" className="text-darkGreen pb-1 pl-1">Date de début</label>
+                    <input type="date" name="dateStart" id="dateStart" className="rounded-lg border border-midGreen" />
+                </div>
+                <div className="flex flex-col">
+                    <label htmlFor="dateEnd" className="text-darkGreen pb-1 pl-1">Date de fin</label>
+                    <input type="date" name="dateEnd" id="dateEnd" className="rounded-lg border border-midGreen" />
                 </div>
                 <div className="flex flex-col">
                     <label htmlFor="person" className="text-darkGreen pb-1 pl-1">Combien de personne ?</label>
