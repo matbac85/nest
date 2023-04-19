@@ -8,10 +8,10 @@ const Footer = () => (
         <div className="flex gap-10 items-center">
             <p><a href="mailto:randommail@email.com" className="font-medium hover:text-midGreen">Nous contacter</a></p>
             <div className="flex gap-4">
-                <a href="https://fr-fr.facebook.com/" target="_blank" rel="noreferrer noopener" className="transition duration-200 hover:scale-125">
+                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener" className="transition duration-200 hover:scale-125">
                     <IconInstagram />
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer noopener" className="transition duration-200 hover:scale-125">
+                <a href="https://fr-fr.facebook.com/" target="_blank" rel="noreferrer noopener" className="transition duration-200 hover:scale-125">
                     <IconFacebook />
                 </a>
             </div>
