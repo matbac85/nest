@@ -1,6 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
 
 /* classes css custom */
 .button {
@@ -8,14 +15,76 @@
   padding: 5px;
   color: white;
   border-radius: 10px;
-  border: 1px solid #2E4C48;
 }
 
 .card {
-  border: 2px solid #2E4C48;
+  border: 2px solid #467971;
   background: white;
   -webkit-box-shadow: 4px 7px 30px -10px rgba(46, 76, 72, 1);
   -moz-box-shadow: 4px 7px 30px -10px rgba(46, 76, 72, 1);
   box-shadow: 4px 7px 30px -10px rgba(46, 76, 72, 1);
   border-radius: 15px;
+
+}
+
+.filters {
+  border: 1px solid #467971;
+  color: #467971;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: white;
+  font-size: 14px;
+}
+
+h1,
+h1>span {
+  font-family: 'Dosis', sans-serif;
+}
+
+.filters:hover {
+  background: #87C1B9;
+  color: #2E4C48;
+  cursor: pointer
+}
+
+/* .background{
+ height: 83vh; 
+} */
+
+:root {
+  --header-height: 6rem;
+}
+
+.underline-nav {
+  position: relative;
+  border-bottom: 2px solid transparent;
+}
+
+.underline-nav:before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #87C1B9;
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-nav:hover:before {
+  width: 100%;
+}
+
+.home-background {
+  height: calc(100vh - var(--header-height));
+}
+
+.input {
+  border: solid 1px #467971;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.input:focus {
+  border: 1px solid #FFDF98;
 }
