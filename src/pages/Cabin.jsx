@@ -32,7 +32,7 @@ const Cabin = () => {
                     <div className='w-full h-[500px] mb-8 '>
                         <div className='flex w-full h-full rounded-2xl overflow-hidden  gap-3 '>
                             <img src={data.images[0]} alt="" className='w-1/2 h-auto object-cover' />
-                            <div className='w-1/2 flex justify-between flex-wrap rounded-r-lg overflow-hidden'>
+                            <div className='w-1/2 flex justify-between gap-y-3 flex-wrap rounded-r-lg overflow-hidden'>
                                 <img src={data.images[1]} alt="" className='h-1/2 w-[48.5%] object-cover' />
                                 <img src={data.images[2]} alt="" className='h-1/2 w-[48.5%] object-cover' />
                                 <img src={data.images[3]} alt="" className='h-1/2 w-[48.5%] object-cover' />
