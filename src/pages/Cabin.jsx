@@ -1,6 +1,7 @@
 
 import { useParams } from 'react-router-dom';
 import React, { useState, useEffect} from 'react';
+import CabinComment from '../components/CabinComment';
 
 const Cabin = () => {
 
@@ -26,16 +27,16 @@ const Cabin = () => {
 
     return (
                 data && data.images ? (
-                    <div className="home-background bg-cover bg-center bg-backgroundColor px-64 pt-24" >
-                        <div className='w-3/4'>
+                    <div className="bg-backgroundColor px-64 pt-24 pb-24 h-full" >
+                        <div className='w-3/4 mb-24'>
                             <div className='w-full h-[500px] mb-8 '>
                                     <div className='flex w-full h-full rounded-lg overflow-hidden  gap-3 '>
                                         <img src={data.images[0]} alt="" className='w-1/2 h-auto object-cover'/>
                                     <div className='w-1/2 flex gap-3 flex-wrap rounded-r-lg overflow-hidden'>
-                                        <img src={data.images[1]} alt="" className='h-1/2 w-[49%] object-cover'/>
-                                        <img src={data.images[2]} alt="" className='h-1/2 w-[49%] object-cover'/>
-                                        <img src={data.images[3]} alt="" className='h-1/2 w-[49%] object-cover'/>
-                                        <img src={data.images[4]} alt="" className='h-1/2 w-[49%] object-cover'/>
+                                        <img src={data.images[1]} alt="" className='h-1/2 w-[48.5%] object-cover'/>
+                                        <img src={data.images[2]} alt="" className='h-1/2 w-[48.5%] object-cover'/>
+                                        <img src={data.images[3]} alt="" className='h-1/2 w-[48.5%] object-cover'/>
+                                        <img src={data.images[4]} alt="" className='h-1/2 w-[48.5%] object-cover'/>
                                     </div>
                                 </div>
                             </div>
@@ -50,6 +51,20 @@ const Cabin = () => {
                             </div>
                             <p className='font-light mb-4'>{data.region}, {data.commune}</p>
                             <p>{data.description}</p>
+                        <div className='mt-24 pb-24'>
+                            <h1 className='text-2xl font-bold mb-12'>Commentaires</h1>
+                            <div>
+                                {data.comments.length!==0?
+                                
+                            <div className='justify-between flex flex-wrap'>
+                                {data.comments.map((comment, index)=>
+                                    <CabinComment comment={comment} key={index}/>
+                                )}
+                            </div>:<div><p>Il n'y a aucuns commentaire pour l'instant</p></div>
+                                
+                            }
+                            </div>
+                        </div>
                         </div>
                     </div>) 
                 : <div />

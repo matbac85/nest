@@ -24,9 +24,15 @@
             ],
             "comments": [
                 {
-                    "commenter_id": 0,
-                    "comment": "",
-                    "time_stamp": "",
+                    "commenter_id": 1,
+                    "comment": "Un super endroit pour déconnecter du quotidien. Un cocon qui porte très bien son nom et au calme au milieu de la nature. Le cocon est super bien agencé et on ne manque de rien pour...",
+                    "time_stamp": "01-01-2023",
+                    "rating": 0
+                },
+                {
+                    "commenter_id": 1,
+                    "comment": "Un super endroit pour déconnecter du quotidien. Un cocon qui porte très bien son nom et au calme au milieu de la nature. Le cocon est super bien agencé et on ne manque de rien pour...",
+                    "time_stamp": "01-01-2023",
                     "rating": 0
                 }
             ],
@@ -56,12 +62,7 @@
                 }
             ],
             "comments": [
-                {
-                    "commenter_id": 0,
-                    "comment": "",
-                    "time_stamp": "",
-                    "rating": 0
-                }
+                
             ],
             "rating": 0,
             "max-guests": 8
@@ -486,10 +487,10 @@
             ],
             "comments": [
                 {
-                    "commenter_id": 0,
+                    "commenter_id": 1,
                     "comment": "",
-                    "time_stamp": "",
-                    "rating": 0
+                    "time_stamp": "01-01-2023",
+                    "rating": 5
                 }
             ],
             "rating": 0,
