@@ -76,10 +76,15 @@ h1>span {
 }
 
 .home-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
   height: calc(100vh - var(--header-height));
-  margin-top: var(--header-height);
+}
+
+.input {
+  border: solid 1px #467971;
+  border-radius: 0.5rem;
+  background-color: white;
+}
+
+.input:focus {
+  border: 1px solid #FFDF98;
 }
