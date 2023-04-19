@@ -14,7 +14,7 @@ const Header = () => {
   };
 
   const handleRegistrationIconClick = () => {
-    setIsRegistrationFormVisible(true);
+    setIsRegistrationFormVisible(!isRegistrationFormVisible);
     setIsLoginFormVisible(false);
   };
 
@@ -38,7 +38,7 @@ const Header = () => {
               </ul>
           </nav>
           {isLoginFormVisible && <FormLogin handleClick={handleRegistrationIconClick}/>}
-          {isRegistrationFormVisible && <FormRegistration />}
+          {isRegistrationFormVisible && <FormRegistration handleClick={handleRegistrationIconClick}/>}
         </header>
   )
 }
