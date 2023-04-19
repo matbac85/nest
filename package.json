@@ -2,7 +2,7 @@
   "name": "react-base",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3006",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
