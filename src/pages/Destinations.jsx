@@ -1,4 +1,5 @@
-import CabinCard from '../components/CabinCard'
+import CabinCard from '../components/CabinCard';
+import React, { useState, useEffect } from 'react';
 
 const Destinations = () => {
 
