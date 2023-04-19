@@ -70,7 +70,7 @@ const Cabin = () => {
                     <div className='card w-full h-[300px] mb-16' />
                     <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
 
-                    <button type='button' className='bg-midGreen mt-8 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl'>Réserver</button>
+                    <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl'>Réserver</button>
                 </div>
             </div>)
             : <div />
