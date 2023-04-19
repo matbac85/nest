@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from 'react';
 const Home = () => {
     const [data, setData] = useState([]);
     const [location, setLocation] = useState();
+    const [maxGuests, setMaxGuests] = useState();
     const [isSelectedToggle, setIsSelectedToggle] = useState(false);
     const ref = useRef(null);
 
@@ -13,15 +14,20 @@ const Home = () => {
             const data = await response.json();
 
             const searchForACabin = data.map(searchHome => {
+                let cabinID = searchHome.id;
                 let cabinByCommune = searchHome.commune;
                 let cabinBooking = searchHome.bookings;
 
                 cabinBooking.map(cabinGuests => {
                     let cabinByGuests = cabinGuests.guests;
 
-                    console.log(cabinByCommune, cabinByGuests);
+                    console.log(searchHome.id, searchHome.region, searchHome.commune, cabinGuests.guests);
                 })
             })
+
+            const filterTest = data.filter(test => test.region.toLowerCase() === location && test.max_guests <= maxGuests)
+
+            console.log(filterTest);
 
             setData(data);
         } catch (error) {
@@ -40,7 +46,12 @@ const Home = () => {
         return location;
     }
 
-    console.log(location);
+    const handleGuests = (e) => {
+        let maxGuests = e.target.value;
+        setMaxGuests(maxGuests);
+
+        return maxGuests
+    }
 
 return (
     <div className="bg-cover bg-center home-background bg-[url('public/illus/home_bg.svg')]">
@@ -71,7 +82,7 @@ return (
                 </div>
                 <div className="flex flex-col">
                     <label htmlFor="person" className="text-darkGreen pb-1 pl-1">Combien de personne ?</label>
-                    <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg w-[250px] border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" />
+                    <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg w-[250px] border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" onClick={handleGuests} />
                 </div>
                 <button className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen" onClick={handleResearch}>Rechercher</button>
                 </form>

@@ -97,7 +97,7 @@
                 }
             ],
             "rating": 0,
-            "max-guests": 8
+            "max-guests": 3
         },
         {
             "id": 4,
@@ -163,7 +163,7 @@
                 }
             ],
             "rating": 0,
-            "max-guests": 8
+            "max-guests": 2
         },
         {
             "id": 6,
