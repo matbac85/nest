@@ -8,11 +8,11 @@
             "price_per_night": 80,
             "description": "Évadez-vous de la ville et découvrez la tranquillité de la nature en séjournant dans notre cabane perchée dans les arbres. Vous pourrez profiter d'une vue imprenable sur la canopée et écouter les bruits de la forêt la nuit. Cette expérience unique en son genre vous offrira un séjour inoubliable.",
             "images": [
-                "./public/img/cabins/01/01-1.webp",
-                "./public/img/cabins/01/01-2.webp",
-                "./public/img/cabins/01/01-3.webp",
-                "./public/img/cabins/01/01-4.webp",
-                "./public/img/cabins/01/01-5.webp"
+                "/public/img/cabins/01/01-1.webp",
+                "/public/img/cabins/01/01-2.webp",
+                "/public/img/cabins/01/01-3.webp",
+                "/public/img/cabins/01/01-4.webp",
+                "/public/img/cabins/01/01-5.webp"
             ],
             "bookings": [
                 {
@@ -41,11 +41,11 @@
             "price_per_night": 120,
             "description": "Imaginez-vous surplombant la canopée des arbres depuis votre propre cabane perchée dans les hauteurs. Notre cabane offre une expérience de vie en harmonie avec la nature, avec le confort moderne pour que vous puissiez profiter de la vue imprenable tout en ayant toutes les commodités nécessaires pour passer un séjour agréable.",
             "images": [
-                "./public/img/cabins/02/02-2.webp",
-                "./public/img/cabins/02/02-2.webp",
-                "./public/img/cabins/02/02-3.webp",
-                "./public/img/cabins/02/02-4.webp",
-                "./public/img/cabins/02/02-5.webp"
+                "/public/img/cabins/02/02-2.webp",
+                "/public/img/cabins/02/02-2.webp",
+                "/public/img/cabins/02/02-3.webp",
+                "/public/img/cabins/02/02-4.webp",
+                "/public/img/cabins/02/02-5.webp"
             ],
             "bookings": [
                 {
@@ -74,11 +74,11 @@
             "price_per_night": 150,
             "description": "Nous vous invitons à venir séjourner dans notre cabane perchée dans les arbres, une expérience unique et inoubliable. Vous serez entouré d'une nature luxuriante, avec une vue imprenable sur la forêt environnante. Vous pourrez observer les animaux sauvages depuis votre terrasse privée, pour un moment de calme et de détente.",
             "images": [
-                "./public/img/cabins/03/03-1.webp",
-                "./public/img/cabins/03/03-2.webp",
-                "./public/img/cabins/03/03-3.webp",
-                "./img/cabins/03/03-4.webp",
-                "./public/img/cabins/03/03-5.webp"
+                "/public/img/cabins/03/03-1.webp",
+                "/public/img/cabins/03/03-2.webp",
+                "/public/img/cabins/03/03-3.webp",
+                "/img/cabins/03/03-4.webp",
+                "/public/img/cabins/03/03-5.webp"
             ],
             "bookings": [
                 {
@@ -107,11 +107,11 @@
             "price_per_night": 180,
             "description": "Pour une expérience de vie en pleine nature, rien ne vaut une cabane perchée dans les arbres. Notre cabane est conçue pour vous offrir une vue imprenable sur la canopée, ainsi que tout le confort moderne dont vous avez besoin pour un séjour agréable. Profitez de la sérénité de la forêt et détendez-vous dans ce havre de paix.",
             "images": [
-                "./public/img/cabins/04/04-1.webp",
-                "./public/img/cabins/04/04-2.webp",
-                "./public/img/cabins/04/04-3.webp",
-                "./public/img/cabins/04/04-4.webp",
-                "./public/img/cabins/04/04-5.webp"
+                "/public/img/cabins/04/04-1.webp",
+                "/public/img/cabins/04/04-2.webp",
+                "/public/img/cabins/04/04-3.webp",
+                "/public/img/cabins/04/04-4.webp",
+                "/public/img/cabins/04/04-5.webp"
             ],
             "bookings": [
                 {
@@ -140,11 +140,11 @@
             "price_per_night": 200,
             "description": "Offrez-vous une expérience unique en passant la nuit dans notre cabane perchée dans les arbres. Vous pourrez admirer la vue imprenable sur la canopée depuis votre terrasse privée, et vous serez bercé par les sons de la nature toute la nuit. Cette expérience unique vous offrira une immersion totale dans la nature, pour un séjour inoubliable.",
             "images": [
-                "./public/img/cabins/05/05-1.webp",
-                "./public/img/cabins/05/05-2.webp",
-                "./public/img/cabins/05/05-3.webp",
-                "./public/img/cabins/05/05-4.webp",
-                "./public/img/cabins/05/05-5.webp"
+                "/public/img/cabins/05/05-1.webp",
+                "/public/img/cabins/05/05-2.webp",
+                "/public/img/cabins/05/05-3.webp",
+                "/public/img/cabins/05/05-4.webp",
+                "/public/img/cabins/05/05-5.webp"
             ],
             "bookings": [
                 {
@@ -173,11 +173,11 @@
             "price_per_night": 220,
             "description": "Envie d'une expérience unique et hors du commun ? Optez pour notre cabane perchée dans les arbres, qui vous offrira une vue spectaculaire sur la nature environnante. Vous pourrez observer les oiseaux et autres animaux sauvages depuis votre terrasse privée, pour une expérience en harmonie avec la nature.",
             "images": [
-                "./public/img/cabins/06/06-1.webp",
-                "./public/img/cabins/06/06-2.webp",
-                "./public/img/cabins/06/06-3.webp",
-                "./public/img/cabins/06/06-4.webp",
-                "./public/img/cabins/06/06-5.webp"
+                "/public/img/cabins/06/06-1.webp",
+                "/public/img/cabins/06/06-2.webp",
+                "/public/img/cabins/06/06-3.webp",
+                "/public/img/cabins/06/06-4.webp",
+                "/public/img/cabins/06/06-5.webp"
             ],
             "bookings": [
                 {
@@ -206,11 +206,11 @@
             "price_per_night": 250,
             "description": "Nichée dans les arbres, notre cabane offre une expérience immersive dans la nature, avec tout le confort moderne que vous pourriez souhaiter. Profitez de la vue imprenable sur les arbres, écoutez les bruits de la nature et relaxez-vous dans ce havre de paix, loin de l'agitation de la ville.",
             "images": [
-                "./public/img/cabins/07/07-1.webp",
-                "./public/img/cabins/07/07-2.webp",
-                "./public/img/cabins/07/07-3.webp",
-                "./public/img/cabins/07/07-4.webp",
-                "./public/img/cabins/07/07-5.webp"
+                "/public/img/cabins/07/07-1.webp",
+                "/public/img/cabins/07/07-2.webp",
+                "/public/img/cabins/07/07-3.webp",
+                "/public/img/cabins/07/07-4.webp",
+                "/public/img/cabins/07/07-5.webp"
             ],
             "bookings": [
                 {
@@ -239,11 +239,11 @@
             "price_per_night": 280,
             "description": "Venez découvrir la magie de notre cabane perchée dans les arbres, qui vous offrira une expérience unique de vie en pleine nature. Vous pourrez observer les étoiles depuis votre terrasse privée, et vous réveiller au son des oiseaux le matin. Une expérience immersive et relaxante à ne pas manquer.",
             "images": [
-                "./public/img/cabins/08/08-1.webp",
-                "./public/img/cabins/08/08-2.webp",
-                "./public/img/cabins/08/08-3.webp",
-                "./public/img/cabins/08/08-4.webp",
-                "./public/img/cabins/08/08-5.webp"
+                "/public/img/cabins/08/08-1.webp",
+                "/public/img/cabins/08/08-2.webp",
+                "/public/img/cabins/08/08-3.webp",
+                "/public/img/cabins/08/08-4.webp",
+                "/public/img/cabins/08/08-5.webp"
             ],
             "bookings": [
                 {
@@ -272,11 +272,11 @@
             "price_per_night": 300,
             "description": "Pour une expérience de vie en harmonie avec la nature, notre cabane perchée dans les arbres est l'endroit idéal. Vous pourrez profiter d'une vue imprenable sur les arbres et la forêt environnante, tout en étant confortablement installé dans votre cabane. Une expérience unique et inoubliable vous attend.",
             "images": [
-                "./public/img/cabins/09/09-1.webp",
-                "./public/img/cabins/09/09-2.webp",
-                "./public/img/cabins/09/09-3.webp",
-                "./public/img/cabins/09/09-4.webp",
-                "./public/img/cabins/09/09-5.webp"
+                "/public/img/cabins/09/09-1.webp",
+                "/public/img/cabins/09/09-2.webp",
+                "/public/img/cabins/09/09-3.webp",
+                "/public/img/cabins/09/09-4.webp",
+                "/public/img/cabins/09/09-5.webp"
             ],
             "bookings": [
                 {
@@ -305,11 +305,11 @@
             "price_per_night": 320,
             "description": "Notre cabane perchée dans les arbres offre une expérience unique de vie en pleine nature. Située en hauteur, vous aurez une vue imprenable sur les arbres et la forêt environnante. Profitez de la tranquillité de la nature tout en étant confortablement installé dans votre cabane.",
             "images": [
-                "./public/img/cabins/10/10-1.webp",
-                "./public/img/cabins/10/10-2.webp",
-                "./public/img/cabins/10/10-3.webp",
-                "./public/img/cabins/10/10-4.webp",
-                "./public/img/cabins/10/10-5.webp"
+                "/public/img/cabins/10/10-1.webp",
+                "/public/img/cabins/10/10-2.webp",
+                "/public/img/cabins/10/10-3.webp",
+                "/public/img/cabins/10/10-4.webp",
+                "/public/img/cabins/10/10-5.webp"
             ],
             "bookings": [
                 {
@@ -338,11 +338,11 @@
             "price_per_night": 350,
             "description": "Nichée au sommet des arbres, notre cabane vous offre une vue imprenable sur la nature environnante. Vous pourrez observer les étoiles la nuit depuis votre terrasse privée, et vous réveiller au son des oiseaux le matin. Une expérience unique de vie en pleine nature vous attend.",
             "images": [
-                "./public/img/cabins/11/11-1.webp",
-                "./public/img/cabins/11/11-2.webp",
-                "./public/img/cabins/11/11-3.webp",
-                "./public/img/cabins/11/11-4.webp",
-                "./public/img/cabins/11/11-5.webp"
+                "/public/img/cabins/11/11-1.webp",
+                "/public/img/cabins/11/11-2.webp",
+                "/public/img/cabins/11/11-3.webp",
+                "/public/img/cabins/11/11-4.webp",
+                "/public/img/cabins/11/11-5.webp"
             ],
             "bookings": [
                 {
@@ -371,11 +371,11 @@
             "price_per_night": 380,
             "description": "Vivez une expérience immersive dans la nature en séjournant dans notre cabane perchée dans les arbres. Vous pourrez observer les animaux sauvages et les oiseaux depuis votre terrasse privée, tout en étant confortablement installé dans votre cabane. Un séjour relaxant et inoubliable en perspective.",
             "images": [
-                "./public/img/cabins/12/12-1.webp",
-                "./public/img/cabins/12/12-2.webp",
-                "./public/img/cabins/12/12-3.webp",
-                "./public/img/cabins/12/12-4.webp",
-                "./public/img/cabins/12/12-5.webp"
+                "/public/img/cabins/12/12-1.webp",
+                "/public/img/cabins/12/12-2.webp",
+                "/public/img/cabins/12/12-3.webp",
+                "/public/img/cabins/12/12-4.webp",
+                "/public/img/cabins/12/12-5.webp"
             ],
             "bookings": [
                 {
@@ -404,11 +404,11 @@
             "price_per_night": 400,
             "description": "Éloignez-vous de la ville et découvrez la sérénité de la nature en séjournant dans notre cabane perchée dans les arbres. Vous pourrez profiter d'une vue imprenable sur la forêt environnante, tout en étant confortablement installé dans votre cabane. Une expérience unique et paisible vous attend.",
             "images": [
-                "./public/img/cabins/13/13-1.webp",
-                "./public/img/cabins/13/13-2.webp",
-                "./public/img/cabins/13/13-3.webp",
-                "./public/img/cabins/13/13-4.webp",
-                "./public/img/cabins/13/13-5.webp"
+                "/public/img/cabins/13/13-1.webp",
+                "/public/img/cabins/13/13-2.webp",
+                "/public/img/cabins/13/13-3.webp",
+                "/public/img/cabins/13/13-4.webp",
+                "/public/img/cabins/13/13-5.webp"
             ],
             "bookings": [
                 {
@@ -437,11 +437,11 @@
             "price_per_night": 450,
             "description": "Notre cabane perchée dans les arbres vous offre une expérience immersive dans la nature, avec tout le confort moderne que vous pourriez souhaiter. Profitez de la vue imprenable sur la canopée, écoutez les bruits de la forêt et détendez-vous dans ce havre de paix, loin du stress de la vie quotidienne.",
             "images": [
-                "./public/img/cabins/14/14-1.webp",
-                "./public/img/cabins/14/14-2.webp",
-                "./public/img/cabins/14/14-3.webp",
-                "./public/img/cabins/14/14-4.webp",
-                "./public/img/cabins/14/14-5.webp"
+                "/public/img/cabins/14/14-1.webp",
+                "/public/img/cabins/14/14-2.webp",
+                "/public/img/cabins/14/14-3.webp",
+                "/public/img/cabins/14/14-4.webp",
+                "/public/img/cabins/14/14-5.webp"
             ],
             "bookings": [
                 {
@@ -470,11 +470,11 @@
             "price_per_night": 500,
             "description": "Pour une expérience unique de vie en pleine nature, optez pour notre cabane perchée dans les arbres. Vous pourrez admirer la beauté de la nature environnante depuis votre terrasse privée, et vous détendre dans votre cabane confortablement équipée. Un séjour en immersion totale dans la nature, pour une expérience inoubliable.",
             "images": [
-                "./public/img/cabins/15/15-1.webp",
-                "./public/img/cabins/15/15-2.webp",
-                "./public/img/cabins/15/15-3.webp",
-                "./public/img/cabins/15/15-4.webp",
-                "./public/img/cabins/15/15-5.webp"
+                "/public/img/cabins/15/15-1.webp",
+                "/public/img/cabins/15/15-2.webp",
+                "/public/img/cabins/15/15-3.webp",
+                "/public/img/cabins/15/15-4.webp",
+                "/public/img/cabins/15/15-5.webp"
             ],
             "bookings": [
                 {

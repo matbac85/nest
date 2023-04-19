@@ -1,5 +1,5 @@
-import CabinCard from '../components/CabinCard';
 import React, { useState, useEffect } from 'react';
+import CabinCard from '../components/CabinCard';
 
 const Destinations = () => {
 
@@ -20,6 +20,11 @@ const Destinations = () => {
         getData();
     }, []);
 
+    function walloniaFilter(){
+        const filteredData = data.filter((cabin)=> cabin.region==="Région wallone")
+        setData(filteredData)
+    }
+
     return (
         < div className='px-auto flex justify-center bg-backgroundColor bg-cover bg-center h-full mb-24' >
             <div className='w-2/3 f-full flex flex-col'>
@@ -27,7 +32,7 @@ const Destinations = () => {
                 <div className='flex justify-center w-full mb-16'>
                     <ul className='flex gap-3 font-semibold'>
                         <li className='filters'>Toute les cabanes</li>
-                        <li className='filters'>Région wallone</li>
+                        <li className='filters'><button type='button' onClick={walloniaFilter}>Région wallone</button></li>
                         <li className='filters'>Région flamande</li>
                         <li className='filters'>Région bruxelloise</li>
                         <li className='filters'>-50€ la nuit</li>
