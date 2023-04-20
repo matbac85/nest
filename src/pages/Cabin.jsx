@@ -33,7 +33,10 @@ const Cabin = () => {
             <div className="bg-backgroundColor max-h-fit pl-56 pr-56 pt-24 pb-24 gap-16 flex justify-between" >
 
                 {openedModal ?
-                    <Carroussel images={data.images} />
+                    <div className='flex flex-col items-center w-full gap-4'>
+                        <Carroussel images={data.images} />
+                        <button type='button' onClick={modalControl} className='font-bold underline'>Retourner à la page de la cabane</button>
+                    </div>
                     :
                     <>
                         <div className='w-3/4 mb-24 px-8'>
