@@ -36,7 +36,7 @@
   font-size: 14px;
 }
 
-h1,
+h1,h2,
 h1>span {
   font-family: 'Dosis', sans-serif;
 }
@@ -95,4 +95,11 @@ h1>span {
   border: #467971 solid 1px;
   background-color: white;
   border-radius: 5px;
+}
+
+.user-box{
+  background-color: white;
+  border: #467971 1px solid;
+  padding: 2rem;
+  border-radius: 10px;
 }
