@@ -27,12 +27,12 @@ const Cabin = () => {
 
     return (
         data && data.images ? (
-            <div className="bg-backgroundColor px-64 pt-24 pb-24 h-full" >
-                <div className='w-3/4 mb-24'>
+            <div className="bg-backgroundColor pl-56 pr-56 pt-24 pb-24 h-full gap-16 flex justify-between" >
+                <div className='w-3/4 mb-24 px-8'>
                     <div className='w-full h-[500px] mb-8 '>
                         <div className='flex w-full h-full rounded-2xl overflow-hidden  gap-3 '>
                             <img src={data.images[0]} alt="" className='w-1/2 h-auto object-cover' />
-                            <div className='w-1/2 flex justify-between flex-wrap rounded-r-lg overflow-hidden'>
+                            <div className='w-1/2 flex justify-between gap-y-3 flex-wrap rounded-r-lg overflow-hidden'>
                                 <img src={data.images[1]} alt="" className='h-1/2 w-[48.5%] object-cover' />
                                 <img src={data.images[2]} alt="" className='h-1/2 w-[48.5%] object-cover' />
                                 <img src={data.images[3]} alt="" className='h-1/2 w-[48.5%] object-cover' />
@@ -60,11 +60,17 @@ const Cabin = () => {
                                     {data.comments.map((comment, index) =>
                                         <CabinComment comment={comment} key={index} />
                                     )}
-                                </div> : <div><p>Il n'y a aucuns commentaire pour l'instant</p></div>
+                                </div> : <div><p>Il n'y a aucun commentaire pour l'instant</p></div>
 
                             }
                         </div>
                     </div>
+                </div>
+                <div className='w-1/4 h-screen flex  flex-col'>
+                    <div className='card w-full h-[300px] mb-16' />
+                    <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
+
+                    <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl'>Réserver</button>
                 </div>
             </div>)
             : <div />
