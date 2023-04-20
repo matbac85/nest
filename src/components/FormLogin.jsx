@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { NavLink } from 'react-router-dom';
 
 const FormLogin = ({handleClick, visible }) =>
         {
@@ -28,7 +29,7 @@ const FormLogin = ({handleClick, visible }) =>
             
             <input id="password" name="password" type="password" className='input opacity-100 focus:ring-transparent focus:outline-none px-4 mb-5 required'  value={password} onChange={(e) =>setPassword(e.target.value)}/>
             
-            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 mb-3'>Se connecter</button>
+            <NavLink className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 mb-3 text-center' to="/utilisateur"><button type="submit">Se connecter</button></NavLink>
             
             <button type="button" className='cursor-pointer text-midGreen font-medium underline text-sm' onClick={handleClick}>Pas de Compte ? Inscrivez vous !</button>
         </form>)
