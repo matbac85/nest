@@ -15,36 +15,39 @@ const FormRegistration = ({handleClick, visible}) => {
                 setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
         };
 
+        const validateRequiredField = (fieldValue) => {
+                if (!fieldValue) {
+                  return `Ce champ est obligatoire.`;
+                }
+                return "";
+            }
+        
+        const validateText = (fieldValue) => {
+        if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
+                return `Ce champ ne peut contenir que des lettres.`;
+        }
+        return "";
+        }
+
+        const validateConfirmEmail = () => {
+                if (formData.confirmPassword !== formData.password){
+                return `Ce champ doit correspondre au champ Mot de passe.`
+                }
+                return "";
+        }
+
         const validateForm = () => {
                 const newErrors = {};
 
-                if (!formData.surname) {
-                        newErrors.surname = "Ce champ est obligatoire.";
-                }
-                if (!formData.firstName) {
-                        newErrors.firstName = "Ce champ est obligatoire.";
-                }
-                if (!formData.email) {
-                        newErrors.email = "Ce champ est obligatoire.";
-                }
-                if (!formData.password) {
-                        newErrors.password = "Ce champ est obligatoire.";
-                }
-                if (!formData.confirmPassword) {
-                        newErrors.confirmPassword = "Ce champ est obligatoire.";
-                }
+                newErrors.surname = validateRequiredField(formData.surname);
+                newErrors.firstName = validateRequiredField(formData.firstName);
+                newErrors.email = validateRequiredField(formData.email);
+                newErrors.password = validateRequiredField(formData.password);
+                newErrors.confirmPassword = validateRequiredField(formData.confirmPassword);
+                newErrors.surname = validateText(formData.surname);
+                newErrors.firstName = validateText(formData.firstName);
+                newErrors.confirmPassword = validateConfirmEmail(formData.confirmPassword);
 
-                if(formData.surname && !/^[a-zA-Z]+$/.test(formData.surname)){
-                        newErrors.surname = "Ce champ ne peut contenir que des lettres"
-                }
-
-                if(formData.firstName && !/^[a-zA-Z]+$/.test(formData.firstName)){
-                        newErrors.firstName = "Ce champ ne peut contenir que des lettres"
-                }
-
-                if (formData.confirmPassword !== formData.password) {
-                        newErrors.confirmPassword = "Ce champ doit correspondre au champ Mot de passe.";
-                      }
                 return newErrors
         }
 
