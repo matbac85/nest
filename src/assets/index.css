@@ -76,7 +76,7 @@ h1>span {
 }
 
 .home-background {
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
 }
 
 .input {
@@ -88,3 +88,18 @@ h1>span {
 .input:focus {
   border: 1px solid #FFDF98;
 }
+
+.picture-upload {
+  height: 5rem;
+  width: 5rem;
+  border: #467971 solid 1px;
+  background-color: white;
+}
+
+.active{
+  color: #2E4C48;
+  font-weight: 400;
+  border-bottom: #2E4C48 2px solid;
+  padding-bottom: 6px;
+}
+
