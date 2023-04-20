@@ -16,16 +16,12 @@ const Home = () => {
             const searchForACabin = data.map(searchHome => {
                 let cabinID = searchHome.id;
                 let cabinByCommune = searchHome.commune;
-                let cabinBooking = searchHome.bookings;
+                let cabinMaxGuests = searchHome.max-guests;
 
-                cabinBooking.map(cabinGuests => {
-                    let cabinByGuests = cabinGuests.guests;
-
-                    console.log(searchHome.id, searchHome.region, searchHome.commune, cabinGuests.guests);
-                })
+                console.log(cabinID, cabinByCommune, cabinMaxGuests);
             })
 
-            const filterTest = data.filter(test => test.region.toLowerCase() === location && test.max_guests <= maxGuests)
+            const filterTest = data.filter(test => test.region.toLowerCase() === location && test.max-guests <= maxGuests)
 
             console.log(filterTest);
 
