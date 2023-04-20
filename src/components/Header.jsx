@@ -7,6 +7,11 @@ import FormRegistration from './FormRegistration';
 const Header = () => {
   const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
   const [isRegistrationFormVisible, setIsRegistrationFormVisible] = useState(false);
+  const [activeMenu, setActiveMenu] = useState('');
+
+  const handleClickMenu = (menu) => {
+    setActiveMenu(menu);
+  }
 
   const handleLoginIconClick = () => {
     setIsLoginFormVisible(!isLoginFormVisible);
@@ -14,7 +19,7 @@ const Header = () => {
   };
 
   const handleRegistrationIconClick = () => {
-    setIsRegistrationFormVisible(true);
+    setIsRegistrationFormVisible(!isRegistrationFormVisible);
     setIsLoginFormVisible(false);
   };
 
@@ -25,20 +30,26 @@ const Header = () => {
           </div>
           <nav className='flex flex-row justify-between'>
                 <ul className="flex flex-row items-center gap-x-20">
-                <li className="text-midGreen text-xl font-light"><NavLink className="underline-nav"to="/">Accueil</NavLink></li>
-                <li className="text-midGreen text-xl font-light"><NavLink className="underline-nav" to="/destinations">Destinations</NavLink></li>
-                <li className="text-midGreen text-xl font-light"><NavLink className="underline-nav" to="/proposez">Proposez votre cabane</NavLink></li>
+                
+                <li className="text-midGreen text-xl font-light"><NavLink onClick={() => handleClickMenu('home')} className={activeMenu === 'home' ? 'active' : 'underline-nav'}to="/">Accueil</NavLink></li>
+                
+                <li className="text-midGreen text-xl font-light"><NavLink onClick={() => handleClickMenu('destinations')} className={activeMenu === 'destinations' ? 'active' : 'underline-nav'} to="/destinations">Destinations</NavLink></li>
+                
+                <li className="text-midGreen text-xl font-light"><NavLink onClick={() => handleClickMenu('proposez')} className={activeMenu === 'proposez' ? 'active' : 'underline-nav'} to="/proposez">Proposez votre cabane</NavLink></li>
+                
                 <li className="flex flex-row items-center text-midGreen border-midGreen border-2 rounded-3xl pr-1"><input type="text" placeholder="Recherche" className="focus:ring-0 border-0 px-4 m-0 rounded-3xl bg-transparent"/><Search /></li>
+                
                 <li className= "text-midGreen border-midGreen border-2 rounded-3xl py-0.5 px-1.5 relative" >
                   <button className="flex" type='button' onClick={handleLoginIconClick}>
                     <User />
                     <ArrowExpand />
                   </button>
                 </li>
+
               </ul>
           </nav>
-          {isLoginFormVisible && <FormLogin handleClick={handleRegistrationIconClick}/>}
-          {isRegistrationFormVisible && <FormRegistration />}
+          <FormLogin handleClick={handleRegistrationIconClick} visible={isLoginFormVisible}/>
+          <FormRegistration handleClick={handleRegistrationIconClick} visible={isRegistrationFormVisible}/>
         </header>
   )
 }
