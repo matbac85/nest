@@ -1,11 +1,11 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 
 const Home = () => {
     const [data, setData] = useState([]);
     const [location, setLocation] = useState();
     const [maxGuests, setMaxGuests] = useState();
     const [isSelectedToggle, setIsSelectedToggle] = useState(false);
-    const ref = useRef(null);
+    const regionChoice = useRef();
 
     const handleResearch = async (e) => {
         e.preventDefault();
@@ -13,17 +13,21 @@ const Home = () => {
             const response = await fetch('http://localhost:3000/cabins');
             const data = await response.json();
 
-            const searchForACabin = data.map(searchHome => {
-                let cabinID = searchHome.id;
-                let cabinByCommune = searchHome.commune;
-                let cabinMaxGuests = searchHome.max-guests;
+            const infoSearch = {
+                regionSearch: location,
+                guestsSearch: maxGuests,
+            }
 
-                console.log(cabinID, cabinByCommune, cabinMaxGuests);
-            })
-
-            const filterTest = data.filter(test => test.region.toLowerCase() === location && test.max-guests <= maxGuests)
-
-            console.log(filterTest);
+            if (infoSearch.regionSearch && infoSearch.guestsSearch) {
+                const filterLocation = data.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
+                const filterLocAndGuests = filterLocation.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
+            } else if (infoSearch.regionSearch) {
+                const filterLocation = data.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
+            } else if (infoSearch.guestsSearch) {
+                const filterGuests = data.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
+            } else {
+                console.log("qued");
+            }
 
             setData(data);
         } catch (error) {
@@ -36,8 +40,11 @@ const Home = () => {
     }
 
     const handleLocation = (e) => {
+        regionChoice.current.innerText = e.target.innerText;
         let location = e.target.innerText.toLowerCase();
         setLocation(location);
+
+        toggleSelected()
 
         return location;
     }
@@ -50,7 +57,7 @@ const Home = () => {
     }
 
 return (
-    <div className="bg-cover bg-center home-background bg-[url('public/illus/home_bg.svg')]">
+    <div className="bg-cover bg-center home-background bg-[url('/public/illus/home_bg.svg')]">
         <main className="flex flex-col items-center justify-center h-3/4">
             <h1 className="text-4xl text-center w-[550px] font-semibold mb-9">
                     Vivez une <span className="text-midGreen font-bold">expérience unique</span> en réservant votre cabane dans les arbres dès maintenant !</h1>
@@ -58,10 +65,15 @@ return (
                 <div className="flex flex-col">
                     <label htmlFor="where" className="text-darkGreen pb-1 pl-1">Où ?</label>
                     <div className="relative">
-                        <button type="button" name="where" id="where" className="w-[250px] rounded-lg border border-midGreen bg-white py-2 px-3 text-[#757575] flex justify-between focus:text-darkGreen focus:font-medium" onClick={toggleSelected}>Choisissez une région <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M480 711 240 471l43-43 197 198 197-197 43 43-240 239Z"/></svg></button>
+                        <button type="button" name="where" id="where" className="w-[270px] rounded-lg border border-midGreen bg-white py-2 px-3 text-[#757575] flex justify-between focus:text-darkGreen focus:font-medium" onClick={toggleSelected}><span ref={regionChoice}>Choisissez une région</span>
+                            {!isSelectedToggle ?
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M480 711 240 471l43-43 197 198 197-197 43 43-240 239Z"/></svg> : 
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24" className="rotate-180"><path d="M480 711 240 471l43-43 197 198 197-197 43 43-240 239Z"/></svg>
+                            }
+                        </button>
                         {isSelectedToggle &&
-                            <div className="absolute top-[50px] bg-white w-[250px] rounded-lg py-1 px-2 border border-midGreen" ref={ref}>
-                                <p value="wallonie" className="my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white border-b border-midGreen/50" onClick={handleLocation}>Région Wallone</p>
+                            <div className="absolute top-[50px] bg-white w-[270px] rounded-lg py-1 px-2 border border-midGreen">
+                                <p value="wallonie" className="my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white border-b border-midGreen/50" onClick={handleLocation}>Région Wallonne</p>
                                 <p value="flandres" className="my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white border-b border-midGreen/50" onClick={handleLocation}>Région Flamande</p>
                                 <p value="bruxelles_capitale" className="my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white" onClick={handleLocation}>Région de Bruxelles-Capitale</p>
                             </div>
@@ -78,7 +90,7 @@ return (
                 </div>
                 <div className="flex flex-col">
                     <label htmlFor="person" className="text-darkGreen pb-1 pl-1">Combien de personne ?</label>
-                    <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg w-[250px] border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" onClick={handleGuests} />
+                    <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg w-[200px] border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" onChange={handleGuests} />
                 </div>
                 <button className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen" onClick={handleResearch}>Rechercher</button>
                 </form>
