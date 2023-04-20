@@ -94,12 +94,5 @@ h1>span {
   width: 5rem;
   border: #467971 solid 1px;
   background-color: white;
+  border-radius: 5px;
 }
-
-.active{
-  color: #2E4C48;
-  font-weight: 400;
-  border-bottom: #2E4C48 2px solid;
-  padding-bottom: 6px;
-}
-
