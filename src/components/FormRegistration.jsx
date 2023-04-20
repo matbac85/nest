@@ -44,9 +44,9 @@ const FormRegistration = ({handleClick, visible}) => {
                 newErrors.email = validateRequiredField(formData.email);
                 newErrors.password = validateRequiredField(formData.password);
                 newErrors.confirmPassword = validateRequiredField(formData.confirmPassword);
-                newErrors.surname = validateText(formData.surname);
-                newErrors.firstName = validateText(formData.firstName);
-                newErrors.confirmPassword = validateConfirmEmail(formData.confirmPassword);
+                newErrors.surname += validateText(formData.surname);
+                newErrors.firstName += validateText(formData.firstName);
+                newErrors.confirmPassword += validateConfirmEmail(formData.confirmPassword);
 
                 return newErrors
         }
@@ -99,7 +99,7 @@ const FormRegistration = ({handleClick, visible}) => {
         
         <div className="flex flex-col gap-1">
                 <label htmlFor="email" className='px-2'>E-mail<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-                <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} className="input focus:ring-transparent focus:outline-none w-full"/>
+                <input id="email" name="email" type="text" value={formData.email} onChange={handleChange} className="input focus:ring-transparent focus:outline-none w-full"/>
                 {errors.email && (
                 <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.email}</div>
                 )}
