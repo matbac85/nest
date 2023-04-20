@@ -101,6 +101,7 @@ h1>span {
   color: #2E4C48;
   font-weight: 500;
   border-bottom: #2E4C48 solid 2px;
+  padding-bottom: 4px;
 }
 
 .user-box{

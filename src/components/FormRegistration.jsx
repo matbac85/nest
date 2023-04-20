@@ -26,7 +26,7 @@ const FormRegistration = ({handleClick, visible}) => {
         if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
                 return `Ce champ ne peut contenir que des lettres.`;
         }
-        return "";
+                return "";
         }
 
         const validateConfirmEmail = () => {
@@ -67,15 +67,14 @@ const FormRegistration = ({handleClick, visible}) => {
                         },
                         body: JSON.stringify(formData)
                         })
+                        setFormData({
+                                surname: "",
+                                firstName: "",
+                                email: "",
+                                password: "",
+                                confirmPassword: "",
+                              });
                 }
-
-                setFormData({
-                        surname: "",
-                        firstName: "",
-                        email: "",
-                        password: "",
-                        confirmPassword: "",
-                      });
         }
 
         return (visible &&
