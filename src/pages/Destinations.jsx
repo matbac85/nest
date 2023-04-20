@@ -63,13 +63,13 @@ const Destinations = () => {
     }
 
     function maxGuest2() {
-        const filter = data.filter((cabins) => cabins.max_guests === 2)
+        const filter = data.filter((cabins) => cabins.max_guests >= 2)
 
         setFilteredData(filter)
     }
 
     function maxGuest4() {
-        const filter = data.filter((cabins) => cabins.max_guests === 4)
+        const filter = data.filter((cabins) => cabins.max_guests >= 4)
 
         setFilteredData(filter)
     }
