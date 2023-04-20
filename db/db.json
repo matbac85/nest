@@ -36,7 +36,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 3,
             "max_guests": 8
         },
         {
@@ -47,7 +47,7 @@
             "price_per_night": 120,
             "description": "Imaginez-vous surplombant la canopée des arbres depuis votre propre cabane perchée dans les hauteurs. Notre cabane offre une expérience de vie en harmonie avec la nature, avec le confort moderne pour que vous puissiez profiter de la vue imprenable tout en ayant toutes les commodités nécessaires pour passer un séjour agréable.",
             "images": [
-                "/public/img/cabins/02/02-2.webp",
+                "/public/img/cabins/02/02-1.webp",
                 "/public/img/cabins/02/02-2.webp",
                 "/public/img/cabins/02/02-3.webp",
                 "/public/img/cabins/02/02-4.webp",
@@ -62,7 +62,7 @@
                 }
             ],
             "comments": [],
-            "rating": 0,
+            "rating": 5,
             "max_guests": 8
         },
         {
@@ -95,7 +95,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 4,
             "max_guests": 8
         },
         {
@@ -128,7 +128,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 5,
             "max_guests": 8
         },
         {
@@ -161,7 +161,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 3,
             "max_guests": 8
         },
         {
@@ -194,7 +194,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 2,
             "max_guests": 8
         },
         {
@@ -227,7 +227,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 4,
             "max_guests": 8
         },
         {
@@ -260,7 +260,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 5,
             "max_guests": 8
         },
         {
@@ -293,7 +293,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 1,
             "max_guests": 8
         },
         {
@@ -326,7 +326,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 3,
             "max_guests": 8
         },
         {
@@ -359,7 +359,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 2,
             "max_guests": 8
         },
         {
@@ -392,7 +392,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 4,
             "max_guests": 8
         },
         {
@@ -425,7 +425,7 @@
                     "rating": 0
                 }
             ],
-            "rating": 0,
+            "rating": 5,
             "max_guests": 8
         },
         {
@@ -491,7 +491,7 @@
                     "rating": 5
                 }
             ],
-            "rating": 0,
+            "rating": 3,
             "max_guests": 8
         }
     ],
