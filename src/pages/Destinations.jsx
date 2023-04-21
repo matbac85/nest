@@ -15,7 +15,7 @@ const Destinations = () => {
     }
 
     function locationFilter(cabins, location) {
-        if(location !== null) {
+        if((location !== null) && (location !== "undefined")) {
             const filter = cabins.filter((cabin) => cabin.region.toLowerCase() === location);
     
             setFilteredData(filter)
@@ -27,7 +27,7 @@ const Destinations = () => {
 
     function guestsFilter(cabins, maxGuests) {
         console.log(maxGuests);
-        if(maxGuests !== null) {
+        if((maxGuests !== null) && (maxGuests !== "undefined")) {
             const filter = cabins.filter((cabin) => cabin.max_guests >= parseInt(maxGuests, 10));
     
             setFilteredData(filter)
