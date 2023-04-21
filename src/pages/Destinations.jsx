@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import CabinCard from '../components/CabinCard';
 
 const Destinations = () => {
 
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([])
+    const [ searchParams ] = useSearchParams();
 
     async function fetchData() {
         const response = await fetch('http://localhost:3000/cabins');
@@ -12,12 +14,37 @@ const Destinations = () => {
         return Data;
     }
 
+    function locationFilter(cabins, location) {
+        if(location !== null) {
+            const filter = cabins.filter((cabin) => cabin.region.toLowerCase() === location);
+    
+            setFilteredData(filter)
+            return filter
+        } 
+            return cabins
+        
+    }
+
+    function guestsFilter(cabins, maxGuests) {
+        console.log(maxGuests);
+        if(maxGuests !== null) {
+            const filter = cabins.filter((cabin) => cabin.max_guests >= parseInt(maxGuests, 10));
+    
+            setFilteredData(filter)
+            return filter
+        } 
+            return cabins
+        
+        
+    }
 
     useEffect(() => {
         async function getData() {
-            const result = await fetchData();
+            let result = await fetchData();
             setData(result);
             setFilteredData(result)
+            result = locationFilter(result, searchParams.get('location'));
+            result = guestsFilter(result, searchParams.get('maxGuests'));
         }
         getData();
     }, []);

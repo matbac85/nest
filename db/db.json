@@ -195,7 +195,7 @@
                 }
             ],
             "rating": 2,
-            "max_guests": 8
+            "max_guests": 4
         },
         {
             "id": 7,
@@ -261,7 +261,7 @@
                 }
             ],
             "rating": 5,
-            "max_guests": 8
+            "max_guests": 2
         },
         {
             "id": 9,
@@ -327,7 +327,7 @@
                 }
             ],
             "rating": 3,
-            "max_guests": 8
+            "max_guests": 3
         },
         {
             "id": 11,
@@ -426,7 +426,7 @@
                 }
             ],
             "rating": 5,
-            "max_guests": 8
+            "max_guests": 3
         },
         {
             "id": 14,
@@ -459,7 +459,7 @@
                 }
             ],
             "rating": 0,
-            "max_guests": 8
+            "max_guests": 3
         },
         {
             "id": 15,
@@ -492,7 +492,7 @@
                 }
             ],
             "rating": 3,
-            "max_guests": 8
+            "max_guests": 1
         }
     ],
     "users": [
