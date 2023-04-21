@@ -57,8 +57,8 @@ const Home = () => {
     }
 
 return (
-    <div className="bg-cover bg-center home-background bg-[url('/public/illus/home_bg.svg')] flex flex-col items-center justify-center">
-        <main className="flex flex-col items-center h-1/2">
+    <div className="bg-cover bg-center home-background bg-[url('/public/illus/home_bg.svg')] flex flex-col">
+        <main className="flex flex-col items-center m-44">
             <h1 className="text-4xl text-center w-[550px] font-semibold mb-9">
                     Vivez une <span className="text-midGreen font-bold">expérience unique</span> en réservant votre cabane dans les arbres dès maintenant !</h1>
             <form className="flex bg-white/75 p-7 gap-6 rounded-2xl border-2 border-midGreen items-end shadow-lg shadow-darkGreen/50">
