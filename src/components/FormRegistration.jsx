@@ -15,36 +15,39 @@ const FormRegistration = ({handleClick, visible}) => {
                 setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
         };
 
+        const validateRequiredField = (fieldValue) => {
+                if (!fieldValue) {
+                  return `Ce champ est obligatoire.`;
+                }
+                return "";
+            }
+        
+        const validateText = (fieldValue) => {
+        if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
+                return `Ce champ ne peut contenir que des lettres.`;
+        }
+                return "";
+        }
+
+        const validateConfirmEmail = () => {
+                if (formData.confirmPassword !== formData.password){
+                return `Ce champ doit correspondre au champ Mot de passe.`
+                }
+                return "";
+        }
+
         const validateForm = () => {
                 const newErrors = {};
 
-                if (!formData.surname) {
-                        newErrors.surname = "Ce champ est obligatoire.";
-                }
-                if (!formData.firstName) {
-                        newErrors.firstName = "Ce champ est obligatoire.";
-                }
-                if (!formData.email) {
-                        newErrors.email = "Ce champ est obligatoire.";
-                }
-                if (!formData.password) {
-                        newErrors.password = "Ce champ est obligatoire.";
-                }
-                if (!formData.confirmPassword) {
-                        newErrors.confirmPassword = "Ce champ est obligatoire.";
-                }
+                newErrors.surname = validateRequiredField(formData.surname);
+                newErrors.firstName = validateRequiredField(formData.firstName);
+                newErrors.email = validateRequiredField(formData.email);
+                newErrors.password = validateRequiredField(formData.password);
+                newErrors.confirmPassword = validateRequiredField(formData.confirmPassword);
+                newErrors.surname += validateText(formData.surname);
+                newErrors.firstName += validateText(formData.firstName);
+                newErrors.confirmPassword += validateConfirmEmail(formData.confirmPassword);
 
-                if(formData.surname && !/^[a-zA-Z]+$/.test(formData.surname)){
-                        newErrors.surname = "Ce champ ne peut contenir que des lettres"
-                }
-
-                if(formData.firstName && !/^[a-zA-Z]+$/.test(formData.firstName)){
-                        newErrors.firstName = "Ce champ ne peut contenir que des lettres"
-                }
-
-                if (formData.confirmPassword !== formData.password) {
-                        newErrors.confirmPassword = "Ce champ doit correspondre au champ Mot de passe.";
-                      }
                 return newErrors
         }
 
@@ -64,19 +67,18 @@ const FormRegistration = ({handleClick, visible}) => {
                         },
                         body: JSON.stringify(formData)
                         })
+                        setFormData({
+                                surname: "",
+                                firstName: "",
+                                email: "",
+                                password: "",
+                                confirmPassword: "",
+                              });
                 }
-
-                setFormData({
-                        surname: "",
-                        firstName: "",
-                        email: "",
-                        password: "",
-                        confirmPassword: "",
-                      });
         }
 
         return (visible &&
-        <form className="z-51 flex flex-col bg-formBackground absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 w-full max-w-lg gap-4" onSubmit={submitFormRegistration}>
+        <form className="z-100 flex flex-col bg-formBackground w-full absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 max-w-lg gap-4" onSubmit={submitFormRegistration}>
         
         <div className="flex flex-col gap-1">
                 <label htmlFor="surname" className='px-2'>Nom<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
@@ -96,7 +98,7 @@ const FormRegistration = ({handleClick, visible}) => {
         
         <div className="flex flex-col gap-1">
                 <label htmlFor="email" className='px-2'>E-mail<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-                <input id="email" name="email" type="email" value={formData.email} onChange={handleChange} className="input focus:ring-transparent focus:outline-none w-full"/>
+                <input id="email" name="email" type="text" value={formData.email} onChange={handleChange} className="input focus:ring-transparent focus:outline-none w-full"/>
                 {errors.email && (
                 <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.email}</div>
                 )}

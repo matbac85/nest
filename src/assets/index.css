@@ -97,6 +97,13 @@ h1>span {
   border-radius: 5px;
 }
 
+.active {
+  color: #2E4C48;
+  font-weight: 500;
+  border-bottom: #2E4C48 solid 2px;
+  padding-bottom: 4px;
+}
+
 .user-box{
   background-color: white;
   border: #467971 1px solid;
