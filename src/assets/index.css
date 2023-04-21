@@ -36,7 +36,7 @@
   font-size: 14px;
 }
 
-h1,
+h1,h2,
 h1>span {
   font-family: 'Dosis', sans-serif;
 }
@@ -76,7 +76,7 @@ h1>span {
 }
 
 .home-background {
-  height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-height));
 }
 
 .input {
@@ -87,4 +87,19 @@ h1>span {
 
 .input:focus {
   border: 1px solid #FFDF98;
+}
+
+.picture-upload {
+  height: 5rem;
+  width: 5rem;
+  border: #467971 solid 1px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.user-box{
+  background-color: white;
+  border: #467971 1px solid;
+  padding: 2rem;
+  border-radius: 10px;
 }
