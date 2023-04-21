@@ -1,10 +1,12 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Search, User, ArrowExpand } from './Iconssvg';
 import FormLogin from './FormLogin';
 import FormRegistration from './FormRegistration';
+import AuthContext from '../contexts/AuthContext';
 
 const Header = () => {
+  const [currentUser, setCurrentUser] = useContext(AuthContext);
   const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
   const [isRegistrationFormVisible, setIsRegistrationFormVisible] = useState(false);
 

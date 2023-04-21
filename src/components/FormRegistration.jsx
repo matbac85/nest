@@ -65,7 +65,7 @@ const FormRegistration = ({handleClick, visible}) => {
 
                 const newErrors = validateForm();
 
-                if(Object.keys(newErrors).length > 0){
+                if(Object.values(newErrors).filter((value) => value !== "").length > 0){
                         setErrors(newErrors);
                 }else{
                         fetch('http://localhost:3000/users', {
