@@ -78,7 +78,7 @@ const FormRegistration = ({handleClick, visible}) => {
         }
 
         return (visible &&
-        <form className="z-51 flex flex-col bg-formBackground absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 w-full max-w-lg gap-4" onSubmit={submitFormRegistration}>
+        <form className="z-100 flex flex-col bg-formBackground w-full absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 max-w-lg gap-4" onSubmit={submitFormRegistration}>
         
         <div className="flex flex-col gap-1">
                 <label htmlFor="surname" className='px-2'>Nom<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
