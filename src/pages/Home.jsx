@@ -20,11 +20,11 @@ const Home = () => {
 
             if (infoSearch.regionSearch && infoSearch.guestsSearch) {
                 const filterLocation = data.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
-                const filterLocAndGuests = filterLocation.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
+                const filters = filterLocation.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
             } else if (infoSearch.regionSearch) {
-                const filterLocation = data.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
+                const filters = data.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
             } else if (infoSearch.guestsSearch) {
-                const filterGuests = data.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
+                const filters = data.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
             } else {
                 console.log("qued");
             }
