@@ -2,8 +2,6 @@ import React, { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-    // eslint-disable-next-line no-unused-vars
-    const [data, setData] = useState([]);
     const [location, setLocation] = useState();
     const [maxGuests, setMaxGuests] = useState();
     const [isSelectedToggle, setIsSelectedToggle] = useState(false);
@@ -18,7 +16,7 @@ const Home = () => {
         const locationHandled = e.target.innerText.toLowerCase();
         setLocation(locationHandled);
 
-        toggleSelected()
+        toggleSelected();
 
         return locationHandled;
     }
@@ -27,7 +25,7 @@ const Home = () => {
         const maxGuestsHandled = e.target.value;
         setMaxGuests(maxGuestsHandled);
 
-        return maxGuestsHandled
+        return maxGuestsHandled;
     }
 
 return (
@@ -66,7 +64,7 @@ return (
                     <label htmlFor="person" className="text-darkGreen pb-1 pl-1">Combien de personne ?</label>
                     <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg w-[200px] border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" onChange={handleGuests} />
                 </div>
-                <NavLink to={`/destinations?location=${location}&maxGuests=${maxGuests}`} className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen">Rechercher</NavLink>
+                <NavLink to={`/destinations?location=${location}&maxGuests=${maxGuests}`} className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen hover:bg-darkGreen hover:border-darkGreen">Rechercher</NavLink>
                 </form>
             </main>
         </div>

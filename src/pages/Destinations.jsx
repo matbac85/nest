@@ -6,7 +6,7 @@ const Destinations = () => {
 
     const [data, setData] = useState([]);
     const [filteredData, setFilteredData] = useState([])
-    const [ searchParams ] = useSearchParams();
+    const [searchParams] = useSearchParams();
 
     async function fetchData() {
         const response = await fetch('http://localhost:3000/cabins');
@@ -22,11 +22,9 @@ const Destinations = () => {
             return filter
         } 
             return cabins
-        
     }
 
     function guestsFilter(cabins, maxGuests) {
-        console.log(maxGuests);
         if((maxGuests !== null) && (maxGuests !== "undefined")) {
             const filter = cabins.filter((cabin) => cabin.max_guests >= parseInt(maxGuests, 10));
     
@@ -34,8 +32,6 @@ const Destinations = () => {
             return filter
         } 
             return cabins
-        
-        
     }
 
     useEffect(() => {
