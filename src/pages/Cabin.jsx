@@ -3,15 +3,25 @@ import { useParams } from 'react-router-dom';
 import React, { useState, useEffect, } from 'react';
 import CabinComment from '../components/CabinComment';
 import Carroussel from '../components/Carroussel';
+import CommentForm from '../components/CommentForm';
 
 const Cabin = () => {
 
     const { id } = useParams();
     const [data, setData] = useState(["coucou"]);
     const [openedModal, setOpenedModal] = useState(false)
+    const [isConnected, setIsConnected] = useState(true)
+    const [openedCommentForm, setOpenedCommentForm] = useState(false)
+
+
+
 
     function modalControl() {
         setOpenedModal(!openedModal)
+    }
+
+    function commentFormControl() {
+        setOpenedCommentForm(!openedCommentForm)
     }
 
     async function fetchData() {
@@ -76,6 +86,14 @@ const Cabin = () => {
                                             )}
                                         </div> : <div><p>Il n'y a aucun commentaire pour l'instant</p></div>
 
+                                    }
+                                    {isConnected &&
+                                        <div className='mt-8 '>
+                                            {openedCommentForm ? <CommentForm close={setOpenedCommentForm} /> :
+
+                                                <button type='button' className='text-midGreen underline' onClick={commentFormControl}>Laisser un commentaire</button>
+                                            }
+                                        </div>
                                     }
                                 </div>
                             </div>
