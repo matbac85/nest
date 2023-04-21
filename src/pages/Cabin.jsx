@@ -35,7 +35,7 @@ const Cabin = () => {
                 {openedModal ?
                     <div className='flex flex-col items-center w-full gap-4'>
                         <Carroussel images={data.images} />
-                        <button type='button' onClick={modalControl} className='font-bold underline'>Retourner à la page de la cabane</button>
+                        <button type='button' onClick={modalControl} className='font-bold text-midGreen underline'>Retourner à la page de la cabane</button>
                     </div>
                     :
                     <>
@@ -85,7 +85,7 @@ const Cabin = () => {
                                 <div className='card w-full h-[300px] mb-16' />
                                 <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
 
-                                <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-white hover:text-darkGreen duration-75'>Réserver</button>
+                                <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-darkGreen duration-75'>Réserver</button>
                             </div>
                         </div></>}
             </div>)
