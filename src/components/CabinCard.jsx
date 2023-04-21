@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const CabinCard = ({ cabin }) => (
-    <div className='card  overflow-hidden w-[30%] hover:scale-105 duration-75 hover:cursor-pointer' >
+    <div className='card col-span-4  overflow-hidden  hover:scale-105 duration-75 hover:cursor-pointer' >
         <NavLink to={`/cabin/${cabin.id}`}>
             <img src={cabin.images[0]} alt="" className='h-80 w-full object-cover mb-4' />
             <div className='flex  justify-between p-4'>
