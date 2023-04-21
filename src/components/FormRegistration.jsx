@@ -23,13 +23,20 @@ const FormRegistration = ({handleClick, visible}) => {
             }
         
         const validateText = (fieldValue) => {
-        if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
-                return `Ce champ ne peut contenir que des lettres.`;
-        }
+                if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
+                  return `Ce champ ne peut contenir que des lettres.`;
+                }
                 return "";
         }
 
-        const validateConfirmEmail = () => {
+        const validateEmail = (fieldValue) => {
+                if (fieldValue && !/^([\w-\.]+@([\w-]+\.)+[\w-]{2,})?$/.test(fieldValue)) {
+                  return `Le format de votre email n'est pas correct`;
+                }
+                return "";
+        }
+
+        const validateConfirmPassword = () => {
                 if (formData.confirmPassword !== formData.password){
                 return `Ce champ doit correspondre au champ Mot de passe.`
                 }
@@ -46,7 +53,8 @@ const FormRegistration = ({handleClick, visible}) => {
                 newErrors.confirmPassword = validateRequiredField(formData.confirmPassword);
                 newErrors.surname += validateText(formData.surname);
                 newErrors.firstName += validateText(formData.firstName);
-                newErrors.confirmPassword += validateConfirmEmail(formData.confirmPassword);
+                newErrors.confirmPassword += validateConfirmPassword(formData.confirmPassword);
+                newErrors.email += validateEmail(formData.email);
 
                 return newErrors
         }
