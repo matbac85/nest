@@ -11,7 +11,7 @@ const Home = () => {
         e.preventDefault();
         try {
             const response = await fetch('http://localhost:3000/cabins');
-            const data = await response.json();
+            const datas = await response.json();
 
             const infoSearch = {
                 regionSearch: location,
@@ -19,17 +19,17 @@ const Home = () => {
             }
 
             if (infoSearch.regionSearch && infoSearch.guestsSearch) {
-                const filterLocation = data.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
+                const filterLocation = datas.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
                 const filters = filterLocation.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
             } else if (infoSearch.regionSearch) {
-                const filters = data.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
+                const filters = datas.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
             } else if (infoSearch.guestsSearch) {
-                const filters = data.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
+                const filters = datas.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
             } else {
                 console.log("qued");
             }
 
-            setData(data);
+            setData(datas);
         } catch (error) {
             console.log(error.message);
         }
@@ -41,24 +41,24 @@ const Home = () => {
 
     const handleLocation = (e) => {
         regionChoice.current.innerText = e.target.innerText;
-        let location = e.target.innerText.toLowerCase();
-        setLocation(location);
+        const locationHandled = e.target.innerText.toLowerCase();
+        setLocation(locationHandled);
 
         toggleSelected()
 
-        return location;
+        return locationHandled;
     }
 
     const handleGuests = (e) => {
-        let maxGuests = e.target.value;
-        setMaxGuests(maxGuests);
+        const maxGuestsHandled = e.target.value;
+        setMaxGuests(maxGuestsHandled);
 
-        return maxGuests
+        return maxGuestsHandled
     }
 
 return (
-    <div className="bg-cover bg-center home-background bg-[url('/public/illus/home_bg.svg')]">
-        <main className="flex flex-col items-center justify-center h-3/4">
+    <div className="bg-cover bg-center home-background bg-[url('/public/illus/home_bg.svg')] flex flex-col items-center justify-center">
+        <main className="flex flex-col items-center h-1/2">
             <h1 className="text-4xl text-center w-[550px] font-semibold mb-9">
                     Vivez une <span className="text-midGreen font-bold">expérience unique</span> en réservant votre cabane dans les arbres dès maintenant !</h1>
             <form className="flex bg-white/75 p-7 gap-6 rounded-2xl border-2 border-midGreen items-end shadow-lg shadow-darkGreen/50">
@@ -73,9 +73,9 @@ return (
                         </button>
                         {isSelectedToggle &&
                             <div className="absolute top-[50px] bg-white w-[270px] rounded-lg py-1 px-2 border border-midGreen">
-                                <p value="wallonie" className="my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white border-b border-midGreen/50" onClick={handleLocation}>Région Wallonne</p>
-                                <p value="flandres" className="my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white border-b border-midGreen/50" onClick={handleLocation}>Région Flamande</p>
-                                <p value="bruxelles_capitale" className="my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white" onClick={handleLocation}>Région de Bruxelles-Capitale</p>
+                                <button type="button" value="wallonie" className="w-full text-left my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white border-b border-midGreen/50" onClick={handleLocation}>Région Wallonne</button>
+                                <button type="button" value="flandres" className="w-full text-left my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white border-b border-midGreen/50" onClick={handleLocation}>Région Flamande</button>
+                                <button type="button" value="bruxelles_capitale" className="w-full text-left my-1 py-1 px-2 hover:bg-midGreen hover:rounded-lg hover:text-white" onClick={handleLocation}>Région de Bruxelles-Capitale</button>
                             </div>
                         }
                     </div>
@@ -92,7 +92,7 @@ return (
                     <label htmlFor="person" className="text-darkGreen pb-1 pl-1">Combien de personne ?</label>
                     <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg w-[200px] border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" onChange={handleGuests} />
                 </div>
-                <button className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen" onClick={handleResearch}>Rechercher</button>
+                <button type="button" className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen" onClick={handleResearch}>Rechercher</button>
                 </form>
             </main>
         </div>
