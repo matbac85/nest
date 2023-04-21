@@ -4,6 +4,7 @@ const CabinComment = ({ comment }) => {
 
     const [data, setData] = useState([]);
 
+
     async function fetchData() {
         const response = await fetch(`http://localhost:3000/users/${comment.commenter_id}`);
         const Data = await response.json();
