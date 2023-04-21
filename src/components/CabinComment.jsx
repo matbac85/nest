@@ -29,9 +29,9 @@ const CabinComment = ({ comment }) => {
                 <div className='flex justify-between mb-4'>
                     <div className='flex gap-3'>
                         <div>
-                            <p className="w-12 h-12 bg-lightGreen rounded-full flex justify-center items-center text-xl text-bold mb-4">
-                                {data.first_name[0]}{data.name[0]}
-                            </p>
+                            {data && data.first_name && data.name &&
+                                < p className="w-12 h-12 bg-lightGreen rounded-full flex justify-center items-center text-xl text-bold mb-4">{data.first_name[0]}{data.name[0]}</p>
+                            }
                         </div>
                         <div >
                             <h2 className='font-bold'>{data.first_name} {data.name}</h2>
@@ -45,7 +45,7 @@ const CabinComment = ({ comment }) => {
 
                 <p>{comment.comment}</p>
             </div>
-        </div>
+        </div >
     )
 };
 
