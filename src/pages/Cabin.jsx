@@ -22,6 +22,7 @@ const Cabin = () => {
 
     function commentFormControl() {
         setOpenedCommentForm(!openedCommentForm)
+
     }
 
     async function fetchData() {

@@ -120,3 +120,19 @@ h1>span {
   padding: 2rem;
   border-radius: 10px;
 }
+
+.ratingButton {
+  border: 1px solid #467971;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: white;
+
+}
+
+.activeRatingButton {
+  border: 1px solid #467971;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #467971;
+  font-size: 14px;
+}
