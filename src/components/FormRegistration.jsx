@@ -65,15 +65,20 @@ const FormRegistration = ({handleClick, visible}) => {
 
                 const newErrors = validateForm();
 
-                if(Object.keys(newErrors).length > 0){
+                if(Object.values(newErrors).filter((value) => value !== "").length > 0){
                         setErrors(newErrors);
-                }else{
+                }else{  const dataBaseForm = {
+                                first_name : formData.firstName,
+                                name: formData.surname,
+                                email: formData.email,
+                                password: formData.password
+                        }
                         fetch('http://localhost:3000/users', {
                         method: 'POST',
                         headers: {
                                 'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(formData)
+                        body: JSON.stringify(dataBaseForm)
                         })
                         setFormData({
                                 surname: "",
@@ -82,6 +87,7 @@ const FormRegistration = ({handleClick, visible}) => {
                                 password: "",
                                 confirmPassword: "",
                               });
+                        handleClick()
                 }
         }
 

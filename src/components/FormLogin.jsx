@@ -1,8 +1,11 @@
-import { useState } from "react"
-import { NavLink } from 'react-router-dom';
+import { useState, useContext } from "react"
+import AuthContext from "../contexts/AuthContext";
 
-const FormLogin = ({handleClick, visible }) =>
+const FormLogin = ({handleClick, visible, setVisible }) =>
         {
+            const [currentUser, setCurrentUser] = useContext(AuthContext);
+            const [connexionError, setConnexionError] = useState(null);
+
             const [formData, setFormData] = useState({
                 email: "",
                 password: "",
@@ -39,39 +42,51 @@ const FormLogin = ({handleClick, visible }) =>
                 return newErrors
             }
 
-            const submit = (e) => {
+            const submit = async (e) => {
                 e.preventDefault()
 
                 const newErrors = validateForm();
-
-                if(Object.keys(newErrors).length > 0){
+                if(Object.values(newErrors).filter((value) => value !== "").length > 0){
                     setErrors(newErrors);
                 }else{
-                    setFormData({
-                            email: "",
-                            password: "",
-                          });
+                    const response = await fetch(`http://localhost:3000/users?email=${formData.email}&password=${formData.password}`)
+                    const user = await response.json()
+                    if(user.length === 0){
+                        setConnexionError(`Votre email ou votre mot de passe n'est pas reconnu`)
+                    }else{
+                        setVisible(false)
+                        setConnexionError(null)
+                        setCurrentUser(user[0])
+                        setFormData({
+                                email: "",
+                                password: "",
+                              });
+                        localStorage.setItem('currentUser', JSON.stringify(user[0]))
+                    }
                 }
             }
 
-            return (visible && <form onSubmit={submit} className='z-50 flex flex-col bg-formBackground w-72 absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20'>
+            return (visible && <form onSubmit={submit} className='z-50 flex flex-col bg-formBackground w-72 absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 gap-4'>
             <div className="flex flex-col gap-1">
                 <label htmlFor="email" className='px-2'>E-mail<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-                <input id="email" type="text" name="email" value={formData.email} className='input opacity-100 focus:ring-transparent focus:outline-none px-4 mb-5 required' onChange={handleChange }/>
+                <input id="email" type="text" name="email" value={formData.email} className='input opacity-100 focus:ring-transparent focus:outline-none px-4' onChange={handleChange }/>
                 {errors.email && (
-                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.surname}</div>
+                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.email}</div>
                 )}
             </div>
 
-            <div className="flex flex-col gap-1 mb-5">
+            <div className="flex flex-col gap-1">
                 <label htmlFor="password" className='px-2'>Mot de passe<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-                <input id="password" name="password" value={formData.password} type="password" className='input opacity-100 focus:ring-transparent focus:outline-none px-4 mb-5 required' onChange={handleChange}/>
+                <input id="password" name="password" value={formData.password} type="password" className='input opacity-100 focus:ring-transparent focus:outline-none px-4' onChange={handleChange}/>
                 {errors.password && (
-                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.surname}</div>
+                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.password}</div>
+                )}
+                {connexionError && (
+                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{connexionError}</div>
                 )}
             </div>
             
-            <NavLink to="/utilisateur" className={({isActive}) => (isActive ? 'border-none' : 'border-none')}><button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 mb-3 text-center w-full'>Se connecter</button></NavLink>
+            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 mb-3 text-center w-full'>Se connecter</button>
             
             <button type="button" className='cursor-pointer text-midGreen font-medium underline text-sm' onClick={handleClick}>Pas de Compte ? Inscrivez vous !</button>
         </form>)
