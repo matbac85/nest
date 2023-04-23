@@ -537,35 +537,6 @@
         }
       ],
       "time_stamp": ""
-    },
-    {
-      "surname": "Baclin",
-      "firstName": "Mathilde",
-      "email": "mathildebaclin@gmail.com",
-      "password": "1234",
-      "confirmPassword": "1234",
-      "id": 2
-    },
-    {
-      "first_name": "Christophe",
-      "name": "Belpaire",
-      "email": "chris@gmail.com",
-      "password": "1234",
-      "id": 3
-    },
-    {
-      "first_name": "Alain",
-      "name": "Belpaire",
-      "email": "alain@gmail.com",
-      "password": "1234",
-      "id": 4
-    },
-    {
-      "first_name": "Dudu",
-      "name": "Donovan",
-      "email": "donodudu@gmail.com",
-      "password": "12345",
-      "id": 5
     }
   ]
 }
