@@ -51,7 +51,7 @@ const Header = () => {
                     ? <div className='border-midGreen border-2 rounded-full w-8 h-8 flex items-center justify-center'>{loggedInIcon(currentUser)}</div>
                     : <User />
                   }
-                    <ArrowExpand loginVisible={isLoginFormVisible} registrationVisible={isRegistrationFormVisible}/>
+                    <ArrowExpand toggleCallback ={handleLoginIconClick}/>
                   </button>
                 </li>
 

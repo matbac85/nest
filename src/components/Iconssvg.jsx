@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const Search = () => 
     (<svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className="cursor-pointer"><path d="M774 913 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l243 241q9 8.442 9 20.721t-9.913 22.192Q809 922 795.778 922q-13.222 0-21.778-9ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z" className="text-midGreen"/></svg>)
 
@@ -14,12 +16,29 @@ const IconFacebook = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#467971" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 )
 
-const ArrowExpand = ({loginVisible, registrationVisible}) => (
-    <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className={loginVisible || registrationVisible ? "origin-center rotate-180" : "cursor-pointer"}><path d="M480 699q-6 0-11-2t-10-7L261 492q-8-8-7.5-21.5T262 449q10-10 21.5-8.5T304 450l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501 690q-5 5-10 7t-11 2Z"/></svg>
-)
+// const ArrowExpand = ({loginVisible, registrationVisible}) => (
+//     <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className={loginVisible || registrationVisible ? "origin-center rotate-180" : "cursor-pointer"}><path d="M480 699q-6 0-11-2t-10-7L261 492q-8-8-7.5-21.5T262 449q10-10 21.5-8.5T304 450l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501 690q-5 5-10 7t-11 2Z"/></svg>
+// )
+
+const ArrowExpand = ({toggleCallback}) => {
+    const [isExpanded, setIsExpanded] = useState(false)
+    console.log(isExpanded);
+    const toggle = () => {
+        setIsExpanded(!isExpanded)
+        toggleCallback()
+    }   
+    
+    return(
+    <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className={isExpanded ? "origin-center rotate-180" : "cursor-pointer"} onClick={toggle}><path d="M480 699q-6 0-11-2t-10-7L261 492q-8-8-7.5-21.5T262 449q10-10 21.5-8.5T304 450l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501 690q-5 5-10 7t-11 2Z"/></svg>
+    )
+}
 
 const Add = () => (
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24"><path d="M479.825 856Q467 856 458.5 847.375T450 826V606H230q-12.75 0-21.375-8.675-8.625-8.676-8.625-21.5 0-12.825 8.625-21.325T230 546h220V326q0-12.75 8.675-21.375 8.676-8.625 21.5-8.625 12.825 0 21.325 8.625T510 326v220h220q12.75 0 21.375 8.675 8.625 8.676 8.625 21.5 0 12.825-8.625 21.325T730 606H510v220q0 12.75-8.675 21.375-8.676 8.625-21.5 8.625Z"/></svg>
 )
 
-export { IconInstagram, IconFacebook, Search, User, ArrowExpand, Add };
+const FilledHeart = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24" fill="#87C1B9"><path d="m439 900-53-49Q262 736 171 631.5T80 413q0-90 60.5-150.5T290 202q51 0 101 24.5t89 80.5q44-56 91-80.5t99-24.5q89 0 149.5 60.5T880 413q0 114-91 218.5T574 851l-53 49q-17 16-41 16t-41-16Z"/></svg>
+)
+
+export { IconInstagram, IconFacebook, Search, User, ArrowExpand, Add, FilledHeart };
