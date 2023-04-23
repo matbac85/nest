@@ -559,6 +559,13 @@
       "email": "alain@gmail.com",
       "password": "1234",
       "id": 4
+    },
+    {
+      "first_name": "Dudu",
+      "name": "Donovan",
+      "email": "donodudu@gmail.com",
+      "password": "12345",
+      "id": 5
     }
   ]
 }

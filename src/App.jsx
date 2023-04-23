@@ -16,7 +16,6 @@ const App = () => {
     const userInStorage = localStorage.getItem('currentUser');
     if(userInStorage && !currentUser){
       setCurrentUser(JSON.parse(userInStorage))
-      console.log(JSON.parse(userInStorage));
     }
   },[currentUser])
 
