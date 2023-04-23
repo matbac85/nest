@@ -61,6 +61,7 @@ const FormLogin = ({handleClick, visible, setVisible }) =>
                                 email: "",
                                 password: "",
                               });
+                        localStorage.setItem('currentUser', JSON.stringify(user[0]))
                     }
                 }
             }

@@ -4,14 +4,20 @@ import { Search, User, ArrowExpand } from './Iconssvg';
 import FormLogin from './FormLogin';
 import FormRegistration from './FormRegistration';
 import AuthContext from '../contexts/AuthContext';
+import FormLogOut from './FormLogOut';
 
 const Header = () => {
   const [currentUser, setCurrentUser] = useContext(AuthContext);
   const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
   const [isRegistrationFormVisible, setIsRegistrationFormVisible] = useState(false);
+  const [isFormLogOutVisible, setIsFormLogOutVisible] = useState(false);
 
   const handleLoginIconClick = () => {
-    setIsLoginFormVisible(!isLoginFormVisible);
+    if(currentUser) {
+      setIsFormLogOutVisible(!isFormLogOutVisible)
+    }else{
+      setIsLoginFormVisible(!isLoginFormVisible);
+    }
     setIsRegistrationFormVisible(false);
   };
 
@@ -51,7 +57,10 @@ const Header = () => {
 
               </ul>
           </nav>
-          <FormLogin handleClick={handleRegistrationIconClick} visible={isLoginFormVisible} setVisible={setIsLoginFormVisible}/>
+          {currentUser
+                    ? <FormLogOut setVisible={setIsFormLogOutVisible} visible={isFormLogOutVisible}/>
+                    : <FormLogin handleClick={handleRegistrationIconClick} visible={isLoginFormVisible} setVisible={setIsLoginFormVisible}/>
+                  }
           <FormRegistration handleClick={handleRegistrationIconClick} visible={isRegistrationFormVisible}/>
         </header>
   )

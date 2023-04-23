@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AuthContext from './contexts/AuthContext';
 import Home from './pages/Home';
@@ -11,6 +11,15 @@ import User from './pages/User'
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState("")
+
+  useEffect(() => {
+    const userInStorage = localStorage.getItem('currentUser');
+    if(userInStorage && !currentUser){
+      setCurrentUser(JSON.parse(userInStorage))
+      console.log(JSON.parse(userInStorage));
+    }
+  },[currentUser])
+
 
   return (
       <AuthContext.Provider value={[currentUser, setCurrentUser]}>
