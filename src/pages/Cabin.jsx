@@ -1,6 +1,7 @@
 
 import { useParams } from 'react-router-dom';
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import AuthContext from "../contexts/AuthContext";
 import CabinComment from '../components/CabinComment';
 import Carroussel from '../components/Carroussel';
 import CommentForm from '../components/CommentForm';
@@ -8,18 +9,25 @@ import CommentForm from '../components/CommentForm';
 
 const Cabin = () => {
 
+    const [currentUser, setCurrentUser] = useContext(AuthContext);
     const { id } = useParams();
     const [data, setData] = useState(["coucou"]);
     const [openedModal, setOpenedModal] = useState(false)
-    const [isConnected, setIsConnected] = useState(true)
+    const [isConnected, setIsConnected] = useState(false)
     const [openedCommentForm, setOpenedCommentForm] = useState(false)
     const today = new Date();
     const [minDate, setMinDate] = useState(today.toISOString().slice(0, 10));
 
 
 
+    useEffect(() => {
+        if (currentUser) {
+            setIsConnected(true)
+        } else {
+            setIsConnected(false)
+        }
 
-
+    }, [currentUser]);
 
 
 

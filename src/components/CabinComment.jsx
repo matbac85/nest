@@ -20,7 +20,7 @@ const CabinComment = ({ comment }) => {
         getData();
     }, []);
 
-    console.log(data)
+
 
     return (
 
