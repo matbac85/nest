@@ -1,10 +1,10 @@
 import { useState, useContext } from "react"
-import { NavLink } from 'react-router-dom';
 import AuthContext from "../contexts/AuthContext";
 
-const FormLogin = ({handleClick, visible }) =>
+const FormLogin = ({handleClick, visible, setVisible }) =>
         {
             const [currentUser, setCurrentUser] = useContext(AuthContext);
+            const [connexionError, setConnexionError] = useState(null);
 
             const [formData, setFormData] = useState({
                 email: "",
@@ -42,19 +42,26 @@ const FormLogin = ({handleClick, visible }) =>
                 return newErrors
             }
 
-            const submit = (e) => {
+            const submit = async (e) => {
                 e.preventDefault()
 
                 const newErrors = validateForm();
-                console.log(newErrors)
                 if(Object.values(newErrors).filter((value) => value !== "").length > 0){
                     setErrors(newErrors);
                 }else{
-                    setCurrentUser(formData.email)
-                    setFormData({
-                            email: "",
-                            password: "",
-                          });
+                    const response = await fetch(`http://localhost:3000/users?email=${formData.email}&password=${formData.password}`)
+                    const user = await response.json()
+                    if(user.length === 0){
+                        setConnexionError(`Votre email ou votre mot de passe n'est pas reconnu`)
+                    }else{
+                        setVisible(false)
+                        setConnexionError(null)
+                        setCurrentUser(user[0])
+                        setFormData({
+                                email: "",
+                                password: "",
+                              });
+                    }
                 }
             }
 
@@ -67,11 +74,14 @@ const FormLogin = ({handleClick, visible }) =>
                 )}
             </div>
 
-            <div className="flex flex-col gap-1 mb-5">
+            <div className="flex flex-col gap-1">
                 <label htmlFor="password" className='px-2'>Mot de passe<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
                 <input id="password" name="password" value={formData.password} type="password" className='input opacity-100 focus:ring-transparent focus:outline-none px-4' onChange={handleChange}/>
                 {errors.password && (
                 <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.password}</div>
+                )}
+                {connexionError && (
+                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{connexionError}</div>
                 )}
             </div>
             

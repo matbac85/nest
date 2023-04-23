@@ -498,8 +498,8 @@
     "users": [
         {
             "id": 1,
-            "name": "Jane",
-            "first_name": "Doe",
+            "name": "Doe",
+            "first_name": "Jane",
             "email": "j.doe@email.com",
             "password": "user1",
             "current_bookings": [
