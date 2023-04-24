@@ -1,39 +1,11 @@
 import React, { useRef, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-    const [data, setData] = useState([]);
     const [location, setLocation] = useState();
     const [maxGuests, setMaxGuests] = useState();
     const [isSelectedToggle, setIsSelectedToggle] = useState(false);
     const regionChoice = useRef();
-
-    const handleResearch = async (e) => {
-        e.preventDefault();
-        try {
-            const response = await fetch('http://localhost:3000/cabins');
-            const datas = await response.json();
-
-            const infoSearch = {
-                regionSearch: location,
-                guestsSearch: maxGuests,
-            }
-
-            if (infoSearch.regionSearch && infoSearch.guestsSearch) {
-                const filterLocation = datas.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
-                const filters = filterLocation.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
-            } else if (infoSearch.regionSearch) {
-                const filters = datas.filter(loc => loc.region.toLowerCase() === infoSearch.regionSearch);
-            } else if (infoSearch.guestsSearch) {
-                const filters = datas.filter(nGuests => nGuests.max_guests >= infoSearch.guestsSearch);
-            } else {
-                console.log("qued");
-            }
-
-            setData(datas);
-        } catch (error) {
-            console.log(error.message);
-        }
-    };
 
     const toggleSelected = () => {
         setIsSelectedToggle(!isSelectedToggle);
@@ -44,7 +16,7 @@ const Home = () => {
         const locationHandled = e.target.innerText.toLowerCase();
         setLocation(locationHandled);
 
-        toggleSelected()
+        toggleSelected();
 
         return locationHandled;
     }
@@ -53,7 +25,7 @@ const Home = () => {
         const maxGuestsHandled = e.target.value;
         setMaxGuests(maxGuestsHandled);
 
-        return maxGuestsHandled
+        return maxGuestsHandled;
     }
 
 return (
@@ -92,7 +64,7 @@ return (
                     <label htmlFor="person" className="text-darkGreen pb-1 pl-1">Combien de personne ?</label>
                     <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg w-[200px] border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" onChange={handleGuests} />
                 </div>
-                <button type="button" className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen" onClick={handleResearch}>Rechercher</button>
+                <NavLink to={`/destinations?location=${location}&maxGuests=${maxGuests}`} className="bg-midGreen h-fit py-2 px-3 rounded-lg text-white border border-midGreen hover:bg-darkGreen hover:border-darkGreen">Rechercher</NavLink>
                 </form>
             </main>
         </div>

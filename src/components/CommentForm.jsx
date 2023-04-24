@@ -62,7 +62,7 @@ const CommentForm = ({ close }) => {
                     onChange={handleUserCommentChange} />
 
             </div>
-            {isValidForm === false && <p className='text-red-500 text-sm'>veuillez complèter le champ commentaire.</p>}
+            {!isValidForm && <p className='text-red-500 text-sm'>veuillez complèter le champ commentaire.</p>}
             <div className='flex gap-3 mt-4'>
                 <button type='button' className='bg-midGreen mt-1 w-fit h-fit py-2 px-3 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75' onClick={validate}>Valider</button>
                 <button type='button' className='bg-midGreen mt-1 w-fit h-fit py-2 px-3 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75' onClick={cancel}>Annuler</button>
