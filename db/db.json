@@ -22,20 +22,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "Un super endroit pour déconnecter du quotidien. Un cocon qui porte très bien son nom et au calme au milieu de la nature. Le cocon est super bien agencé et on ne manque de rien pour...",
-          "time_stamp": "01-01-2023",
-          "rating": 0
-        },
-        {
-          "commenter_id": 1,
-          "comment": "Un super endroit pour déconnecter du quotidien. Un cocon qui porte très bien son nom et au calme au milieu de la nature. Le cocon est super bien agencé et on ne manque de rien pour...",
-          "time_stamp": "01-01-2023",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     },
@@ -87,14 +74,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -120,14 +100,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -153,14 +126,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     },
@@ -186,14 +152,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 2,
       "max_guests": 8
     },
@@ -219,14 +178,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -252,14 +204,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -285,14 +230,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 1,
       "max_guests": 8
     },
@@ -318,14 +256,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     },
@@ -351,14 +282,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 2,
       "max_guests": 8
     },
@@ -384,14 +308,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -417,14 +334,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -450,14 +360,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 0,
       "max_guests": 8
     },
@@ -483,14 +386,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "",
-          "time_stamp": "01-01-2023",
-          "rating": 5
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     }
@@ -518,13 +414,7 @@
           "guests": 2
         }
       ],
-      "posted_comments": [
-        {
-          "cabin_id": 1,
-          "comment": "",
-          "time_stamp": ""
-        }
-      ],
+      "posted_comments": [],
       "favourites": [
         {
           "cabin_id": 1
@@ -537,6 +427,18 @@
         }
       ],
       "time_stamp": ""
+    },
+    {
+      "first_name": "Donovan",
+      "name": "Duperrois",
+      "email": "slashhable@gmail.com",
+      "password": "user2",
+      "current_bookings": [],
+      "past_bookings": [],
+      "posted_comments": [],
+      "favourites": [],
+      "time_stamp": "24-04-2023",
+      "id": 2
     }
   ]
 }

@@ -1,10 +1,11 @@
 
-import { useParams } from 'react-router-dom';
+import { useParams, } from 'react-router-dom';
 import React, { useState, useEffect, useContext } from 'react';
 import AuthContext from "../contexts/AuthContext";
 import CabinComment from '../components/CabinComment';
 import Carroussel from '../components/Carroussel';
 import CommentForm from '../components/CommentForm';
+
 
 
 const Cabin = () => {
@@ -17,6 +18,7 @@ const Cabin = () => {
     const [openedCommentForm, setOpenedCommentForm] = useState(false)
     const today = new Date();
     const [minDate, setMinDate] = useState(today.toISOString().slice(0, 10));
+    const [commentPosted, setCommentPosted] = useState(false)
 
 
 
@@ -43,6 +45,7 @@ const Cabin = () => {
     async function fetchData() {
         const response = await fetch(`http://localhost:3000/cabins/${id}`);
         const Data = await response.json();
+        console.log(id)
         return Data;
     }
 
@@ -52,7 +55,13 @@ const Cabin = () => {
             setData(result);
         }
         getData();
-    }, []);
+
+    }, [commentPosted]);
+
+    const changeCommentState = () => {
+        setCommentPosted(!commentPosted)
+        console.log(commentPosted)
+    }
 
     return (
         data && data.images ? (
@@ -105,7 +114,7 @@ const Cabin = () => {
                                     }
                                     {isConnected &&
                                         <div className='mt-8 '>
-                                            {openedCommentForm ? <CommentForm close={setOpenedCommentForm} /> :
+                                            {openedCommentForm ? <CommentForm close={setOpenedCommentForm} user={currentUser} data={data} postedComment={changeCommentState} /> :
 
                                                 <button type='button' className='text-midGreen underline' onClick={commentFormControl}>Laisser un commentaire</button>
                                             }
@@ -124,7 +133,7 @@ const Cabin = () => {
                                     </div>
                                     <div className="flex flex-col">
                                         <label htmlFor="dateEnd" className="text-darkGreen pb-1 pl-1">Date de fin</label>
-                                        <input type="date" name="dateEnd" id="dateEnd" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" />
+                                        <input type="date" name="dateEnd" min={minDate} id="dateEnd" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" />
                                     </div>
                                 </div>
                                 <div className=''>
