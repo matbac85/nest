@@ -11,6 +11,7 @@ const Header = () => {
   const [isLoginFormVisible, setIsLoginFormVisible] = useState(false);
   const [isRegistrationFormVisible, setIsRegistrationFormVisible] = useState(false);
   const [isFormLogOutVisible, setIsFormLogOutVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false)
 
   const handleLoginIconClick = () => {
     if (currentUser) {
@@ -51,17 +52,17 @@ const Header = () => {
                 ? <div className='border-midGreen border-2 rounded-full w-8 h-8 flex items-center justify-center'>{loggedInIcon(currentUser)}</div>
                 : <User />
               }
-              <ArrowExpand toggleCallback={handleLoginIconClick} />
+              <ArrowExpand toggleCallback={handleLoginIconClick} isExpanded={isExpanded} setIsExpanded={setIsExpanded}/>
             </button>
           </li>
 
         </ul>
       </nav>
       {currentUser
-        ? <FormLogOut setVisible={setIsFormLogOutVisible} visible={isFormLogOutVisible} />
-        : <FormLogin handleClick={handleRegistrationIconClick} visible={isLoginFormVisible} setVisible={setIsLoginFormVisible} />
+        ? <FormLogOut setVisible={setIsFormLogOutVisible} visible={isFormLogOutVisible} setIsExpanded={setIsExpanded}/>
+        : <FormLogin handleClick={handleRegistrationIconClick} visible={isLoginFormVisible} setVisible={setIsLoginFormVisible} setIsExpanded={setIsExpanded}/>
       }
-      <FormRegistration handleClick={handleRegistrationIconClick} visible={isRegistrationFormVisible} />
+      <FormRegistration handleClick={handleRegistrationIconClick} visible={isRegistrationFormVisible} setIsExpanded={setIsExpanded}/>
     </header>
   )
 }
