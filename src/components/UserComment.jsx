@@ -1,9 +1,7 @@
-import { useEffect, useState, useContext } from "react";
-import AuthContext from "../contexts/AuthContext";
-import { FilledHeart, QuoteComment } from "./Iconssvg";
+import { useEffect, useState } from "react";
+import { QuoteComment } from "./Iconssvg";
 
 const UserComment = ({postedComment}) => {
-    const [currentUser, setCurrentUser] = useContext(AuthContext);
     const [cabin, setCabin] = useState(null)
 
     async function fetchCabin() {

@@ -1,8 +1,7 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../contexts/AuthContext";
 import { ArrowExpand } from "./Iconssvg";
 import Favourite from "./Favourite";
-import { useState } from "react";
 import UserComment from "./UserComment";
 
 const UserSections = () => {
