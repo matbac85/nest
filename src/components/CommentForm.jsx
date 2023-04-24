@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { format } from 'date-fns'
 
 
 const CommentForm = ({ close, user, data, postedComment }) => {
@@ -36,7 +37,7 @@ const CommentForm = ({ close, user, data, postedComment }) => {
                     {
                         cabin_id: data.id,
                         comment: userComment,
-                        time_stamp: new Date()
+                        time_stamp: format(new Date(), 'dd-MM-yyyy')
                     }
                 ]
             }
@@ -44,7 +45,7 @@ const CommentForm = ({ close, user, data, postedComment }) => {
                 comments: [...data.comments, {
                     commenter_id: user.id,
                     comment: userComment,
-                    time_stamp: new Date(),
+                    time_stamp: format(new Date(), 'dd-MM-yyyy'),
                     rating: userRating
                 }]
 
