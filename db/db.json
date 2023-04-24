@@ -414,28 +414,7 @@
           "guests": 2
         }
       ],
-      "posted_comments": [
-        {
-          "cabin_id": 1,
-          "comment": "",
-          "time_stamp": ""
-        },
-        {
-          "cabin_id": 1,
-          "comment": "coucou",
-          "time_stamp": "2023-04-24T06:20:05.339Z"
-        },
-        {
-          "cabin_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T07:18:58.695Z"
-        },
-        {
-          "cabin_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T09:09:37.714Z"
-        }
-      ],
+      "posted_comments": [],
       "favourites": [
         {
           "cabin_id": 1
@@ -448,6 +427,18 @@
         }
       ],
       "time_stamp": ""
+    },
+    {
+      "first_name": "Donovan",
+      "name": "Duperrois",
+      "email": "slashhable@gmail.com",
+      "password": "user2",
+      "current_bookings": [],
+      "past_bookings": [],
+      "posted_comments": [],
+      "favourites": [],
+      "time_stamp": "24-04-2023",
+      "id": 2
     }
   ]
 }
