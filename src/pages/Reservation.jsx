@@ -31,21 +31,21 @@ const Reservation = () => {
                         <div>
                             <h3 className="text-lg font-medium py-5">Payer avec</h3>
                             <div className="flex gap-2">
-                                <div className="flex flex-row-reverse border border-darkGreen rounded-lg items-center bg-white w-28 justify-end px-2 h-12 overflow-hidden">
-                                    <label htmlFor="" className="pl-2"><VisaLogo /></label>
-                                    <input type="radio" />
+                                <div className="flex border border-darkGreen rounded-lg items-center bg-white w-28 px-2 h-12 overflow-hidden">
+                                    <input type="radio" id="visa" name="payment" value="visa" />
+                                    <label htmlFor="visa"className="pl-2"><VisaLogo /></label>
                                 </div>
-                                <div className="flex flex-row-reverse border border-darkGreen rounded-lg items-center bg-white w-28 justify-end px-2 h-12 overflow-hidden">
-                                    <label htmlFor="" className="pl-2"><MastercardLogo /></label>
-                                    <input type="radio" />
+                                <div className="flex border border-darkGreen rounded-lg items-center bg-white w-28 px-2 h-12 overflow-hidden">
+                                    <input type="radio" id="mastercard" name="payment" value="mastercard" />
+                                    <label htmlFor="mastercard" className="pl-2"><MastercardLogo /></label>
                                 </div>
-                                <div className="flex flex-row-reverse border border-darkGreen rounded-lg items-center bg-white w-28 justify-end px-2 h-12 overflow-hidden">
-                                    <label htmlFor="" className="pl-2"><BancontactLogo /></label>
-                                    <input type="radio" />
+                                <div className="flex border border-darkGreen rounded-lg items-center bg-white w-28 px-2 h-12 overflow-hidden">
+                                    <input type="radio" id="bancontact" name="payment" value="bancontact" />
+                                    <label htmlFor="bancontact" className="pl-2"><BancontactLogo /></label>
                                 </div>
-                                <div className="flex flex-row-reverse border border-darkGreen rounded-lg items-center bg-white w-28 justify-end px-2 h-12 overflow-hidden">
-                                    <label htmlFor="" className="pl-2"><PayPalLogo /></label>
-                                    <input type="radio" />
+                                <div className="flex border border-darkGreen rounded-lg items-center bg-white w-28 px-2 h-12 overflow-hidden">
+                                    <input type="radio" id="paypal" name="payment" value="paypal" />
+                                    <label htmlFor="paypal" className="pl-2"><PayPalLogo /></label>
                                 </div>
                             </div>
                         </div>
