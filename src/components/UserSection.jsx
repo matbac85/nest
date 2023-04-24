@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../contexts/AuthContext";
 import { ArrowExpand } from "./Iconssvg";
 import Favourite from "./Favourite";
@@ -10,6 +10,15 @@ const UserSections = () => {
     const [isSectionCurrentBookingsVisible, setIsSectionCurrentBookingsVisible] = useState(false);
     const [isSectionPastBookingsVisible, setIsSectionPastBookingsVisible] = useState(false);
     const [isSectionCommentsVisible, setIsSectionCommentsVisible] = useState(false);
+
+    useEffect(() => {
+        const reloadUser = async () => {
+        const response = await fetch(`http://localhost:3000/users/${currentUser.id}`)
+                    const user = await response.json() 
+                    setCurrentUser((prevUser)=>(user));
+                }
+        reloadUser();
+    }, [])
 
     const sectionFavouritesVisible = () => {
         setIsSectionFavouritesVisible(!isSectionFavouritesVisible)
@@ -73,7 +82,7 @@ return (
                 <h2 className="font-bold text-lg">Mes commentaires</h2>
                 <ArrowExpand toggleCallback={sectionCommentsVisible} isExpanded={isSectionCommentsVisible} setIsExpanded={setIsSectionCommentsVisible}/>
             </div>
-            {isSectionCommentsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {isSectionCommentsVisible && <div className="grid grid-cols-2 gap-8 border-t-2 border-t-beige pt-6">
             {currentUser.posted_comments.length !== 0 ?
                         currentUser.posted_comments.map((postedComment) =>
                             <UserComment postedComment={postedComment} key={postedComment.cabin_id} />
