@@ -16,13 +16,8 @@ const IconFacebook = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#467971" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 )
 
-// const ArrowExpand = ({loginVisible, registrationVisible}) => (
-//     <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className={loginVisible || registrationVisible ? "origin-center rotate-180" : "cursor-pointer"}><path d="M480 699q-6 0-11-2t-10-7L261 492q-8-8-7.5-21.5T262 449q10-10 21.5-8.5T304 450l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501 690q-5 5-10 7t-11 2Z"/></svg>
-// )
-
 const ArrowExpand = ({toggleCallback}) => {
     const [isExpanded, setIsExpanded] = useState(false)
-    console.log(isExpanded);
     const toggle = () => {
         setIsExpanded(!isExpanded)
         toggleCallback()

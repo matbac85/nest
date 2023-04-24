@@ -126,7 +126,7 @@ const FormRegistration = ({handleClick, visible}) => {
                 )}
         </div>
 
-        <div className="flex flex-col gap-1 mb-5">
+        <div className="flex flex-col gap-1">
                 <label htmlFor="confirmPassword" className='px-2'>Confimer votre mot de passe<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
                 <input id="confirmPassword" name="confirmPassword" value={formData.confirmPassword} type="password" onChange={handleChange} className="input focus:ring-transparent focus:outline-none w-full"/>
                 {errors.confirmPassword && (
@@ -134,7 +134,7 @@ const FormRegistration = ({handleClick, visible}) => {
                 )}
         </div>
         
-        <button type="submit" className= 'cursor-pointer bg-midGreen text-white rounded-lg font-medium mb-3 py-3' >S'inscrire</button>
+        <button type="submit" className= 'cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3' >S'inscrire</button>
         <button type="button" onClick={handleClick} className='cursor-pointer text-midGreen font-medium underline text-sm'>Annuler</button>
         </form>
         )
