@@ -22,26 +22,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T08:31:41.356Z",
-          "rating": 4
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol2",
-          "time_stamp": "2023-04-24T08:31:53.499Z",
-          "rating": 5
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T08:36:28.579Z",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     },
@@ -67,44 +48,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "hello",
-          "time_stamp": "2023-04-24T06:55:09.224Z",
-          "rating": 3
-        },
-        {
-          "commenter_id": 1,
-          "comment": "coucou",
-          "time_stamp": "2023-04-24T07:01:34.683Z",
-          "rating": 4
-        },
-        {
-          "commenter_id": 1,
-          "comment": "hello",
-          "time_stamp": "2023-04-24T07:04:22.748Z",
-          "rating": 3
-        },
-        {
-          "commenter_id": 1,
-          "comment": "coucou",
-          "time_stamp": "2023-04-24T07:12:31.098Z",
-          "rating": 4
-        },
-        {
-          "commenter_id": 1,
-          "comment": "b",
-          "time_stamp": "2023-04-24T07:13:04.296Z",
-          "rating": 3
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T07:14:18.442Z",
-          "rating": 4
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -130,14 +74,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -163,20 +100,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T08:08:45.925Z",
-          "rating": 4
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -202,14 +126,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     },
@@ -235,14 +152,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 2,
       "max_guests": 8
     },
@@ -268,14 +178,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -301,14 +204,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -334,14 +230,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 1,
       "max_guests": 8
     },
@@ -367,14 +256,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     },
@@ -400,14 +282,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 2,
       "max_guests": 8
     },
@@ -433,14 +308,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -466,14 +334,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -499,14 +360,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 0,
       "max_guests": 8
     },
@@ -532,14 +386,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "",
-          "time_stamp": "01-01-2023",
-          "rating": 5
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     }
@@ -586,7 +433,7 @@
         {
           "cabin_id": 1,
           "comment": "lol",
-          "time_stamp": "2023-04-24T08:36:28.579Z"
+          "time_stamp": "2023-04-24T09:09:37.714Z"
         }
       ],
       "favourites": [
