@@ -25,14 +25,20 @@
       "comments": [
         {
           "commenter_id": 1,
-          "comment": "Un super endroit pour déconnecter du quotidien. Un cocon qui porte très bien son nom et au calme au milieu de la nature. Le cocon est super bien agencé et on ne manque de rien pour...",
-          "time_stamp": "01-01-2023",
-          "rating": 0
+          "comment": "lol",
+          "time_stamp": "2023-04-24T08:31:41.356Z",
+          "rating": 4
         },
         {
           "commenter_id": 1,
-          "comment": "Un super endroit pour déconnecter du quotidien. Un cocon qui porte très bien son nom et au calme au milieu de la nature. Le cocon est super bien agencé et on ne manque de rien pour...",
-          "time_stamp": "01-01-2023",
+          "comment": "lol2",
+          "time_stamp": "2023-04-24T08:31:53.499Z",
+          "rating": 5
+        },
+        {
+          "commenter_id": 1,
+          "comment": "lol",
+          "time_stamp": "2023-04-24T08:36:28.579Z",
           "rating": 0
         }
       ],
@@ -61,7 +67,44 @@
           "guests": 2
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "commenter_id": 1,
+          "comment": "hello",
+          "time_stamp": "2023-04-24T06:55:09.224Z",
+          "rating": 3
+        },
+        {
+          "commenter_id": 1,
+          "comment": "coucou",
+          "time_stamp": "2023-04-24T07:01:34.683Z",
+          "rating": 4
+        },
+        {
+          "commenter_id": 1,
+          "comment": "hello",
+          "time_stamp": "2023-04-24T07:04:22.748Z",
+          "rating": 3
+        },
+        {
+          "commenter_id": 1,
+          "comment": "coucou",
+          "time_stamp": "2023-04-24T07:12:31.098Z",
+          "rating": 4
+        },
+        {
+          "commenter_id": 1,
+          "comment": "b",
+          "time_stamp": "2023-04-24T07:13:04.296Z",
+          "rating": 3
+        },
+        {
+          "commenter_id": 1,
+          "comment": "lol",
+          "time_stamp": "2023-04-24T07:14:18.442Z",
+          "rating": 4
+        }
+      ],
       "rating": 5,
       "max_guests": 8
     },
@@ -126,6 +169,12 @@
           "comment": "",
           "time_stamp": "",
           "rating": 0
+        },
+        {
+          "commenter_id": 1,
+          "comment": "lol",
+          "time_stamp": "2023-04-24T08:08:45.925Z",
+          "rating": 4
         }
       ],
       "rating": 5,
@@ -523,6 +572,21 @@
           "cabin_id": 1,
           "comment": "",
           "time_stamp": ""
+        },
+        {
+          "cabin_id": 1,
+          "comment": "coucou",
+          "time_stamp": "2023-04-24T06:20:05.339Z"
+        },
+        {
+          "cabin_id": 1,
+          "comment": "lol",
+          "time_stamp": "2023-04-24T07:18:58.695Z"
+        },
+        {
+          "cabin_id": 1,
+          "comment": "lol",
+          "time_stamp": "2023-04-24T08:36:28.579Z"
         }
       ],
       "favourites": [
