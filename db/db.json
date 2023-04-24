@@ -22,7 +22,14 @@
           "guests": 2
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "commenter_id": 1,
+          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
+          "time_stamp": "24-04-2023",
+          "rating": 0
+        }
+      ],
       "rating": 3,
       "max_guests": 8
     },
@@ -126,7 +133,14 @@
           "guests": 2
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "commenter_id": 1,
+          "comment": "Mais quel merveilleux endroit ! Avec Dono, nous nous sommes sentis comme de vrais hobbits. Je recommande !!",
+          "time_stamp": "24-04-2023",
+          "rating": 3
+        }
+      ],
       "rating": 3,
       "max_guests": 8
     },
@@ -414,7 +428,18 @@
           "guests": 2
         }
       ],
-      "posted_comments": [],
+      "posted_comments": [
+        {
+          "cabin_id": 1,
+          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
+          "time_stamp": "24-04-2023"
+        },
+        {
+          "cabin_id": 5,
+          "comment": "Mais quel merveilleux endroit ! Avec Dono, nous nous sommes sentis comme de vrais hobbits. Je recommande !!",
+          "time_stamp": "24-04-2023"
+        }
+      ],
       "favourites": [
         {
           "cabin_id": 1
