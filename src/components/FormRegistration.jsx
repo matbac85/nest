@@ -144,9 +144,7 @@ const FormRegistration = ({ handleClick, visible }) => {
         
         <button type="submit" className= 'cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3' >S'inscrire</button>
         <button type="button" onClick={handleClick} className='cursor-pointer text-midGreen font-medium underline text-sm'>Annuler</button>
-        </form>
-
-        )
+        </form> )
 }
 
 export default FormRegistration;
