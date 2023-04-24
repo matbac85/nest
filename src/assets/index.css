@@ -38,10 +38,10 @@
 
 .activeFilter {
   border: 1px solid #467971;
-  color: #467971;
+  color: #fff;
   padding: 10px 15px;
   border-radius: 20px;
-  background-color: #87C1B9;
+  background-color: #2E4C48;
   font-size: 14px;
 }
 
