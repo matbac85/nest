@@ -23,13 +23,20 @@ const FormRegistration = ({handleClick, visible}) => {
             }
         
         const validateText = (fieldValue) => {
-        if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
-                return `Ce champ ne peut contenir que des lettres.`;
-        }
+                if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
+                  return `Ce champ ne peut contenir que des lettres.`;
+                }
                 return "";
         }
 
-        const validateConfirmEmail = () => {
+        const validateEmail = (fieldValue) => {
+                if (fieldValue && !/^([\w-\.]+@([\w-]+\.)+[\w-]{2,})?$/.test(fieldValue)) {
+                  return `Le format de votre email n'est pas correct`;
+                }
+                return "";
+        }
+
+        const validateConfirmPassword = () => {
                 if (formData.confirmPassword !== formData.password){
                 return `Ce champ doit correspondre au champ Mot de passe.`
                 }
@@ -46,7 +53,8 @@ const FormRegistration = ({handleClick, visible}) => {
                 newErrors.confirmPassword = validateRequiredField(formData.confirmPassword);
                 newErrors.surname += validateText(formData.surname);
                 newErrors.firstName += validateText(formData.firstName);
-                newErrors.confirmPassword += validateConfirmEmail(formData.confirmPassword);
+                newErrors.confirmPassword += validateConfirmPassword(formData.confirmPassword);
+                newErrors.email += validateEmail(formData.email);
 
                 return newErrors
         }
@@ -57,15 +65,20 @@ const FormRegistration = ({handleClick, visible}) => {
 
                 const newErrors = validateForm();
 
-                if(Object.keys(newErrors).length > 0){
+                if(Object.values(newErrors).filter((value) => value !== "").length > 0){
                         setErrors(newErrors);
-                }else{
+                }else{  const dataBaseForm = {
+                                first_name : formData.firstName,
+                                name: formData.surname,
+                                email: formData.email,
+                                password: formData.password
+                        }
                         fetch('http://localhost:3000/users', {
                         method: 'POST',
                         headers: {
                                 'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify(formData)
+                        body: JSON.stringify(dataBaseForm)
                         })
                         setFormData({
                                 surname: "",
@@ -74,11 +87,12 @@ const FormRegistration = ({handleClick, visible}) => {
                                 password: "",
                                 confirmPassword: "",
                               });
+                        handleClick()
                 }
         }
 
         return (visible &&
-        <form className="z-100 flex flex-col bg-formBackground w-full absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 max-w-lg gap-4" onSubmit={submitFormRegistration}>
+        <form className="z-10 flex flex-col bg-formBackground w-full absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 max-w-lg gap-4" onSubmit={submitFormRegistration}>
         
         <div className="flex flex-col gap-1">
                 <label htmlFor="surname" className='px-2'>Nom<sup className="text-red-500 font-medium ml-0.5">*</sup></label>

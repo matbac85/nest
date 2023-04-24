@@ -63,7 +63,7 @@ const submitFormCabin = (e) => {
 
         const newErrors = validateForm();
 
-        if(Object.keys(newErrors).length > 0){
+        if(Object.values(newErrors).filter((value) => value !== "").length > 0){
                 setErrors(newErrors);
         }else{
                 fetch('http://localhost:3000/cabins', {
@@ -86,7 +86,7 @@ const submitFormCabin = (e) => {
 }
 
     return(
-    <div>
+    <div className="pt-24">
         <h1 className="text-4xl font-bold mb-8 pl-2">Ajoutez votre cabane sur <span className='text-midGreen'>Nest</span></h1>
         <form className="bg-formBackground p-8 rounded-xl border-2 border-midGreen flex flex-col gap-4" onSubmit={submitFormCabin}>
             

@@ -36,7 +36,17 @@
   font-size: 14px;
 }
 
-h1,h2,
+.activeFilter {
+  border: 1px solid #467971;
+  color: #467971;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #87C1B9;
+  font-size: 14px;
+}
+
+h1,
+h2,
 h1>span {
   font-family: 'Dosis', sans-serif;
 }
@@ -104,9 +114,25 @@ h1>span {
   padding-bottom: 4px;
 }
 
-.user-box{
+.user-box {
   background-color: white;
   border: #467971 1px solid;
   padding: 2rem;
   border-radius: 10px;
+}
+
+.ratingButton {
+  border: 1px solid #467971;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: white;
+
+}
+
+.activeRatingButton {
+  border: 1px solid #467971;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #467971;
+  font-size: 14px;
 }

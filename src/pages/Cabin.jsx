@@ -1,17 +1,43 @@
 
 import { useParams } from 'react-router-dom';
-import React, { useState, useEffect, } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import AuthContext from "../contexts/AuthContext";
 import CabinComment from '../components/CabinComment';
 import Carroussel from '../components/Carroussel';
+import CommentForm from '../components/CommentForm';
+
 
 const Cabin = () => {
 
+    const [currentUser, setCurrentUser] = useContext(AuthContext);
     const { id } = useParams();
     const [data, setData] = useState(["coucou"]);
     const [openedModal, setOpenedModal] = useState(false)
+    const [isConnected, setIsConnected] = useState(false)
+    const [openedCommentForm, setOpenedCommentForm] = useState(false)
+    const today = new Date();
+    const [minDate, setMinDate] = useState(today.toISOString().slice(0, 10));
+
+
+
+    useEffect(() => {
+        if (currentUser) {
+            setIsConnected(true)
+        } else {
+            setIsConnected(false)
+        }
+
+    }, [currentUser]);
+
+
 
     function modalControl() {
         setOpenedModal(!openedModal)
+    }
+
+    function commentFormControl() {
+        setOpenedCommentForm(!openedCommentForm)
+
     }
 
     async function fetchData() {
@@ -35,7 +61,7 @@ const Cabin = () => {
                 {openedModal ?
                     <div className='flex flex-col items-center w-full gap-4'>
                         <Carroussel images={data.images} />
-                        <button type='button' onClick={modalControl} className='font-bold underline'>Retourner à la page de la cabane</button>
+                        <button type='button' onClick={modalControl} className='font-bold text-midGreen underline'>Retourner à la page de la cabane</button>
                     </div>
                     :
                     <>
@@ -77,15 +103,35 @@ const Cabin = () => {
                                         </div> : <div><p>Il n'y a aucun commentaire pour l'instant</p></div>
 
                                     }
+                                    {isConnected &&
+                                        <div className='mt-8 '>
+                                            {openedCommentForm ? <CommentForm close={setOpenedCommentForm} /> :
+
+                                                <button type='button' className='text-midGreen underline' onClick={commentFormControl}>Laisser un commentaire</button>
+                                            }
+                                        </div>
+                                    }
                                 </div>
                             </div>
                         </div>
                         <div className='w-1/4 h-screen flex flex-col'>
-                            <div className='fixed'>
-                                <div className='card w-full h-[300px] mb-16' />
-                                <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
+                            <div className='fixed border-solid p-5'>
+                                <h1 className='text-xl font-bold mb-8'>Choisissez vos dates</h1>
+                                <div className=' w-full h-fit mb-8  flex flex-col gap-8' >
+                                    <div className="flex flex-col">
+                                        <label htmlFor="dateStart" className="text-darkGreen pb-1 pl-1">Date de début</label>
+                                        <input type="date" min={minDate} name="dateStart" id="dateStart" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <label htmlFor="dateEnd" className="text-darkGreen pb-1 pl-1">Date de fin</label>
+                                        <input type="date" name="dateEnd" id="dateEnd" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" />
+                                    </div>
+                                </div>
+                                <div className=''>
+                                    <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
 
-                                <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-white hover:text-darkGreen duration-75'>Réserver</button>
+                                    <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-darkGreen duration-75'>Réserver</button>
+                                </div>
                             </div>
                         </div></>}
             </div>)
