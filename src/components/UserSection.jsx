@@ -32,7 +32,7 @@ return (
         <div className="user-box">
             <div className="flex justify-between">
                 <h2 className="font-bold text-lg">Mes favoris</h2>
-                <ArrowExpand toggleCallback={sectionFavouritesVisible}/>
+                <ArrowExpand toggleCallback={sectionFavouritesVisible} isExpanded={isSectionFavouritesVisible} setIsExpanded={setIsSectionFavouritesVisible}/>
             </div>
             {isSectionFavouritesVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
             {currentUser.favourites.length !== 0 ?
@@ -45,7 +45,7 @@ return (
         <div className="user-box">
             <div className="flex justify-between">
                 <h2 className="font-bold text-lg">Mes réservations futures</h2>
-                <ArrowExpand toggleCallback={sectionCurrentBookingsVisible}/>
+                <ArrowExpand toggleCallback={sectionCurrentBookingsVisible}  isExpanded={isSectionCurrentBookingsVisible} setIsExpanded={setIsSectionCurrentBookingsVisible}/>
             </div>
             {isSectionCurrentBookingsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
             {currentUser.past_bookings.length !== 0 ?
@@ -58,7 +58,7 @@ return (
         <div className="user-box">
             <div className="flex justify-between">
                 <h2 className="font-bold text-lg">Mes réservations passées</h2>
-                <ArrowExpand toggleCallback={sectionPastBookingsVisible}/>
+                <ArrowExpand toggleCallback={sectionPastBookingsVisible} isExpanded={isSectionPastBookingsVisible} setIsExpanded={setIsSectionPastBookingsVisible}/>
             </div>
             {isSectionPastBookingsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
             {currentUser.current_bookings.length !== 0 ?
@@ -71,7 +71,7 @@ return (
         <div className="user-box">
             <div className="flex justify-between">
                 <h2 className="font-bold text-lg">Mes commentaires</h2>
-                <ArrowExpand toggleCallback={sectionCommentsVisible}/>
+                <ArrowExpand toggleCallback={sectionCommentsVisible} isExpanded={isSectionCommentsVisible} setIsExpanded={setIsSectionCommentsVisible}/>
             </div>
             {isSectionCommentsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
             {currentUser.posted_comments.length !== 0 ?

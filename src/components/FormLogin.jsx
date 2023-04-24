@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
 import AuthContext from "../contexts/AuthContext";
 
-const FormLogin = ({handleClick, visible, setVisible }) =>
+const FormLogin = ({handleClick, visible, setVisible, setIsExpanded }) =>
         {
             const [currentUser, setCurrentUser] = useContext(AuthContext);
             const [connexionError, setConnexionError] = useState(null);
@@ -54,14 +54,15 @@ const FormLogin = ({handleClick, visible, setVisible }) =>
                     if(user.length === 0){
                         setConnexionError(`Votre email ou votre mot de passe n'est pas reconnu`)
                     }else{
-                        setVisible(false)
-                        setConnexionError(null)
-                        setCurrentUser(user[0])
                         setFormData({
                                 email: "",
                                 password: "",
                               });
+                        setIsExpanded(false)      
+                        setConnexionError(null)
+                        setCurrentUser(user[0])
                         localStorage.setItem('currentUser', JSON.stringify(user[0]))
+                        setVisible(false)
                     }
                 }
             }

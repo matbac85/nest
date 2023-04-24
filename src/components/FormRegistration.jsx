@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { format } from 'date-fns'
 
-const FormRegistration = ({ handleClick, visible }) => {
+const FormRegistration = ({ handleClick, visible, setIsExpanded }) => {
         const [formData, setFormData] = useState({
                 surname: "",
                 firstName: "",
@@ -60,6 +60,11 @@ const FormRegistration = ({ handleClick, visible }) => {
                 return newErrors
         }
 
+        const cancel = () => {
+                setIsExpanded(false)
+                handleClick()
+        }
+
 
         const submitFormRegistration = (e) => {
                 e.preventDefault();
@@ -88,6 +93,7 @@ const FormRegistration = ({ handleClick, visible }) => {
                                 },
                                 body: JSON.stringify(dataBaseForm)
                         })
+                        setIsExpanded(false)      
                         setFormData({
                                 surname: "",
                                 firstName: "",
@@ -143,7 +149,7 @@ const FormRegistration = ({ handleClick, visible }) => {
         </div>
         
         <button type="submit" className= 'cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3' >S'inscrire</button>
-        <button type="button" onClick={handleClick} className='cursor-pointer text-midGreen font-medium underline text-sm'>Annuler</button>
+        <button type="button" onClick={cancel} className='cursor-pointer text-midGreen font-medium underline text-sm'>Annuler</button>
         </form> )
 }
 

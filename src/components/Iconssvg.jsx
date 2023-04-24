@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Search = () => 
     (<svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className="cursor-pointer"><path d="M774 913 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l243 241q9 8.442 9 20.721t-9.913 22.192Q809 922 795.778 922q-13.222 0-21.778-9ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z" className="text-midGreen"/></svg>)
 
@@ -16,8 +14,7 @@ const IconFacebook = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#467971" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 )
 
-const ArrowExpand = ({toggleCallback}) => {
-    const [isExpanded, setIsExpanded] = useState(false)
+const ArrowExpand = ({toggleCallback, isExpanded, setIsExpanded}) => {
     const toggle = () => {
         setIsExpanded(!isExpanded)
         toggleCallback()
