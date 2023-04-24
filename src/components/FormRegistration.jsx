@@ -1,13 +1,14 @@
 import { useState } from "react"
+import { format } from 'date-fns'
 
-const FormRegistration = ({handleClick, visible}) => {
+const FormRegistration = ({ handleClick, visible }) => {
         const [formData, setFormData] = useState({
                 surname: "",
                 firstName: "",
                 email: "",
                 password: "",
                 confirmPassword: "",
-              });
+        });
         const [errors, setErrors] = useState({})
 
         const handleChange = (e) => {
@@ -17,28 +18,28 @@ const FormRegistration = ({handleClick, visible}) => {
 
         const validateRequiredField = (fieldValue) => {
                 if (!fieldValue) {
-                  return `Ce champ est obligatoire.`;
+                        return `Ce champ est obligatoire.`;
                 }
                 return "";
-            }
-        
+        }
+
         const validateText = (fieldValue) => {
                 if (fieldValue && !/^[a-zA-Z]+$/.test(fieldValue)) {
-                  return `Ce champ ne peut contenir que des lettres.`;
+                        return `Ce champ ne peut contenir que des lettres.`;
                 }
                 return "";
         }
 
         const validateEmail = (fieldValue) => {
                 if (fieldValue && !/^([\w-\.]+@([\w-]+\.)+[\w-]{2,})?$/.test(fieldValue)) {
-                  return `Le format de votre email n'est pas correct`;
+                        return `Le format de votre email n'est pas correct`;
                 }
                 return "";
         }
 
         const validateConfirmPassword = () => {
-                if (formData.confirmPassword !== formData.password){
-                return `Ce champ doit correspondre au champ Mot de passe.`
+                if (formData.confirmPassword !== formData.password) {
+                        return `Ce champ doit correspondre au champ Mot de passe.`
                 }
                 return "";
         }
@@ -65,20 +66,27 @@ const FormRegistration = ({handleClick, visible}) => {
 
                 const newErrors = validateForm();
 
-                if(Object.values(newErrors).filter((value) => value !== "").length > 0){
+                if (Object.values(newErrors).filter((value) => value !== "").length > 0) {
                         setErrors(newErrors);
-                }else{  const dataBaseForm = {
-                                first_name : formData.firstName,
+                } else {
+                        const dataBaseForm = {
+                                first_name: formData.firstName,
                                 name: formData.surname,
                                 email: formData.email,
-                                password: formData.password
+                                password: formData.password,
+                                current_bookings: [],
+                                past_bookings: [],
+                                posted_comments: [],
+                                favourites: [],
+                                time_stamp: format(new Date(), 'dd-MM-yyyy')
+
                         }
                         fetch('http://localhost:3000/users', {
-                        method: 'POST',
-                        headers: {
-                                'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(dataBaseForm)
+                                method: 'POST',
+                                headers: {
+                                        'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify(dataBaseForm)
                         })
                         setFormData({
                                 surname: "",
@@ -86,7 +94,7 @@ const FormRegistration = ({handleClick, visible}) => {
                                 email: "",
                                 password: "",
                                 confirmPassword: "",
-                              });
+                        });
                         handleClick()
                 }
         }
@@ -126,7 +134,7 @@ const FormRegistration = ({handleClick, visible}) => {
                 )}
         </div>
 
-        <div className="flex flex-col gap-1 mb-5">
+        <div className="flex flex-col gap-1">
                 <label htmlFor="confirmPassword" className='px-2'>Confimer votre mot de passe<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
                 <input id="confirmPassword" name="confirmPassword" value={formData.confirmPassword} type="password" onChange={handleChange} className="input focus:ring-transparent focus:outline-none w-full"/>
                 {errors.confirmPassword && (
@@ -134,9 +142,10 @@ const FormRegistration = ({handleClick, visible}) => {
                 )}
         </div>
         
-        <button type="submit" className= 'cursor-pointer bg-midGreen text-white rounded-lg font-medium mb-3 py-3' >S'inscrire</button>
+        <button type="submit" className= 'cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3' >S'inscrire</button>
         <button type="button" onClick={handleClick} className='cursor-pointer text-midGreen font-medium underline text-sm'>Annuler</button>
         </form>
+
         )
 }
 

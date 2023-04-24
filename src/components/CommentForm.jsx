@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import { format } from 'date-fns'
 
 
-const CommentForm = ({ close }) => {
+const CommentForm = ({ close, user, data, postedComment }) => {
 
-    const [activeIndex, setActiveIndex] = useState([0]);
+    const [activeIndex, setActiveIndex] = useState([]);
     const [userComment, setUserComment] = useState("");
-    const [userRating, setUserRating] = useState(1)
+    const [userRating, setUserRating] = useState(0)
     const [isValidForm, setIsValidForm] = useState(true)
+
 
     const handleClick = (index) => {
         setUserRating(index + 1)
@@ -25,17 +27,42 @@ const CommentForm = ({ close }) => {
     function cancel() {
         close(false)
     }
-    function validate() {
-
+    async function validate(event) {
+        event.preventDefault()
         if (userComment !== "") {
             setIsValidForm(true)
-            const validatedForm = {
-                commenter_id: 1,
-                comment: userComment,
-                time_stamp: "01-01-2023",
-                rating: userRating
+            const userPostedComment = {
+                posted_comments: [
+                    ...user.posted_comments,
+                    {
+                        cabin_id: data.id,
+                        comment: userComment,
+                        time_stamp: format(new Date(), 'dd-MM-yyyy')
+                    }
+                ]
             }
-            console.log(validatedForm)
+            const validatedForm = {
+                comments: [...data.comments, {
+                    commenter_id: user.id,
+                    comment: userComment,
+                    time_stamp: format(new Date(), 'dd-MM-yyyy'),
+                    rating: userRating
+                }]
+
+            }
+            await fetch(`http://localhost:3000/users/${user.id}`, {
+                method: 'PATCH',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(userPostedComment)
+            });
+            // eslint-disable-next-line prefer-template
+            await fetch("http://localhost:3000/cabins/" + data.id, {
+                method: 'PATCH',
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(validatedForm)
+            });
+            console.log("coucou")
+            postedComment()
             close(false)
         } else {
             setIsValidForm(false)
@@ -56,17 +83,19 @@ const CommentForm = ({ close }) => {
                 </div>
 
             </div>
-            <div className="w-full mt-4">
-                <label htmlFor="area" className="px-2 mb-1">commentaire<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-                <textarea id="area" name="area" type="text" rows={5} className="w-full input focus:ring-transparent focus:outline-none resize-none" value={userComment}
-                    onChange={handleUserCommentChange} />
+            <form action="submit" onSubmit={(e) => validate(e)}>
+                <div className="w-full mt-4">
+                    <label htmlFor="area" className="px-2 mb-1">commentaire<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
+                    <textarea id="area" name="area" type="text" rows={5} className="w-full input focus:ring-transparent focus:outline-none resize-none" value={userComment}
+                        onChange={handleUserCommentChange} />
 
-            </div>
-            {!isValidForm && <p className='text-red-500 text-sm'>veuillez complèter le champ commentaire.</p>}
-            <div className='flex gap-3 mt-4'>
-                <button type='button' className='bg-midGreen mt-1 w-fit h-fit py-2 px-3 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75' onClick={validate}>Valider</button>
-                <button type='button' className='bg-midGreen mt-1 w-fit h-fit py-2 px-3 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75' onClick={cancel}>Annuler</button>
-            </div>
+                </div>
+                {!isValidForm && <p className='text-red-500 text-sm'>veuillez complèter le champ commentaire.</p>}
+                <div className='flex gap-3 mt-4'>
+                    <button type='submit' className='bg-midGreen mt-1 w-fit h-fit py-2 px-3 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75'>Valider</button>
+                    <button type='button' className='bg-midGreen mt-1 w-fit h-fit py-2 px-3 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75' onClick={cancel}>Annuler</button>
+                </div>
+            </form>
         </div>
     )
 };
