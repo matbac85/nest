@@ -24,7 +24,7 @@ const CabinComment = ({ comment }) => {
 
     return (
 
-        <div className='w-[45%]'>
+        <div className='w-[45%] mb-16'>
             <div className='flex flex-col'>
 
                 <div className='flex justify-between mb-4'>
