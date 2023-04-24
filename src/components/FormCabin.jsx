@@ -86,8 +86,8 @@ const submitFormCabin = (e) => {
 }
 
     return(
-    <div className="pt-24">
-        <h1 className="text-4xl font-bold mb-8 pl-2">Ajoutez votre cabane sur <span className='text-midGreen'>Nest</span></h1>
+    <div className="pt-16">
+        <h1 className="text-4xl font-bold mb-4 pl-2">Ajoutez votre cabane sur <span className='text-midGreen font-extrabold'>Nest</span></h1>
         <form className="bg-formBackground p-8 rounded-xl border-2 border-midGreen flex flex-col gap-4" onSubmit={submitFormCabin}>
             
             <div>
@@ -134,14 +134,14 @@ const submitFormCabin = (e) => {
 
             <div>
                 <label htmlFor="description" className="px-2 mb-1">Description<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-                <textarea id="description" name="description" value={formData.description} cols="30" rows="5" className="w-full input focus:ring-transparent focus:outline-none" onChange={handleChange}/>
+                <textarea id="description" name="description" value={formData.description} cols="30" rows="3" className="w-full input focus:ring-transparent focus:outline-none" onChange={handleChange}/>
                 {errors.description && (
                 <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.description}</div>
                 )}
             </div>
             <div>
                 <label className="px-2 mb-1">Vos photos<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-                <div className="flex justify-between input p-8 mt-1">
+                <div className="flex justify-between input p-4 mt-1">
                     <div className="picture-upload flex justify-center items-center cursor-pointer hover:bg-slate-300"><Add /></div>
                     <div className="picture-upload"/>
                     <div className="picture-upload"/>
@@ -151,7 +151,7 @@ const submitFormCabin = (e) => {
                 </div>
             </div>
             <div className="text-right">
-            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium mb-3 py-3 px-8'>Soumettre</button>
+            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 px-8'>Soumettre</button>
             </div>
         </form>
     </div>

@@ -86,7 +86,7 @@ h1>span {
 }
 
 .home-background {
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - 4rem - var(--header-height)) ;
 }
 
 .input {
@@ -100,8 +100,8 @@ h1>span {
 }
 
 .picture-upload {
-  height: 5rem;
-  width: 5rem;
+  height: 4.5rem;
+  width: 4.5rem;
   border: #467971 solid 1px;
   background-color: white;
   border-radius: 5px;
