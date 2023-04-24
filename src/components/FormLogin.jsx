@@ -54,14 +54,14 @@ const FormLogin = ({handleClick, visible, setVisible }) =>
                     if(user.length === 0){
                         setConnexionError(`Votre email ou votre mot de passe n'est pas reconnu`)
                     }else{
-                        setVisible(false)
-                        setConnexionError(null)
-                        setCurrentUser(user[0])
                         setFormData({
                                 email: "",
                                 password: "",
                               });
+                        setConnexionError(null)
+                        setCurrentUser(user[0])
                         localStorage.setItem('currentUser', JSON.stringify(user[0]))
+                        setVisible(false)
                     }
                 }
             }
