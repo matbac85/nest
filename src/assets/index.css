@@ -57,6 +57,8 @@ h1>span {
   cursor: pointer
 }
 
+
+
 /* .background{
  height: 83vh; 
 } */
@@ -86,7 +88,7 @@ h1>span {
 }
 
 .home-background {
-  min-height: calc(100vh - 4rem - var(--header-height)) ;
+  min-height: calc(100vh - 4rem - var(--header-height));
 }
 
 .input {
