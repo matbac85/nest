@@ -1,8 +1,35 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
+import { useSearchParams } from 'react-router-dom';
 import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../components/PaymentLogo";
 
 const Reservation = () => {
-    const bidule = "";
+    const [data, setData] = useState([]);
+    const [searchParams] = useSearchParams();
+
+    function getCabinID(cabinID) {
+        if((cabinID !== null) && (cabinID !== "undefined")) {
+            const cabID = searchParams.get('id');
+            return cabID;
+        }
+
+        return console.log("test");
+    }
+
+    async function fetchData() {
+        const response = await fetch(`http://localhost:3000/cabins/${id}`);
+        const Data = await response.json();
+        return Data;
+    }
+
+    useEffect(() => {
+        async function getData() {
+            const result = await fetchData();
+            setData(result);
+        }
+        getData();
+    }, []);
+
+    getCabinID()
 
     return(
         <div className="bg-cover bg-center home-background bg-[url('/public/illus/reservation_bg.svg')] flex flex-col">
