@@ -6,10 +6,15 @@ import { useState } from "react";
 
 const UserSections = () => {
     const [currentUser, setCurrentUser] = useContext(AuthContext);
-    const [isSectionVisible, setIsSectionVisible] = useState(false);
+    const [isSectionFavouritesVisible, setIsSectionFavouritesVisible] = useState(false);
+    const [isSectionCurrentBookingsVisible, setIsSectionCurrentBookingsVisible] = useState(false);
 
-    const sectionVisible = () => {
-        setIsSectionVisible(!isSectionVisible)
+    const sectionFavouritesVisible = () => {
+        setIsSectionFavouritesVisible(!isSectionFavouritesVisible)
+    }
+
+    const sectionCurrentBookingsVisible = () => {
+        setIsSectionCurrentBookingsVisible(!isSectionCurrentBookingsVisible)
     }
 
 return (
@@ -17,9 +22,9 @@ return (
         <div className="user-box">
             <div className="flex justify-between">
                 <h2 className="font-bold text-lg">Mes favoris</h2>
-                <ArrowExpand toggleCallback={sectionVisible}/>
+                <ArrowExpand toggleCallback={sectionFavouritesVisible}/>
             </div>
-            {isSectionVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {isSectionFavouritesVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
             {currentUser.favourites.length !== 0 ?
                         currentUser.favourites.map((favourite) =>
                             <Favourite favourite={favourite} key={favourite.cabin_id} />
@@ -27,9 +32,18 @@ return (
                     }
             </div>}
         </div>
-        <div className="user-box flex justify-between">
-            <h2 className="font-bold text-lg">Mes réservations futures</h2>
-            <ArrowExpand />
+        <div className="user-box">
+            <div className="flex justify-between">
+                <h2 className="font-bold text-lg">Mes réservations futures</h2>
+                <ArrowExpand toggleCallback={sectionCurrentBookingsVisible}/>
+            </div>
+            {isSectionCurrentBookingsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {currentUser.favourites.length !== 0 ?
+                        currentUser.current_bookings.map((currentBooking) =>
+                            <Favourite favourite={currentBooking} key={currentBooking.cabin_id} />
+                        ) : <div className=' col-span-12 text-center'><h1 className='text-4xl'>Cette section est vide</h1></div>
+                    }
+            </div>}
         </div>
         <div className="user-box flex justify-between">
             <h2 className="font-bold text-lg">Mes réservations passées</h2>
