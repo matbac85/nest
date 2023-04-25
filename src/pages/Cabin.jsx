@@ -1,12 +1,10 @@
-
 import { useParams, NavLink } from 'react-router-dom';
 import React, { useState, useEffect, useContext } from 'react';
 import AuthContext from "../contexts/AuthContext";
 import CabinComment from '../components/CabinComment';
 import Carroussel from '../components/Carroussel';
 import CommentForm from '../components/CommentForm';
-
-
+import { format } from 'date-fns';
 
 const Cabin = () => {
 
@@ -19,8 +17,8 @@ const Cabin = () => {
     const today = new Date();
     const [minDate, setMinDate] = useState(today.toISOString().slice(0, 10));
     const [commentPosted, setCommentPosted] = useState(false)
-
-
+    const [dateStart, setDateStart] = useState();
+    const [dateEnd, setDateEnd] = useState();
 
     useEffect(() => {
         if (currentUser) {
@@ -62,6 +60,17 @@ const Cabin = () => {
         setCommentPosted(!commentPosted)
         console.log(commentPosted)
     }
+
+    const getDates = (e) => {
+        if(e.target.id === "dateStart") {
+            setDateStart(format(new Date(e.target.value), "dd, MM, yyyy"));
+            console.log(dateStart);
+        }
+        if(e.target.id === "dateEnd") {
+            setDateEnd(e.target.value)
+        }
+    }
+
 
     return (
         data && data.images ? (
@@ -129,17 +138,17 @@ const Cabin = () => {
                                 <div className=' w-full h-fit mb-8  flex flex-col gap-8' >
                                     <div className="flex flex-col">
                                         <label htmlFor="dateStart" className="text-darkGreen pb-1 pl-1">Date de début</label>
-                                        <input type="date" min={minDate} name="dateStart" id="dateStart" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" />
+                                        <input type="date" min={minDate} name="dateStart" id="dateStart" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" onChange={getDates} />
                                     </div>
                                     <div className="flex flex-col">
                                         <label htmlFor="dateEnd" className="text-darkGreen pb-1 pl-1">Date de fin</label>
-                                        <input type="date" name="dateEnd" min={minDate} id="dateEnd" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" />
+                                        <input type="date" name="dateEnd" min={minDate} id="dateEnd" className="w-[160px] rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" onChange={getDates} />
                                     </div>
                                 </div>
                                 <div className=''>
                                     <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
 
-                                    <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-darkGreen duration-75'><NavLink to={`/reservation?id=${id}`}>Réserver</NavLink></button>
+                                    <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-darkGreen duration-75'><NavLink to={`/reservation?id=${id}&dateStart=${dateStart}&dateEnd=${dateEnd}`}>Réserver</NavLink></button>
                                 </div>
                             </div>
                         </div></>}

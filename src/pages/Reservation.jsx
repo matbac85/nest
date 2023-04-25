@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../components/PaymentLogo";
 
@@ -6,17 +6,12 @@ const Reservation = () => {
     const [data, setData] = useState([]);
     const [searchParams] = useSearchParams();
 
-    function getCabinID(cabinID) {
-        if((cabinID !== null) && (cabinID !== "undefined")) {
-            const cabID = searchParams.get('id');
-            return cabID;
-        }
-
-        return console.log("test");
-    }
+    const urlCabinID = searchParams.get('id');
+    let newDateStart = searchParams.get('dateStart');
+    let newDateEnd = searchParams.get('dateEnd');
 
     async function fetchData() {
-        const response = await fetch(`http://localhost:3000/cabins/${id}`);
+        const response = await fetch(`http://localhost:3000/cabins/`);
         const Data = await response.json();
         return Data;
     }
@@ -28,8 +23,6 @@ const Reservation = () => {
         }
         getData();
     }, []);
-
-    getCabinID()
 
     return(
         <div className="bg-cover bg-center home-background bg-[url('/public/illus/reservation_bg.svg')] flex flex-col">
@@ -43,7 +36,7 @@ const Reservation = () => {
                             <div className="flex items-start justify-between pb-5 pl-3">
                                 <div>
                                     <p className="font-bold">Dates</p>
-                                    <p>La date choisie</p>
+                                    <p>Du {newDateStart} au {newDateEnd}</p>
                                 </div>
                                 <button type="button" className="text-darkGreen border-b border-darkGreen hover:font-medium hover:italic">Modifier</button>
                             </div>
