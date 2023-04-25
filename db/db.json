@@ -28,6 +28,12 @@
           "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
           "time_stamp": "24-04-2023",
           "rating": 0
+        },
+        {
+          "commenter_id": 1,
+          "comment": "cet cabane est tro bel",
+          "time_stamp": "24-04-2023",
+          "rating": 5
         }
       ],
       "rating": 3,
@@ -454,8 +460,8 @@
           "time_stamp": "24-04-2023"
         },
         {
-          "cabin_id": 2,
-          "comment": "Sérénité, je n'ai pas de meilleur mot pour décrire cette cabane. Magnifique, confortable, originale. La nature...",
+          "cabin_id": 1,
+          "comment": "cet cabane est tro bel",
           "time_stamp": "24-04-2023"
         },
         {
@@ -464,23 +470,7 @@
           "time_stamp": "25-04-2023"
         }
       ],
-      "favourites": [
-        {
-          "cabin_id": 1
-        },
-        {
-          "cabin_id": 2
-        },
-        {
-          "cabin_id": 3
-        },
-        {
-          "cabin_id": 5
-        },
-        {
-          "cabin_id": 4
-        }
-      ],
+      "favourites": [],
       "time_stamp": ""
     },
     {
