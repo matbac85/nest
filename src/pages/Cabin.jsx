@@ -21,6 +21,8 @@ const Cabin = () => {
     const [commentPosted, setCommentPosted] = useState(false)
     const [dateStart, setDateStart] = useState();
     const [dateEnd, setDateEnd] = useState();
+    const [error, setError] = useState()
+    const [isValidForm, setIsValidForm] = useState(false)
 
     useEffect(() => {
         if (currentUser) {
@@ -70,6 +72,27 @@ const Cabin = () => {
             setDateEnd(e.target.value);
         }
     }
+    function handleLoggedError() {
+        setError("Aucun compte connecté.")
+        setTimeout(() => {
+            setError()
+        }, 10000)
+    }
+
+    function handleDateError() {
+        setError("Veuillez remplir tout les champs ci-dessus.")
+        setTimeout(() => {
+            setError()
+        }, 10000)
+    }
+
+    useEffect(() => {
+        if (dateStart === undefined || dateEnd === undefined) {
+            setIsValidForm(false)
+        } else {
+            setIsValidForm(true)
+        }
+    }, [dateEnd, dateStart])
 
 
     return (
@@ -147,12 +170,17 @@ const Cabin = () => {
                                 </div>
                                 <div className=''>
                                     <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
+                                    {!isConnected ? <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75' onClick={handleLoggedError}>Réserver</button>
+                                        : <> {isValidForm === true ?
+                                            < NavLink to={`/reservation?id=${id}&dateStart=${dateStart}&dateEnd=${dateEnd}`}><button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75'>Réserver</button></ NavLink> :
+                                            <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen  hover:bg-darkGreen duration-75' onClick={handleDateError}>Réserver</button>}</>
+                                    }
+                                    <p className='text-red-500 mt-4'>{error}</p>
 
-                                    <NavLink to={`/reservation?id=${id}&dateStart=${dateStart}&dateEnd=${dateEnd}`}><button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-darkGreen duration-75'>Réserver</button></NavLink>
                                 </div>
                             </div>
                         </div></>}
-            </div>)
+            </div >)
             : <div />
     )
 

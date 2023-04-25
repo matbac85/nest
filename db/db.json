@@ -34,6 +34,12 @@
           "comment": "cet cabane est tro bel",
           "time_stamp": "24-04-2023",
           "rating": 5
+        },
+        {
+          "commenter_id": 1,
+          "comment": "c'est tro bo",
+          "time_stamp": "25-04-2023",
+          "rating": 5
         }
       ],
       "rating": 3,
@@ -462,6 +468,11 @@
           "cabin_id": 1,
           "comment": "cet cabane est tro bel",
           "time_stamp": "24-04-2023"
+        },
+        {
+          "cabin_id": 1,
+          "comment": "c'est tro bo",
+          "time_stamp": "25-04-2023"
         }
       ],
       "favourites": [
