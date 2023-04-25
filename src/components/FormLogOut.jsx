@@ -3,18 +3,21 @@ import { useContext } from 'react';
 import AuthContext from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
-const FormLogOut = ({visible, setVisible}) => {
+const FormLogOut = ({visible, setVisible, setIsExpanded}) => {
     const [currentUser, setCurrentUser] = useContext(AuthContext);
     const navigate = useNavigate()
     
     const logOut = () => {
-        setVisible(false)
+        setIsExpanded(false)      
         localStorage.clear()
         setCurrentUser(null)
+        setVisible(false)
+
     }
 
     const navigateAccount = () => {
         setVisible(false)
+        setIsExpanded(false)
         navigate("/utilisateur")
     }
 
