@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { differenceInDays, format } from "date-fns";
 import AuthContext from "../contexts/AuthContext";
 import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../components/PaymentLogo";
+import Reserved from "../components/Reserved";
 
 
 const Reservation = () => {
@@ -21,6 +22,7 @@ const Reservation = () => {
     const [isDisabled, setIsDisabled] = useState(false)
     const [payment, setPayment] = useState('')
     const [isReserved, setIsReserved] = useState(false)
+    const [reservationsInfos, setReservationInfos] = useState()
 
     const urlCabinID = searchParams.get('id');
     const urlDateStart = searchParams.get('dateStart');
@@ -139,6 +141,15 @@ const Reservation = () => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(userReservation)
             });
+            const globalInfos = {
+                start_date: `${isDateStartChanged ? newDateStart : urlDateStart}`,
+                end_date: `${isDateEndChanged ? newDateEnd : urlDateEnd}`,
+                guests: persNumber,
+                price: total,
+                nights: daysNumber
+
+            }
+            setReservationInfos(globalInfos)
             setIsReserved(true)
         }
     }
@@ -233,7 +244,7 @@ const Reservation = () => {
                             </div>
                         </section>
                     </div>
-                </main> :}
+                </main> : <Reserved data={data} user={currentUser} reservation={reservationsInfos} />}
         </div>
     )
 }
