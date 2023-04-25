@@ -455,22 +455,38 @@
           "time_stamp": "24-04-2023"
         },
         {
-          "cabin_id": 5,
-          "comment": "Mais quel merveilleux endroit ! Avec Dono, nous nous sommes sentis comme de vrais hobbits. Je recommande !!",
+          "cabin_id": 1,
+          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
           "time_stamp": "24-04-2023"
         },
         {
           "cabin_id": 1,
-          "comment": "cet cabane est tro bel",
+          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
           "time_stamp": "24-04-2023"
         },
         {
-          "cabin_id": 8,
-          "comment": "Cet endroit est génial. Vivement qu'on y retourne",
-          "time_stamp": "25-04-2023"
+          "cabin_id": 1,
+          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
+          "time_stamp": "24-04-2023"
         }
       ],
-      "favourites": [],
+      "favourites": [
+        {
+          "cabin_id": 2
+        },
+        {
+          "cabin_id": 11
+        },
+        {
+          "cabin_id": 15
+        },
+        {
+          "cabin_id": 8
+        },
+        {
+          "cabin_id": 14
+        }
+      ],
       "time_stamp": ""
     },
     {
