@@ -43,7 +43,7 @@ return (
                 <h2 className="font-bold text-lg">Mes favoris</h2>
                 <ArrowExpand toggleCallback={sectionFavouritesVisible} isExpanded={isSectionFavouritesVisible} setIsExpanded={setIsSectionFavouritesVisible}/>
             </div>
-            {isSectionFavouritesVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {isSectionFavouritesVisible && <div className="flex flex-wrap gap-6 border-t-2 border-t-beige pt-6">
             {currentUser.favourites.length !== 0 ?
                         currentUser.favourites.map((favourite) =>
                             <Favourite favourite={favourite} key={favourite.cabin_id} />
@@ -56,7 +56,7 @@ return (
                 <h2 className="font-bold text-lg">Mes réservations futures</h2>
                 <ArrowExpand toggleCallback={sectionCurrentBookingsVisible}  isExpanded={isSectionCurrentBookingsVisible} setIsExpanded={setIsSectionCurrentBookingsVisible}/>
             </div>
-            {isSectionCurrentBookingsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {isSectionCurrentBookingsVisible && <div className="flex flex-wrap gap-6 border-t-2 border-t-beige pt-6">
             {currentUser.past_bookings.length !== 0 ?
                         currentUser.past_bookings.map((pastBooking) =>
                             <Favourite favourite={pastBooking} key={pastBooking.cabin_id} />
@@ -69,7 +69,7 @@ return (
                 <h2 className="font-bold text-lg">Mes réservations passées</h2>
                 <ArrowExpand toggleCallback={sectionPastBookingsVisible} isExpanded={isSectionPastBookingsVisible} setIsExpanded={setIsSectionPastBookingsVisible}/>
             </div>
-            {isSectionPastBookingsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {isSectionPastBookingsVisible && <div className="flex flex-wrap gap-6 border-t-2 border-t-beige pt-6">
             {currentUser.current_bookings.length !== 0 ?
                         currentUser.current_bookings.map((currentBooking) =>
                             <Favourite favourite={currentBooking} key={currentBooking.cabin_id} />
