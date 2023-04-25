@@ -55,7 +55,7 @@ const Reservation = () => {
             const space = differenceInDays(new Date(dateEnd), new Date(dateStart));
             setDaysNumber(space)
             const totalPrice = space * data.price_per_night
-            console.log(totalPrice)
+
             setTotal(totalPrice)
 
         }
@@ -146,7 +146,8 @@ const Reservation = () => {
                 end_date: `${isDateEndChanged ? newDateEnd : urlDateEnd}`,
                 guests: persNumber,
                 price: total,
-                nights: daysNumber
+                nights: daysNumber,
+                paymentLogo: payment
 
             }
             setReservationInfos(globalInfos)
@@ -208,10 +209,12 @@ const Reservation = () => {
                                         <input type="radio" id="paypal" name="payment" value="paypal" />
                                         <label htmlFor="paypal" className="pl-2"><PayPalLogo /></label>
                                     </div>
+
                                 </div>
+                                {isDisabled && <p className="text-red-500">Veuillez remplir tous les champs ci-dessus.</p>}
                             </div>
                             <button type="button" className="bg-midGreen h-fit py-1 px-6 rounded-lg text-white hover:bg-darkGreen mt-14" onClick={handleSubmit}>Payer</button>
-                            {isDisabled && <p className="text-red-500">Veuillez remplir tous les champs ci-dessus.</p>}
+
 
                         </form>
                         <section className="w-fit h-fit bg-white border-2 border-midGreen rounded-2xl shadow-lg shadow-darkGreen/50 p-5">
