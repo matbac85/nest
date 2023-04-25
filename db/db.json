@@ -231,7 +231,14 @@
           "guests": 2
         }
       ],
-      "comments": [],
+      "comments": [
+        {
+          "commenter_id": 1,
+          "comment": "Cet endroit est génial. Vivement qu'on y retourne",
+          "time_stamp": "25-04-2023",
+          "rating": 0
+        }
+      ],
       "rating": 5,
       "max_guests": 8
     },
@@ -456,6 +463,11 @@
           "cabin_id": 1,
           "comment": "cet cabane est tro bel",
           "time_stamp": "24-04-2023"
+        },
+        {
+          "cabin_id": 8,
+          "comment": "Cet endroit est génial. Vivement qu'on y retourne",
+          "time_stamp": "25-04-2023"
         }
       ],
       "favourites": [],
