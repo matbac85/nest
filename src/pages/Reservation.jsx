@@ -5,10 +5,17 @@ import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../compone
 const Reservation = () => {
     const [data, setData] = useState([]);
     const [searchParams] = useSearchParams();
+    const today = new Date();
+    const [minDate, setMinDate] = useState(today.toISOString().slice(0, 10));
+    const [newDateStart, setNewDateStart] = useState();
+    const [newDateEnd, setNewDateEnd] = useState();
+    const [persNumber, setPersNumber] = useState();
+    const [isDateStartChanged, setIsDateStartChanged] = useState(false);
+    const [isDateEndChanged, setIsDateEndChanged] = useState(false);
 
     const urlCabinID = searchParams.get('id');
-    let newDateStart = searchParams.get('dateStart');
-    let newDateEnd = searchParams.get('dateEnd');
+    const urlDateStart = searchParams.get('dateStart');
+    const urlDateEnd = searchParams.get('dateEnd');
 
     async function fetchData() {
         const response = await fetch(`http://localhost:3000/cabins/`);
@@ -24,6 +31,35 @@ const Reservation = () => {
         getData();
     }, []);
 
+    const handleChangedDateStart = (e) => {
+        const dateStart = e.target.value;
+        setNewDateStart(dateStart);
+        console.log(dateStart);
+
+        const dateStartChanged = true;
+        setIsDateStartChanged(dateStartChanged);
+    }
+
+    const handleChangedDateEnd = (e) => {
+        const dateEnd = e.target.value;
+        setNewDateEnd(dateEnd);
+        console.log(dateEnd);
+
+        const dateEndChanged = true;
+        setIsDateEndChanged(dateEndChanged);
+    }
+
+    const handlePersNumber = (e) => {
+        const nPers = e.target.value;
+        setPersNumber(nPers);
+        console.log(nPers);
+    }
+
+    const handlePayment = (e) => {
+        const paymentMode = e.target.value;
+        console.log(paymentMode);
+    }
+
     return(
         <div className="bg-cover bg-center home-background bg-[url('/public/illus/reservation_bg.svg')] flex flex-col">
             <main className="w-2/3 flex flex-col mx-auto mt-14">
@@ -32,25 +68,35 @@ const Reservation = () => {
                     <form>
                         <h2 className="text-2xl font-bold pb-8">Détails et modes de paiement</h2>
                         <div>
-                            <h3 className="text-lg font-medium pb-5">Votre séjour</h3>
-                            <div className="flex items-start justify-between pb-5 pl-3">
-                                <div>
-                                    <p className="font-bold">Dates</p>
-                                    <p>Du {newDateStart} au {newDateEnd}</p>
+                            <h3 className="text-lg font-bold pb-5">Votre séjour</h3>
+                            <div className="flex items-start justify-between pb-5 pl-3 w-96">
+                                <div className="flex gap-4 w-full">
+                                    <div className="flex flex-col w-full">
+                                        <label htmlFor="dateStart" className="font-medium pb-1 text-darkGreen">Début du séjour</label>
+                                        {isDateStartChanged === true ? 
+                                            <input type="date" name="dateStart" id="dateStart" min={minDate} className="rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" value={newDateStart} onChange={handleChangedDateStart} /> 
+                                        : 
+                                            <input type="date" name="dateStart" id="dateStart" min={minDate} className="rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" value={urlDateStart} onChange={handleChangedDateStart} />}
+                                    </div>
+                                    <div className="flex flex-col w-full">
+                                        <label htmlFor="dateEnd" className="font-medium pb-1 text-darkGreen">Fin du séjour</label>
+                                        {isDateEndChanged === true ? 
+                                            <input type="date" name="dateEnd" id="dateEnd" min={minDate} className="rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" value={newDateEnd} onChange={handleChangedDateEnd}/>
+                                        :
+                                            <input type="date" name="dateEnd" id="dateEnd" min={minDate} className="rounded-lg border border-midGreen text-[#757575] focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:text-darkGreen" value={urlDateEnd} onChange={handleChangedDateEnd}/>}
+                                    </div>
                                 </div>
-                                <button type="button" className="text-darkGreen border-b border-darkGreen hover:font-medium hover:italic">Modifier</button>
                             </div>
-                            <div className="flex items-start justify-between pb-5 pl-3">
-                                <div>
-                                    <p className="font-bold">Voyageurs</p>
-                                    <p>Nombre de personne</p>
+                            <div className="flex items-start justify-between pb-5 pl-3 w-96">
+                                <div className="flex flex-col w-full">
+                                    <label htmlFor="person" className="font-medium pb-1 text-darkGreen">Voyageurs</label>
+                                    <input type="number" name="person" id="person" min="1" max="4" placeholder="4 pers. max" className="rounded-lg border border-midGreen focus:font-semibold focus:border focus:border-darkGreen focus:ring-0 focus:placeholder:text-darkGreen" onChange={handlePersNumber} />
                                 </div>
-                                <button type="button" className="text-darkGreen border-b border-darkGreen hover:font-medium hover:italic">Modifier</button>
                             </div>
                         </div>
                         <div>
-                            <h3 className="text-lg font-medium py-5">Payer avec</h3>
-                            <div className="flex gap-2">
+                            <h3 className="text-lg font-bold py-5">Payer avec</h3>
+                            <div className="flex gap-2" onChange={handlePayment}>
                                 <div className="flex border border-darkGreen rounded-lg items-center bg-white w-28 px-2 h-12 overflow-hidden">
                                     <input type="radio" id="visa" name="payment" value="visa" />
                                     <label htmlFor="visa"className="pl-2"><VisaLogo /></label>

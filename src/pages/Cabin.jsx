@@ -63,11 +63,10 @@ const Cabin = () => {
 
     const getDates = (e) => {
         if(e.target.id === "dateStart") {
-            setDateStart(format(new Date(e.target.value), "dd, MM, yyyy"));
-            console.log(dateStart);
+            setDateStart(e.target.value);
         }
         if(e.target.id === "dateEnd") {
-            setDateEnd(e.target.value)
+            setDateEnd(e.target.value);
         }
     }
 
@@ -148,7 +147,7 @@ const Cabin = () => {
                                 <div className=''>
                                     <h2 className='w-4/5 text-xl'>Vous n’êtes plus qu’à un click d’une <span className='text-midGreen font-bold'>expérience unique !</span></h2>
 
-                                    <button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-darkGreen duration-75'><NavLink to={`/reservation?id=${id}&dateStart=${dateStart}&dateEnd=${dateEnd}`}>Réserver</NavLink></button>
+                                    <NavLink to={`/reservation?id=${id}&dateStart=${dateStart}&dateEnd=${dateEnd}`}><button type='button' className='bg-midGreen mt-6 w-fit h-fit py-2 px-8 rounded-lg text-white border border-midGreen text-2xl hover:bg-darkGreen duration-75'>Réserver</button></NavLink>
                                 </div>
                             </div>
                         </div></>}

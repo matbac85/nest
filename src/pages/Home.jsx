@@ -17,15 +17,11 @@ const Home = () => {
         setLocation(locationHandled);
 
         toggleSelected();
-
-        return locationHandled;
     }
 
     const handleGuests = (e) => {
         const maxGuestsHandled = e.target.value;
         setMaxGuests(maxGuestsHandled);
-
-        return maxGuestsHandled;
     }
 
 return (
