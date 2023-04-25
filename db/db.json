@@ -17,9 +17,9 @@
       "bookings": [
         {
           "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
+          "start_date": "2023-04-25",
+          "end_date": "2023-04-29",
+          "guests": "2"
         }
       ],
       "comments": [
@@ -231,14 +231,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "Cet endroit est génial. Vivement qu'on y retourne",
-          "time_stamp": "25-04-2023",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -438,6 +431,12 @@
           "start_date": "",
           "end_date": "",
           "guests": 2
+        },
+        {
+          "cabin_id": 1,
+          "start_date": "2023-04-25",
+          "end_date": "2023-04-29",
+          "guests": "2"
         }
       ],
       "past_bookings": [
@@ -458,9 +457,6 @@
       "favourites": [
         {
           "cabin_id": 2
-        },
-        {
-          "cabin_id": 11
         }
       ],
       "time_stamp": ""
