@@ -84,7 +84,6 @@ const FormRegistration = ({ handleClick, visible, setIsExpanded }) => {
                                 posted_comments: [],
                                 favourites: [],
                                 time_stamp: format(new Date(), 'dd-MM-yyyy')
-
                         }
                         fetch('http://localhost:3000/users', {
                                 method: 'POST',

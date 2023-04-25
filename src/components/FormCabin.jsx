@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { NavLink } from 'react-router-dom';
 import { Add } from "./Iconssvg";
+import AuthContext from "../contexts/AuthContext";
+
 
 
 const FormCabin = () => {
+    const [currentUser, setCurrentUser] = useContext(AuthContext);
     const [formData, setFormData] = useState({
         cabinName: "",
         city: "",
@@ -11,8 +15,10 @@ const FormCabin = () => {
         price: "",
         description: "",
     });
+    
+    const [cabinSubmitted, setCabinSubmitted] = useState(false);
+
     const [errors, setErrors] = useState({});
-    const [sendingFrom, setSendinForm] = useState(false)
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -27,7 +33,7 @@ const FormCabin = () => {
     }
 
     const validateText = (fieldValue) => {
-        if (fieldValue && !/^[a-zA-ZÀ-ÖØ-öø-ÿ ]+$/.test(fieldValue)) {
+        if (fieldValue && !/^[a-zA-ZÀ-ÖØ-öø-ÿ\- ]*$/.test(fieldValue)) {
             return `Ce champ ne peut contenir que des lettres et des espaces.`;
         }
         return "";
@@ -41,6 +47,7 @@ const FormCabin = () => {
     }
 
     const validateForm = () => {
+        
         const newErrors = {};
 
         newErrors.cabinName = validateRequiredField(formData.cabinName)
@@ -58,7 +65,6 @@ const FormCabin = () => {
         return newErrors
     }
 
-
     const submitFormCabin = (e) => {
         e.preventDefault();
 
@@ -67,9 +73,31 @@ const FormCabin = () => {
         if (Object.values(newErrors).filter((value) => value !== "").length > 0) {
             setErrors(newErrors);
         } else {
-            setSendinForm(true)
-            setTimeout(() => {
-                setSendinForm(false)
+                const dataBaseForm = {
+                    name: formData.cabinName,
+                    commune: formData.city,
+                    region: formData.area,
+                    price_per_night: formData.price,
+                    description: formData.description,
+                    images: [
+                        "/public/img/cabins/16-demo/16-1.webp",
+                        "/public/img/cabins/16-demo/16-2.webp",
+                        "/public/img/cabins/16-demo/16-3.webp",
+                        "/public/img/cabins/16-demo/16-4.webp",
+                        "/public/img/cabins/16-demo/16-5.webp"
+                    ],
+                    bookings: [],
+                    comments: [],
+                    ratings: 0,
+                    max_guests: formData.guestsNb,
+                }
+                fetch('http://localhost:3000/cabins', {
+                    method: 'POST',
+                    headers: {
+                            'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(dataBaseForm)
+                })
                 setFormData({
                     cabinName: "",
                     city: "",
@@ -77,56 +105,25 @@ const FormCabin = () => {
                     guestsNb: "",
                     price: "",
                     description: "",
-                });
-            }, 15000)
-
-        }
-
+                })
+                setCabinSubmitted(true);
+            }
     }
 
-    return (
-        <div className="pt-16">
-
-            {sendingFrom ? <div className="mt-8 text-center bg-white bg-opacity-50 p-16 rounded-md max-w-[1500px] flex flex-col items-center mb-16">
-                <h1 className="text-2xl mb-4 font-semibold">Félicitation !</h1>
-                <p>Nous avons bien reçu votre demande d'adhésion pour votre cabane.</p>
-                <p>Dans un soucis de protection de nos utilisateurs, votre demande sera vérifiée par notre équipe avant sa mise en ligne sur Nest.</p>
-
-                <h1 className="mt-8 mb-8 text-xl font-semibold">Informations:</h1>
-                <div className="w-1/2 flex flex-col gap-3 mb-16">
-                    <div className="flex justify-between">
-                        <p className="font-bold">Nom de la cabane:</p>
-                        <p>{formData.cabinName}</p>
-                    </div>
-                    <div className="flex justify-between">
-                        <p className="font-bold">Localité:</p>
-                        <p>{formData.city}</p>
-                    </div>
-                    <div className="flex justify-between">
-                        <p className="font-bold">Région:</p>
-                        <p>{formData.area}</p>
-                    </div>
-                    <div className="flex justify-between">
-                        <p className="font-bold">Nombre max de personnes:</p>
-                        <p>{formData.guestsNb}</p>
-                    </div>
-                    <div className="flex justify-between">
-                        <p className="font-bold">Prix par nuit:</p>
-                        <p>{formData.price}€</p>
-                    </div>
-                    <div className="flex justify-between">
-                        <p className="font-bold">Description de la cabane:</p>
-                        <div className="w-1/2 h-fit text-justify"><p>{formData.description}</p></div>
-                    </div>
-
+    const cabinSubmittedPanel = () => 
+        (
+                <div className="mt-8 text-center bg-white bg-opacity-50 p-16 rounded-md max-w-[1500px] flex flex-col items-center mb-16">
+                <h1 className="text-2xl mb-4 font-semibold">Félicitations !</h1>
+                <p>Nous avons bien reçu votre les informations concernant votre cabane.</p>
+                <p>Dans un souci de protection de nos utilisateurs, votre demande sera vérifiée par notre équipe avant sa mise en ligne sur Nest.</p>
+                <NavLink className="hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 px-8 mt-6" to="/">OK</NavLink>
                 </div>
-                <h1 className="text-4xl font-bold pl-2">See you <span className='text-midGreen font-extrabold'>Nest</span> time !</h1>
-                <div />
-            </div>
-                :
-                <>
-                    <h1 className="text-4xl font-bold mb-4 pl-2">Ajoutez votre cabane sur <span className='text-midGreen font-extrabold'>Nest</span></h1>
-                    <form className="bg-formBackground p-8 rounded-xl border-2 border-midGreen flex flex-col gap-4" onSubmit={submitFormCabin}>
+        )
+
+
+    const cabinFormPanel = () => 
+        (
+            <form className="bg-formBackground p-8 rounded-xl border-2 border-midGreen flex flex-col gap-4" onSubmit={submitFormCabin}>
 
                         <div>
                             <label htmlFor="cabinName" className="px-2 mb-1">Nom de la cabane<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
@@ -189,10 +186,17 @@ const FormCabin = () => {
                             </div>
                         </div>
                         <div className="text-right">
-                            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 px-8'>Soumettre</button>
+                            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 px-8 disabled:opacity-50 disabled:bg-slate-500' disabled={!currentUser}>Soumettre</button>
                         </div>
                     </form>
-                </>}
+        )
+    
+
+    return (
+        <div className="pt-16">
+                    <h1 className="text-4xl font-bold mb-4 pl-2">Ajoutez votre cabane sur <span className='text-midGreen font-extrabold'>Nest</span></h1>
+                    {!currentUser && <p className="mb-4 pl-2 text-red-500 font-medium">Veuillez vous connecter pour proposer une cabane</p>}
+                    {cabinSubmitted ? cabinSubmittedPanel() : cabinFormPanel()}
         </div>
     );
 }
