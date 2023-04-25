@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
-import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../components/PaymentLogo";
 import { differenceInDays } from "date-fns";
+import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../components/PaymentLogo";
 
 const Reservation = () => {
     const [data, setData] = useState([]);
@@ -13,17 +13,15 @@ const Reservation = () => {
     const [persNumber, setPersNumber] = useState(0);
     const [isDateStartChanged, setIsDateStartChanged] = useState(false);
     const [isDateEndChanged, setIsDateEndChanged] = useState(false);
-    const [daysNumber, setDaysNumber] = useState();
+    const [daysNumber, setDaysNumber] = useState(0);
 
     const urlCabinID = searchParams.get('id');
     const urlDateStart = searchParams.get('dateStart').toString();
     const urlDateEnd = searchParams.get('dateEnd').toString();
 
-    const urlDates = differenceInDays(new Date(urlDateEnd), new Date(urlDateStart));
+    
 
-    // setDaysNumber(differenceInDays(new Date(urlDateStart), new Date(urlDateEnd)));
-
-    // console.log(daysNumber);
+   
 
     async function fetchData() {
         const response = await fetch(`http://localhost:3000/cabins/${urlCabinID}`);
@@ -39,6 +37,26 @@ const Reservation = () => {
         getData();
 
     }, []);
+
+    function dateSpace(dateStart,dateEnd){
+        const space = differenceInDays(new Date(dateEnd), new Date(dateStart));
+        setDaysNumber(space)
+    }
+    
+    useEffect(() => {
+        const urlDates = differenceInDays(new Date(urlDateEnd), new Date(urlDateStart))
+        setDaysNumber(urlDates)
+        if(isDateStartChanged && !isDateEndChanged){
+            
+            dateSpace(newDateStart,urlDateEnd)
+        }else if(!isDateStartChanged && isDateEndChanged){
+
+            dateSpace(urlDateStart,newDateEnd)
+        }else if(isDateStartChanged && isDateEndChanged){
+            dateSpace(newDateStart,newDateEnd)
+        }
+
+    }, [newDateStart,newDateEnd]);
 
     const handleChangedDateStart = (e) => {
         const dateStart = e.target.value;
@@ -148,7 +166,7 @@ const Reservation = () => {
                         </div>
                         <div className="flex justify-between pb-3">
                             <p>Prix</p>
-                            <p>{data.price_per_night}€ x {urlDates} nuits</p>
+                            <p>{data.price_per_night}€ x {daysNumber} nuits</p>
                         </div>
                         <div className="flex justify-between pt-5 pb-2 border-t-2 border-beige font-medium">
                             <p>Prix total</p>
