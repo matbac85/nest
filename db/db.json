@@ -452,36 +452,17 @@
           "cabin_id": 1,
           "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
           "time_stamp": "24-04-2023"
-        },
-        {
-          "cabin_id": 5,
-          "comment": "Mais quel merveilleux endroit ! Avec Dono, nous nous sommes sentis comme de vrais hobbits. Je recommande !!",
-          "time_stamp": "24-04-2023"
-        },
-        {
-          "cabin_id": 1,
-          "comment": "cet cabane est tro bel",
-          "time_stamp": "24-04-2023"
         }
       ],
       "favourites": [
         {
-          "cabin_id": 1
+          "cabin_id": 2
+        },
+        {
+          "cabin_id": 11
         }
       ],
       "time_stamp": ""
-    },
-    {
-      "first_name": "Donovan",
-      "name": "Duperrois",
-      "email": "slashhable@gmail.com",
-      "password": "user2",
-      "current_bookings": [],
-      "past_bookings": [],
-      "posted_comments": [],
-      "favourites": [],
-      "time_stamp": "24-04-2023",
-      "id": 2
     }
   ]
 }
