@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../components/PaymentLogo";
+import { differenceInDays } from "date-fns";
 
 const Reservation = () => {
     const [data, setData] = useState([]);
@@ -9,16 +10,23 @@ const Reservation = () => {
     const [minDate, setMinDate] = useState(today.toISOString().slice(0, 10));
     const [newDateStart, setNewDateStart] = useState();
     const [newDateEnd, setNewDateEnd] = useState();
-    const [persNumber, setPersNumber] = useState();
+    const [persNumber, setPersNumber] = useState(0);
     const [isDateStartChanged, setIsDateStartChanged] = useState(false);
     const [isDateEndChanged, setIsDateEndChanged] = useState(false);
+    const [daysNumber, setDaysNumber] = useState();
 
     const urlCabinID = searchParams.get('id');
-    const urlDateStart = searchParams.get('dateStart');
-    const urlDateEnd = searchParams.get('dateEnd');
+    const urlDateStart = searchParams.get('dateStart').toString();
+    const urlDateEnd = searchParams.get('dateEnd').toString();
+
+    const urlDates = differenceInDays(new Date(urlDateEnd), new Date(urlDateStart));
+
+    // setDaysNumber(differenceInDays(new Date(urlDateStart), new Date(urlDateEnd)));
+
+    // console.log(daysNumber);
 
     async function fetchData() {
-        const response = await fetch(`http://localhost:3000/cabins/`);
+        const response = await fetch(`http://localhost:3000/cabins/${urlCabinID}`);
         const Data = await response.json();
         return Data;
     }
@@ -29,6 +37,7 @@ const Reservation = () => {
             setData(result);
         }
         getData();
+
     }, []);
 
     const handleChangedDateStart = (e) => {
@@ -117,28 +126,29 @@ const Reservation = () => {
                         </div>
                         <button type="submit" className="bg-midGreen h-fit py-1 px-6 rounded-lg text-white hover:bg-darkGreen mt-14">Payer</button>
                     </form>
-                    <section className="w-96 h-fit bg-white border-2 border-midGreen rounded-2xl shadow-lg shadow-darkGreen/50 p-5">
+                    <section className="w-fit h-fit bg-white border-2 border-midGreen rounded-2xl shadow-lg shadow-darkGreen/50 p-5">
                         <div className="flex mb-7">
-                            <img src="../../public/img/cabins/01/01-1.webp" alt="" className="h-28 rounded-lg" />
+                            <img src={data && data.images && data.images[0]} alt="" className="h-28 rounded-lg" />
                             <div className="pl-3">
-                                <h3 className="text-lg font-bold">Nom de cabane</h3>
-                                <p>Région, ville</p>
-                                <div>
-                                    <p>Rating</p>
-                                </div>
+                                <h3 className="text-lg font-bold">{data.name}</h3>
+                                <p>{data.region}, {data.commune}</p>
+                                <div>{data.rating}</div>
                             </div>
                         </div>
                         <div className="flex justify-between pb-3">
                             <p>Dates</p>
-                            <p>Dates choisies</p>
+                            {isDateStartChanged === true && isDateEndChanged === true ? 
+                                <p>Du {newDateStart} au {newDateEnd}</p>
+                            :
+                                <p>Du {urlDateStart} au {urlDateEnd}</p>}
                         </div>
                         <div className="flex justify-between pb-3">
                             <p>Voyageurs</p>
-                            <p>X</p>
+                            <p>{persNumber}</p>
                         </div>
                         <div className="flex justify-between pb-3">
                             <p>Prix</p>
-                            <p>€ x nuits</p>
+                            <p>{data.price_per_night}€ x {urlDates} nuits</p>
                         </div>
                         <div className="flex justify-between pt-5 pb-2 border-t-2 border-beige font-medium">
                             <p>Prix total</p>
