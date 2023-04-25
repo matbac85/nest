@@ -25,20 +25,8 @@
       "comments": [
         {
           "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T08:31:41.356Z",
-          "rating": 4
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol2",
-          "time_stamp": "2023-04-24T08:31:53.499Z",
-          "rating": 5
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T08:36:28.579Z",
+          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
+          "time_stamp": "24-04-2023",
           "rating": 0
         }
       ],
@@ -70,39 +58,9 @@
       "comments": [
         {
           "commenter_id": 1,
-          "comment": "hello",
-          "time_stamp": "2023-04-24T06:55:09.224Z",
-          "rating": 3
-        },
-        {
-          "commenter_id": 1,
-          "comment": "coucou",
-          "time_stamp": "2023-04-24T07:01:34.683Z",
-          "rating": 4
-        },
-        {
-          "commenter_id": 1,
-          "comment": "hello",
-          "time_stamp": "2023-04-24T07:04:22.748Z",
-          "rating": 3
-        },
-        {
-          "commenter_id": 1,
-          "comment": "coucou",
-          "time_stamp": "2023-04-24T07:12:31.098Z",
-          "rating": 4
-        },
-        {
-          "commenter_id": 1,
-          "comment": "b",
-          "time_stamp": "2023-04-24T07:13:04.296Z",
-          "rating": 3
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T07:14:18.442Z",
-          "rating": 4
+          "comment": "Sérénité, je n'ai pas de meilleur mot pour décrire cette cabane. Magnifique, confortable, originale. La nature...",
+          "time_stamp": "24-04-2023",
+          "rating": 0
         }
       ],
       "rating": 5,
@@ -130,14 +88,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -163,20 +114,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        },
-        {
-          "commenter_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T08:08:45.925Z",
-          "rating": 4
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -204,10 +142,10 @@
       ],
       "comments": [
         {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
+          "commenter_id": 1,
+          "comment": "Mais quel merveilleux endroit ! Avec Dono, nous nous sommes sentis comme de vrais hobbits. Je recommande !!",
+          "time_stamp": "24-04-2023",
+          "rating": 3
         }
       ],
       "rating": 3,
@@ -235,14 +173,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 2,
       "max_guests": 8
     },
@@ -268,14 +199,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -301,14 +225,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -334,14 +251,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 1,
       "max_guests": 8
     },
@@ -367,14 +277,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     },
@@ -400,14 +303,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 2,
       "max_guests": 8
     },
@@ -433,14 +329,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 4,
       "max_guests": 8
     },
@@ -466,14 +355,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 5,
       "max_guests": 8
     },
@@ -499,14 +381,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 0,
-          "comment": "",
-          "time_stamp": "",
-          "rating": 0
-        }
-      ],
+      "comments": [],
       "rating": 0,
       "max_guests": 8
     },
@@ -532,14 +407,7 @@
           "guests": 2
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "",
-          "time_stamp": "01-01-2023",
-          "rating": 5
-        }
-      ],
+      "comments": [],
       "rating": 3,
       "max_guests": 8
     }
@@ -570,23 +438,18 @@
       "posted_comments": [
         {
           "cabin_id": 1,
-          "comment": "",
-          "time_stamp": ""
+          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
+          "time_stamp": "24-04-2023"
         },
         {
-          "cabin_id": 1,
-          "comment": "coucou",
-          "time_stamp": "2023-04-24T06:20:05.339Z"
+          "cabin_id": 5,
+          "comment": "Mais quel merveilleux endroit ! Avec Dono, nous nous sommes sentis comme de vrais hobbits. Je recommande !!",
+          "time_stamp": "24-04-2023"
         },
         {
-          "cabin_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T07:18:58.695Z"
-        },
-        {
-          "cabin_id": 1,
-          "comment": "lol",
-          "time_stamp": "2023-04-24T08:36:28.579Z"
+          "cabin_id": 2,
+          "comment": "Sérénité, je n'ai pas de meilleur mot pour décrire cette cabane. Magnifique, confortable, originale. La nature...",
+          "time_stamp": "24-04-2023"
         }
       ],
       "favourites": [
@@ -598,9 +461,27 @@
         },
         {
           "cabin_id": 3
+        },
+        {
+          "cabin_id": 5
+        },
+        {
+          "cabin_id": 4
         }
       ],
       "time_stamp": ""
+    },
+    {
+      "first_name": "Donovan",
+      "name": "Duperrois",
+      "email": "slashhable@gmail.com",
+      "password": "user2",
+      "current_bookings": [],
+      "past_bookings": [],
+      "posted_comments": [],
+      "favourites": [],
+      "time_stamp": "24-04-2023",
+      "id": 2
     }
   ]
 }

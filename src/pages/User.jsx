@@ -14,8 +14,9 @@ const User = () => {
             }
     })
     
-        return (currentUser && <div className="bg-cover bg-top home-background bg-[url('/public/illus/user_profile_bg.svg')] flex justify-center items-start pt-24">
-        <div className="flex w-9/12 gap-6">
+    return (currentUser && 
+    <div className="bg-cover bg-top home-background bg-[url('/public/illus/user_profile_bg.svg')] flex justify-center items-start">
+        <div className="flex w-9/12 gap-6 pt-24">
             <UserInfo />
             <UserSections />
         </div>

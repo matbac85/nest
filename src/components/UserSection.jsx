@@ -1,15 +1,39 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import AuthContext from "../contexts/AuthContext";
 import { ArrowExpand } from "./Iconssvg";
 import Favourite from "./Favourite";
-import { useState } from "react";
+import UserComment from "./UserComment";
 
 const UserSections = () => {
     const [currentUser, setCurrentUser] = useContext(AuthContext);
-    const [isSectionVisible, setIsSectionVisible] = useState(false);
+    const [isSectionFavouritesVisible, setIsSectionFavouritesVisible] = useState(false);
+    const [isSectionCurrentBookingsVisible, setIsSectionCurrentBookingsVisible] = useState(false);
+    const [isSectionPastBookingsVisible, setIsSectionPastBookingsVisible] = useState(false);
+    const [isSectionCommentsVisible, setIsSectionCommentsVisible] = useState(false);
 
-    const sectionVisible = () => {
-        setIsSectionVisible(!isSectionVisible)
+    useEffect(() => {
+        const reloadUser = async () => {
+        const response = await fetch(`http://localhost:3000/users/${currentUser.id}`)
+                    const user = await response.json() 
+                    setCurrentUser((prevUser)=>(user));
+                }
+        reloadUser();
+    }, [])
+
+    const sectionFavouritesVisible = () => {
+        setIsSectionFavouritesVisible(!isSectionFavouritesVisible)
+    }
+
+    const sectionCurrentBookingsVisible = () => {
+        setIsSectionCurrentBookingsVisible(!isSectionCurrentBookingsVisible)
+    }
+
+    const sectionPastBookingsVisible = () => {
+        setIsSectionPastBookingsVisible(!isSectionPastBookingsVisible)
+    }
+
+    const sectionCommentsVisible = () => {
+        setIsSectionCommentsVisible(!isSectionCommentsVisible)
     }
 
 return (
@@ -17,27 +41,54 @@ return (
         <div className="user-box">
             <div className="flex justify-between">
                 <h2 className="font-bold text-lg">Mes favoris</h2>
-                <ArrowExpand toggleCallback={sectionVisible}/>
+                <ArrowExpand toggleCallback={sectionFavouritesVisible} isExpanded={isSectionFavouritesVisible} setIsExpanded={setIsSectionFavouritesVisible}/>
             </div>
-            {isSectionVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {isSectionFavouritesVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
             {currentUser.favourites.length !== 0 ?
                         currentUser.favourites.map((favourite) =>
                             <Favourite favourite={favourite} key={favourite.cabin_id} />
-                        ) : <div className=' col-span-12 text-center'><h1 className='text-4xl'>Cette section est vide</h1></div>
+                        ) : <p>Cette section est vide</p>
                     }
             </div>}
         </div>
-        <div className="user-box flex justify-between">
-            <h2 className="font-bold text-lg">Mes réservations futures</h2>
-            <ArrowExpand />
+        <div className="user-box">
+            <div className="flex justify-between">
+                <h2 className="font-bold text-lg">Mes réservations futures</h2>
+                <ArrowExpand toggleCallback={sectionCurrentBookingsVisible}  isExpanded={isSectionCurrentBookingsVisible} setIsExpanded={setIsSectionCurrentBookingsVisible}/>
+            </div>
+            {isSectionCurrentBookingsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {currentUser.past_bookings.length !== 0 ?
+                        currentUser.past_bookings.map((pastBooking) =>
+                            <Favourite favourite={pastBooking} key={pastBooking.cabin_id} />
+                        ) : <p>Cette section est vide</p>
+                    }
+            </div>}
         </div>
-        <div className="user-box flex justify-between">
-            <h2 className="font-bold text-lg">Mes réservations passées</h2>
-            <ArrowExpand />
+        <div className="user-box">
+            <div className="flex justify-between">
+                <h2 className="font-bold text-lg">Mes réservations passées</h2>
+                <ArrowExpand toggleCallback={sectionPastBookingsVisible} isExpanded={isSectionPastBookingsVisible} setIsExpanded={setIsSectionPastBookingsVisible}/>
+            </div>
+            {isSectionPastBookingsVisible && <div className="flex gap-8 border-t-2 border-t-beige pt-6">
+            {currentUser.current_bookings.length !== 0 ?
+                        currentUser.current_bookings.map((currentBooking) =>
+                            <Favourite favourite={currentBooking} key={currentBooking.cabin_id} />
+                        ) : <p>Cette section est vide</p>
+                    }
+            </div>}
         </div>
-        <div className="user-box flex justify-between">
-            <h2 className="font-bold text-lg">Mes commentaires</h2>
-            <ArrowExpand />
+        <div className="user-box">
+            <div className="flex justify-between">
+                <h2 className="font-bold text-lg">Mes commentaires</h2>
+                <ArrowExpand toggleCallback={sectionCommentsVisible} isExpanded={isSectionCommentsVisible} setIsExpanded={setIsSectionCommentsVisible}/>
+            </div>
+            {isSectionCommentsVisible && <div className="grid grid-cols-2 gap-8 border-t-2 border-t-beige pt-6">
+            {currentUser.posted_comments.length !== 0 ?
+                        currentUser.posted_comments.map((postedComment) =>
+                            <UserComment postedComment={postedComment} key={postedComment.cabin_id} />
+                        ) : <p>Cette section est vide</p>
+                    }
+            </div>}
         </div>
     </div>
 )}

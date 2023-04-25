@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Search = () => 
     (<svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className="cursor-pointer"><path d="M774 913 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l243 241q9 8.442 9 20.721t-9.913 22.192Q809 922 795.778 922q-13.222 0-21.778-9ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z" className="text-midGreen"/></svg>)
 
@@ -16,13 +14,7 @@ const IconFacebook = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#467971" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
 )
 
-// const ArrowExpand = ({loginVisible, registrationVisible}) => (
-//     <svg xmlns="http://www.w3.org/2000/svg" height="36" viewBox="0 96 960 960" width="36" fill="#467971" className={loginVisible || registrationVisible ? "origin-center rotate-180" : "cursor-pointer"}><path d="M480 699q-6 0-11-2t-10-7L261 492q-8-8-7.5-21.5T262 449q10-10 21.5-8.5T304 450l176 176 176-176q8-8 21.5-9t21.5 9q10 8 8.5 21t-9.5 22L501 690q-5 5-10 7t-11 2Z"/></svg>
-// )
-
-const ArrowExpand = ({toggleCallback}) => {
-    const [isExpanded, setIsExpanded] = useState(false)
-    console.log(isExpanded);
+const ArrowExpand = ({toggleCallback, isExpanded, setIsExpanded}) => {
     const toggle = () => {
         setIsExpanded(!isExpanded)
         toggleCallback()
@@ -41,4 +33,8 @@ const FilledHeart = () => (
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24" fill="#87C1B9"><path d="m439 900-53-49Q262 736 171 631.5T80 413q0-90 60.5-150.5T290 202q51 0 101 24.5t89 80.5q44-56 91-80.5t99-24.5q89 0 149.5 60.5T880 413q0 114-91 218.5T574 851l-53 49q-17 16-41 16t-41-16Z"/></svg>
 )
 
-export { IconInstagram, IconFacebook, Search, User, ArrowExpand, Add, FilledHeart };
+const QuoteComment = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="36" fill="#467971"><path d="M690.077 765.999q-21.538 0-32.922-18.192-11.384-18.191-1.615-37.498l49.077-104.31H589.999q-24.538 0-42.268-17.73t-17.73-42.268V405.999q0-24.538 17.73-42.268t42.268-17.73h140.002q24.538 0 42.268 17.73t17.73 42.268v183.308q0 7.846-1.5 16t-5.346 15.384l-58.538 123.77q-5.077 10.154-14.231 15.846-9.153 5.692-20.307 5.692Zm-360 0q-21.538 0-32.922-18.192-11.384-18.191-1.615-37.498l49.077-104.31H229.999q-24.538 0-42.268-17.73t-17.73-42.268V405.999q0-24.538 17.73-42.268t42.268-17.73h140.002q24.538 0 42.268 17.73t17.73 42.268v183.308q0 7.846-1.5 16t-5.346 15.384l-58.538 123.77q-5.077 10.154-14.231 15.846-9.153 5.692-20.307 5.692Z"/></svg>
+)
+
+export { IconInstagram, IconFacebook, Search, User, ArrowExpand, Add, FilledHeart, QuoteComment };
