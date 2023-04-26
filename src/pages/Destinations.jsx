@@ -10,7 +10,7 @@ const Destinations = () => {
     const [searchParams] = useSearchParams();
     const [activeIndex, setActiveIndex] = useState(1)
     const [currentUser, setCurrentUser] = useContext(AuthContext);
-    const [isConnected, setIsConnected] = useState(false)
+
 
     async function fetchData() {
         const response = await fetch('http://localhost:3000/cabins');
@@ -28,14 +28,6 @@ const Destinations = () => {
         return cabins
     }
 
-    useEffect(() => {
-        if (currentUser) {
-            setIsConnected(true)
-        } else {
-            setIsConnected(false)
-        }
-
-    }, [currentUser]);
 
 
 
@@ -58,7 +50,7 @@ const Destinations = () => {
             result = guestsFilter(result, searchParams.get('maxGuests'));
         }
         getData();
-    }, [isConnected]);
+    }, [currentUser]);
 
     function displayAll() {
         setFilteredData(data)
@@ -136,7 +128,7 @@ const Destinations = () => {
                 <div className='grid grid-cols-12 gap-x-24 gap-y-24 justify-between'>
                     {filteredData.length !== 0 ?
                         filteredData.map((cabin) =>
-                            <CabinCard cabin={cabin} key={cabin.id} user={currentUser} isConnected={isConnected} />
+                            <CabinCard cabin={cabin} key={cabin.id} user={currentUser} />
                         ) : <div className=' col-span-12 text-center'><h1 className='text-4xl'>Il n'y a pas de cabanes correspondant à ces critères</h1></div>
                     }
 
