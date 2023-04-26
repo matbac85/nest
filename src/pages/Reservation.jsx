@@ -228,10 +228,9 @@ const Reservation = () => {
                             </div>
                             <div className="flex justify-between pb-3">
                                 <p>Dates</p>
-                                {isDateStartChanged === true && isDateEndChanged === true ?
-                                    <p>Du {format(new Date(newDateStart), "dd-MM-yyyy")} au {format(new Date(newDateEnd), "dd-MM-yyyy")}</p>
-                                    :
-                                    <p>Du {format(new Date(urlDateStart), "dd-MM-yyyy")} au {format(new Date(urlDateEnd), "dd-MM-yyyy")}</p>}
+
+                                <p>Du {isDateStartChanged === true ? format(new Date(newDateStart), "dd-MM-yyyy") : format(new Date(urlDateStart), "dd-MM-yyyy")} au {isDateEndChanged === true ? format(new Date(newDateEnd), "dd-MM-yyyy") : format(new Date(urlDateEnd), "dd-MM-yyyy")}</p>
+
                             </div>
                             <div className="flex justify-between pb-3">
                                 <p>Voyageurs</p>
