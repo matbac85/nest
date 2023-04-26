@@ -31,7 +31,7 @@
       "name": "La Cabane de la Sérénité",
       "commune": "Liège",
       "region": "Région wallonne",
-      "price_per_night": 120,
+      "price_per_night": 45,
       "description": "Imaginez-vous surplombant la canopée des arbres depuis votre propre cabane perchée dans les hauteurs. Notre cabane offre une expérience de vie en harmonie avec la nature, avec le confort moderne pour que vous puissiez profiter de la vue imprenable tout en ayant toutes les commodités nécessaires pour passer un séjour agréable.",
       "images": [
         "/public/img/cabins/02/02-1.webp",
@@ -70,7 +70,7 @@
       "name": "L'Oasis des Arbres",
       "commune": "Namur",
       "region": "Région wallonne",
-      "price_per_night": 150,
+      "price_per_night": 90,
       "description": "Nous vous invitons à venir séjourner dans notre cabane perchée dans les arbres, une expérience unique et inoubliable. Vous serez entouré d'une nature luxuriante, avec une vue imprenable sur la forêt environnante. Vous pourrez observer les animaux sauvages depuis votre terrasse privée, pour un moment de calme et de détente.",
       "images": [
         "/public/img/cabins/03/03-1.webp",
@@ -96,7 +96,7 @@
       "name": "La Cabane de la Canopée",
       "commune": "Charleroi",
       "region": "Région wallonne",
-      "price_per_night": 180,
+      "price_per_night": 60,
       "description": "Pour une expérience de vie en pleine nature, rien ne vaut une cabane perchée dans les arbres. Notre cabane est conçue pour vous offrir une vue imprenable sur la canopée, ainsi que tout le confort moderne dont vous avez besoin pour un séjour agréable. Profitez de la sérénité de la forêt et détendez-vous dans ce havre de paix.",
       "images": [
         "/public/img/cabins/04/04-1.webp",
@@ -128,7 +128,7 @@
       "name": "L'Évasion des Cimes",
       "commune": "Mons",
       "region": "Région wallonne",
-      "price_per_night": 200,
+      "price_per_night": 110,
       "description": "Offrez-vous une expérience unique en passant la nuit dans notre cabane perchée dans les arbres. Vous pourrez admirer la vue imprenable sur la canopée depuis votre terrasse privée, et vous serez bercé par les sons de la nature toute la nuit. Cette expérience unique vous offrira une immersion totale dans la nature, pour un séjour inoubliable.",
       "images": [
         "/public/img/cabins/05/05-1.webp",
@@ -161,7 +161,7 @@
       "name": "La Maison dans les Arbres",
       "commune": "Tournai",
       "region": "Région wallonne",
-      "price_per_night": 220,
+      "price_per_night": 75,
       "description": "Envie d'une expérience unique et hors du commun ? Optez pour notre cabane perchée dans les arbres, qui vous offrira une vue spectaculaire sur la nature environnante. Vous pourrez observer les oiseaux et autres animaux sauvages depuis votre terrasse privée, pour une expérience en harmonie avec la nature.",
       "images": [
         "/public/img/cabins/06/06-1.webp",
@@ -187,7 +187,7 @@
       "name": "La Cabane du Pic Vert",
       "commune": "Gand",
       "region": "Région flamande",
-      "price_per_night": 250,
+      "price_per_night": 49,
       "description": "Nichée dans les arbres, notre cabane offre une expérience immersive dans la nature, avec tout le confort moderne que vous pourriez souhaiter. Profitez de la vue imprenable sur les arbres, écoutez les bruits de la nature et relaxez-vous dans ce havre de paix, loin de l'agitation de la ville.",
       "images": [
         "/public/img/cabins/07/07-1.webp",
@@ -213,7 +213,7 @@
       "name": "Le Refuge de la Forêt",
       "commune": "Anvers",
       "region": "Région flamande",
-      "price_per_night": 280,
+      "price_per_night": 69,
       "description": "Venez découvrir la magie de notre cabane perchée dans les arbres, qui vous offrira une expérience unique de vie en pleine nature. Vous pourrez observer les étoiles depuis votre terrasse privée, et vous réveiller au son des oiseaux le matin. Une expérience immersive et relaxante à ne pas manquer.",
       "images": [
         "/public/img/cabins/08/08-1.webp",
@@ -239,7 +239,7 @@
       "name": "La Tanière des Ours",
       "commune": "Mechelen",
       "region": "Région flamande",
-      "price_per_night": 300,
+      "price_per_night": 75,
       "description": "Pour une expérience de vie en harmonie avec la nature, notre cabane perchée dans les arbres est l'endroit idéal. Vous pourrez profiter d'une vue imprenable sur les arbres et la forêt environnante, tout en étant confortablement installé dans votre cabane. Une expérience unique et inoubliable vous attend.",
       "images": [
         "/public/img/cabins/09/09-1.webp",
@@ -265,7 +265,7 @@
       "name": "La Cabane du Loup",
       "commune": "Leuven",
       "region": "Région flamande",
-      "price_per_night": 320,
+      "price_per_night": 60,
       "description": "Notre cabane perchée dans les arbres offre une expérience unique de vie en pleine nature. Située en hauteur, vous aurez une vue imprenable sur les arbres et la forêt environnante. Profitez de la tranquillité de la nature tout en étant confortablement installé dans votre cabane.",
       "images": [
         "/public/img/cabins/10/10-1.webp",
@@ -291,7 +291,7 @@
       "name": "Le Nid d'Aigle",
       "commune": "Hasselt",
       "region": "Région flamande",
-      "price_per_night": 350,
+      "price_per_night": 45,
       "description": "Nichée au sommet des arbres, notre cabane vous offre une vue imprenable sur la nature environnante. Vous pourrez observer les étoiles la nuit depuis votre terrasse privée, et vous réveiller au son des oiseaux le matin. Une expérience unique de vie en pleine nature vous attend.",
       "images": [
         "/public/img/cabins/11/11-1.webp",
@@ -317,7 +317,7 @@
       "name": "L'Arbre Magique",
       "commune": "Genk",
       "region": "Région flamande",
-      "price_per_night": 380,
+      "price_per_night": 120,
       "description": "Vivez une expérience immersive dans la nature en séjournant dans notre cabane perchée dans les arbres. Vous pourrez observer les animaux sauvages et les oiseaux depuis votre terrasse privée, tout en étant confortablement installé dans votre cabane. Un séjour relaxant et inoubliable en perspective.",
       "images": [
         "/public/img/cabins/12/12-1.webp",
@@ -343,7 +343,7 @@
       "name": "La Cabane du Colibri",
       "commune": "Bruges",
       "region": "Région flamande",
-      "price_per_night": 400,
+      "price_per_night": 80,
       "description": "Éloignez-vous de la ville et découvrez la sérénité de la nature en séjournant dans notre cabane perchée dans les arbres. Vous pourrez profiter d'une vue imprenable sur la forêt environnante, tout en étant confortablement installé dans votre cabane. Une expérience unique et paisible vous attend.",
       "images": [
         "/public/img/cabins/13/13-1.webp",
@@ -369,7 +369,7 @@
       "name": "La Cime Perchée",
       "commune": "Courtrai",
       "region": "Région flamande",
-      "price_per_night": 450,
+      "price_per_night": 55,
       "description": "Notre cabane perchée dans les arbres vous offre une expérience immersive dans la nature, avec tout le confort moderne que vous pourriez souhaiter. Profitez de la vue imprenable sur la canopée, écoutez les bruits de la forêt et détendez-vous dans ce havre de paix, loin du stress de la vie quotidienne.",
       "images": [
         "/public/img/cabins/14/14-1.webp",
@@ -395,7 +395,7 @@
       "name": "La Cabane Enchantée",
       "commune": "Ostende",
       "region": "Région flamande",
-      "price_per_night": 500,
+      "price_per_night": 99,
       "description": "Pour une expérience unique de vie en pleine nature, optez pour notre cabane perchée dans les arbres. Vous pourrez admirer la beauté de la nature environnante depuis votre terrasse privée, et vous détendre dans votre cabane confortablement équipée. Un séjour en immersion totale dans la nature, pour une expérience inoubliable.",
       "images": [
         "/public/img/cabins/15/15-1.webp",
