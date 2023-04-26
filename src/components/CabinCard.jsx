@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import LikeButton from './LikeButton';
 
 
-const CabinCard = ({ cabin, user, isConnected }) => (
+const CabinCard = ({ cabin, user }) => (
 
 
     <div className='card col-span-4  overflow-hidden  hover:scale-105 duration-75 hover:cursor-pointer' >
@@ -19,7 +19,7 @@ const CabinCard = ({ cabin, user, isConnected }) => (
                 </div>
             </div>
             <div className='p-4 flex justify-between items-center'>
-                <LikeButton data={cabin} user={user} isConnected={isConnected} />
+                <LikeButton data={cabin} user={user} />
 
                 <h2 className='text-xl text-black font-bold bg-lightGreen py-2 px-6 rounded-xl'>{cabin.price_per_night}€/nuit</h2>
             </div>

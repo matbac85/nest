@@ -22,22 +22,9 @@
           "guests": "2"
         }
       ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
-          "time_stamp": "24-04-2023",
-          "rating": 0
-        },
-        {
-          "commenter_id": 1,
-          "comment": "cet cabane est tro bel",
-          "time_stamp": "24-04-2023",
-          "rating": 5
-        }
-      ],
+      "comments": [],
       "rating": 3,
-      "max_guests": 8
+      "max_guests": 4
     },
     {
       "id": 2,
@@ -59,6 +46,12 @@
           "start_date": "",
           "end_date": "",
           "guests": 2
+        },
+        {
+          "booker_id": 1,
+          "start_date": "2023-04-28",
+          "end_date": "2023-04-29",
+          "guests": "4"
         }
       ],
       "comments": [
@@ -70,7 +63,7 @@
         }
       ],
       "rating": 5,
-      "max_guests": 8
+      "max_guests": 6
     },
     {
       "id": 3,
@@ -96,7 +89,7 @@
       ],
       "comments": [],
       "rating": 4,
-      "max_guests": 8
+      "max_guests": 4
     },
     {
       "id": 4,
@@ -118,6 +111,12 @@
           "start_date": "",
           "end_date": "",
           "guests": 2
+        },
+        {
+          "booker_id": 1,
+          "start_date": "2023-04-26",
+          "end_date": "2023-04-29",
+          "guests": "3"
         }
       ],
       "comments": [],
@@ -155,7 +154,7 @@
         }
       ],
       "rating": 3,
-      "max_guests": 8
+      "max_guests": 4
     },
     {
       "id": 6,
@@ -181,7 +180,7 @@
       ],
       "comments": [],
       "rating": 2,
-      "max_guests": 8
+      "max_guests": 6
     },
     {
       "id": 7,
@@ -207,7 +206,7 @@
       ],
       "comments": [],
       "rating": 4,
-      "max_guests": 8
+      "max_guests": 4
     },
     {
       "id": 8,
@@ -233,7 +232,7 @@
       ],
       "comments": [],
       "rating": 5,
-      "max_guests": 8
+      "max_guests": 3
     },
     {
       "id": 9,
@@ -259,7 +258,7 @@
       ],
       "comments": [],
       "rating": 1,
-      "max_guests": 8
+      "max_guests": 4
     },
     {
       "id": 10,
@@ -285,7 +284,7 @@
       ],
       "comments": [],
       "rating": 3,
-      "max_guests": 8
+      "max_guests": 5
     },
     {
       "id": 11,
@@ -311,7 +310,7 @@
       ],
       "comments": [],
       "rating": 2,
-      "max_guests": 8
+      "max_guests": 2
     },
     {
       "id": 12,
@@ -337,7 +336,7 @@
       ],
       "comments": [],
       "rating": 4,
-      "max_guests": 8
+      "max_guests": 4
     },
     {
       "id": 13,
@@ -363,7 +362,7 @@
       ],
       "comments": [],
       "rating": 5,
-      "max_guests": 8
+      "max_guests": 2
     },
     {
       "id": 14,
@@ -389,7 +388,7 @@
       ],
       "comments": [],
       "rating": 0,
-      "max_guests": 8
+      "max_guests": 3
     },
     {
       "id": 15,
@@ -415,6 +414,240 @@
       ],
       "comments": [],
       "rating": 3,
+      "max_guests": 5
+    },
+    {
+      "id": 16,
+      "name": "L'Arbre à Rêves",
+      "commune": "Louvain",
+      "region": "Région flamande",
+      "price_per_night": 200,
+      "description": "Cette cabane perchée est située en bordure d'une clairière, accessible par une échelle en bois. La cabane est équipée d'un grand lit double, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes fenêtres offrent une vue panoramique sur la forêt environnante, créant une sensation d'immersion totale dans la nature. La terrasse privée est équipée de chaises longues pour se détendre et profiter de la vue.",
+      "images": [
+        "/public/img/cabins/16/16-1.webp",
+        "/public/img/cabins/16/16-2.webp",
+        "/public/img/cabins/16/16-3.webp",
+        "/public/img/cabins/16/16-4.webp",
+        "/public/img/cabins/16/16-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 3,
+      "max_guests": 4
+    },
+    {
+      "id": 17,
+      "name": "La Maison des Oiseaux",
+      "commune": "Schaerbeek",
+      "region": "Région de Bruxelles-Capitale",
+      "price_per_night": 50,
+      "description": "Cette cabane perchée est construite sur plusieurs niveaux, accessible par un escalier en colimaçon. La cabane est équipée de deux chambres, l'une avec un grand lit double et l'autre avec des lits jumeaux, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes baies vitrées offrent une vue panoramique sur la forêt environnante, créant une sensation de plénitude. La terrasse privée est équipée de chaises longues pour se détendre et admirer la vue. Cette cabane perchée est parfaite pour les familles ou les groupes d'amis qui cherchent à se ressourcer en pleine nature.",
+      "images": [
+        "/public/img/cabins/17/17-1.webp",
+        "/public/img/cabins/17/17-2.webp",
+        "/public/img/cabins/17/17-3.webp",
+        "/public/img/cabins/17/17-4.webp",
+        "/public/img/cabins/17/17-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 4,
+      "max_guests": 1
+    },
+    {
+      "id": 18,
+      "name": "Les Hauteurs Magiques",
+      "commune": "Ixelles",
+      "region": "Région de Bruxelles-Capitale",
+      "price_per_night": 120,
+      "description": "Cette cabane perchée est située dans un arbre isolé, accessible par une échelle en bois et un système de levage. La cabane est équipée d'un grand lit double, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes fenêtres offrent une vue panoramique sur les vallées environnantes, créant une sensation de plénitude. La terrasse privée est équipée de chaises longues pour se détendre et profiter de la vue spectaculaire.",
+      "images": [
+        "/public/img/cabins/18/18-1.webp",
+        "/public/img/cabins/18/18-2.webp",
+        "/public/img/cabins/18/18-3.webp",
+        "/public/img/cabins/18/18-4.webp",
+        "/public/img/cabins/18/18-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 1,
+      "max_guests": 1
+    },
+    {
+      "id": 19,
+      "name": "Le Perchoir Secret",
+      "commune": "La Louvière",
+      "region": "Région wallonne",
+      "price_per_night": 230,
+      "description": "Cette cabane perchée est nichée dans la canopée, accessible par une échelle en bois. La cabane est équipée d'un grand lit double, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes baies vitrées offrent une vue panoramique sur la forêt environnante, créant une sensation de plongée au cœur de la nature. La terrasse privée est équipée de chaises longues pour se détendre et admirer la vue.",
+      "images": [
+        "/public/img/cabins/19/19-1.webp",
+        "/public/img/cabins/19/19-2.webp",
+        "/public/img/cabins/19/19-3.webp",
+        "/public/img/cabins/19/19-4.webp",
+        "/public/img/cabins/19/19-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 3,
+      "max_guests": 4
+    },
+    {
+      "id": 20,
+      "name": "L'Arbre aux Mille Feuilles",
+      "commune": "Anvers",
+      "region": "Région flamande",
+      "price_per_night": 100,
+      "description": "Cette cabane perchée est située au-dessus d'une rivière cristalline, accessible par un pont suspendu. La cabane est équipée d'un grand lit double, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes baies vitrées offrent une vue imprenable sur la rivière et les montagnes environnantes, créant une sensation d'immersion totale dans la nature. La terrasse privée est équipée de chaises longues pour se détendre et profiter du paysage.",
+      "images": [
+        "/public/img/cabins/20/20-1.webp",
+        "/public/img/cabins/20/20-2.webp",
+        "/public/img/cabins/20/20-3.webp",
+        "/public/img/cabins/20/20-4.webp",
+        "/public/img/cabins/20/20-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 2,
+      "max_guests": 4
+    },
+    {
+      "id": 21,
+      "name": "Le Chalet des Aigles",
+      "commune": "Malines",
+      "region": "Région flamande",
+      "price_per_night": 40,
+      "description": "Cette cabane perchée est construite au sommet d'un grand arbre, accessible par une échelle en bois. La cabane est équipée d'un grand lit double, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes fenêtres offrent une vue panoramique sur la forêt environnante et vous permettent de vous sentir en harmonie avec la nature. La terrasse privée est équipée de chaises longues pour se détendre et observer les oiseaux qui viennent parfois se poser sur les branches à proximité.",
+      "images": [
+        "/public/img/cabins/21/21-1.webp",
+        "/public/img/cabins/21/21-2.webp",
+        "/public/img/cabins/21/21-3.webp",
+        "/public/img/cabins/21/21-4.webp",
+        "/public/img/cabins/21/21-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 3,
+      "max_guests": 3
+    },
+    {
+      "id": 22,
+      "name": "La Cabane Étoilée",
+      "commune": "Nivelles",
+      "region": "Région wallonne",
+      "price_per_night": 85,
+      "description": "Cette cabane perchée est située sur une île flottante, entourée d'arbres majestueux et accessible par un petit ponton. La cabane est équipée d'un grand lit double, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes baies vitrées offrent une vue à 360 degrés sur le lac et les montagnes environnantes, créant une sensation d'immersion totale dans la nature. La terrasse privée est équipée de chaises longues pour se détendre et admirer le paysage. Pour les soirées fraîches, vous pouvez allumer le poêle à bois pour une ambiance chaleureuse et romantique.",
+      "images": [
+        "/public/img/cabins/22/22-1.webp",
+        "/public/img/cabins/22/22-2.webp",
+        "/public/img/cabins/22/22-3.webp",
+        "/public/img/cabins/22/22-4.webp",
+        "/public/img/cabins/22/22-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 5,
+      "max_guests": 6
+    },
+    {
+      "id": 23,
+      "name": "La Cabane boisée",
+      "commune": "Verviers",
+      "region": "Région wallonne",
+      "price_per_night": 140,
+      "description": "Ces cabanes perchées sont situées dans une clairière de la forêt, reliées entre elles par des ponts suspendus. Chaque cabane a une ambiance unique et offre un refuge confortable pour les amoureux de la nature. Les cabanes sont équipées d'un lit double ou de lits jumeaux, d'une salle de bains avec douche et de toilettes, d'une kitchenette avec des ustensiles de cuisine de base et d'un petit coin salon. Les grandes fenêtres offrent une vue panoramique sur la forêt environnante et vous permettent de vous sentir en harmonie avec la nature. Sur la terrasse privée, vous pourrez vous détendre dans les chaises longues tout en écoutant le chant des oiseaux et le bruissement des feuilles dans le vent.",
+      "images": [
+        "/public/img/cabins/23/23-1.webp",
+        "/public/img/cabins/23/23-2.webp",
+        "/public/img/cabins/23/23-3.webp",
+        "/public/img/cabins/23/23-4.webp",
+        "/public/img/cabins/23/23-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 2
+        }
+      ],
+      "comments": [],
+      "rating": 3,
+      "max_guests": 3
+    },
+    {
+      "id": 24,
+      "name": "Le Cocon Vertigo",
+      "commune": "Dinant",
+      "region": "Région wallonne",
+      "price_per_night": 160,
+      "description": "Cette cabane perchée est nichée au sommet d'un arbre majestueux, accessible par une échelle en bois. Une fois à l'intérieur, vous serez transporté dans un monde de nature et de tranquillité. La cabane est équipée d'un lit double confortable, d'une petite kitchenette avec des ustensiles de cuisine de base, d'une salle de bains avec douche et de toilettes. Les grandes fenêtres offrent une vue panoramique sur la forêt environnante et vous permettent de vous sentir complètement immergé dans la nature. Pour les soirées fraîches, vous pouvez allumer le poêle à bois pour une ambiance chaleureuse et confortable. Une terrasse privée est également à votre disposition pour profiter de la vue tout en vous relaxant dans les chaises longues.",
+      "images": [
+        "/public/img/cabins/24/24-1.webp",
+        "/public/img/cabins/24/24-2.webp",
+        "/public/img/cabins/24/24-3.webp",
+        "/public/img/cabins/24/24-4.webp",
+        "/public/img/cabins/24/24-5.webp"
+      ],
+      "bookings": [
+        {
+          "booker_id": 1,
+          "start_date": "",
+          "end_date": "",
+          "guests": 5
+        }
+      ],
+      "comments": [],
+      "rating": 4,
       "max_guests": 8
     }
   ],
@@ -425,41 +658,11 @@
       "first_name": "Jane",
       "email": "j.doe@email.com",
       "password": "user1",
-      "current_bookings": [
-        {
-          "cabin_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        },
-        {
-          "cabin_id": 1,
-          "start_date": "2023-04-25",
-          "end_date": "2023-04-29",
-          "guests": "2"
-        }
-      ],
-      "past_bookings": [
-        {
-          "cabin_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
-      "posted_comments": [
-        {
-          "cabin_id": 1,
-          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
-          "time_stamp": "24-04-2023"
-        }
-      ],
-      "favourites": [
-        {
-          "cabin_id": 2
-        }
-      ],
-      "time_stamp": ""
+      "current_bookings": [],
+      "past_bookings": [],
+      "posted_comments": [],
+      "favourites": [],
+      "time_stamp": "17-04-2023"
     }
   ]
 }

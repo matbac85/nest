@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { FilledHeart } from "./Iconssvg";
 
-const LikeButton = ({ data, user, isConnected }) => {
+const LikeButton = ({ data, user }) => {
 
     const [isLiked, setIsLiked] = useState(false)
 
     useEffect(() => {
-        if (isConnected) {
+        if (user) {
             user.favourites.forEach(element => {
 
                 if (element.cabin_id === data.id) {
@@ -18,12 +18,12 @@ const LikeButton = ({ data, user, isConnected }) => {
         }
 
 
-    }, [isConnected])
+    }, [user])
 
     async function like() {
 
 
-        if (isConnected) {
+        if (user) {
             const userLike = {
                 favourites: [
                     ...user.favourites,
