@@ -31,11 +31,21 @@ const Destinations = () => {
     useEffect(() => {
         if (currentUser) {
             setIsConnected(true)
+            const reloadUser = async () => {
+                const response = await fetch(`http://localhost:3000/users/${currentUser.id}`)
+                const user = await response.json()
+                setCurrentUser((prevUser) => (user));
+            }
+            reloadUser();
         } else {
             setIsConnected(false)
         }
 
     }, [currentUser]);
+
+    useEffect(() => {
+
+    }, [])
 
     function guestsFilter(cabins, maxGuests) {
         if ((maxGuests !== null) && (maxGuests !== "undefined")) {
