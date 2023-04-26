@@ -124,6 +124,12 @@
           "start_date": "",
           "end_date": "",
           "guests": 2
+        },
+        {
+          "booker_id": 1,
+          "start_date": "2023-04-26",
+          "end_date": "2023-04-29",
+          "guests": "3"
         }
       ],
       "comments": [],
@@ -431,41 +437,15 @@
       "first_name": "Jane",
       "email": "j.doe@email.com",
       "password": "user1",
-      "current_bookings": [
-        {
-          "cabin_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        },
-        {
-          "cabin_id": 1,
-          "start_date": "2023-04-25",
-          "end_date": "2023-04-29",
-          "guests": "2"
-        }
-      ],
-      "past_bookings": [
-        {
-          "cabin_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
-      "posted_comments": [
-        {
-          "cabin_id": 1,
-          "comment": "Vraiment ravie par cet endroit. Une vraie immersion dans la nature. Je vous le recommande vivement !",
-          "time_stamp": "24-04-2023"
-        }
-      ],
+      "current_bookings": [],
+      "past_bookings": [],
+      "posted_comments": [],
       "favourites": [
         {
-          "cabin_id": 2
+          "cabin_id": 1
         },
         {
-          "cabin_id": 11
+          "cabin_id": 2
         }
       ],
       "time_stamp": ""
