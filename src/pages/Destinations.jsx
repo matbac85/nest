@@ -126,7 +126,7 @@ const Destinations = () => {
                     </ul>
                 </div>
                 <div className='grid grid-cols-12 gap-x-24 gap-y-24 justify-between'>
-                    {filteredData.length !== 0 ?
+                    {filteredData && filteredData.length !== 0 ?
                         filteredData.map((cabin) =>
                             <CabinCard cabin={cabin} key={cabin.id} user={currentUser} />
                         ) : <div className=' col-span-12 text-center'><h1 className='text-4xl'>Il n'y a pas de cabanes correspondant à ces critères</h1></div>
