@@ -37,6 +37,8 @@ const Destinations = () => {
 
     }, [currentUser]);
 
+
+
     function guestsFilter(cabins, maxGuests) {
         if ((maxGuests !== null) && (maxGuests !== "undefined")) {
             const filter = cabins.filter((cabin) => cabin.max_guests >= parseInt(maxGuests, 10));

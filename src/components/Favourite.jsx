@@ -19,8 +19,8 @@ const Favourite = ({favourite}) => {
     }, []);
 
     return(cabin &&
-    <div className="w-44">
-        <img src={cabin.images[0]} alt="jjj" className="rounded-lg"/>
+    <div className="w-40">
+        <img src={cabin.images[0]} alt="jjj" className="rounded-lg h-32"/>
         <div className="flex justify-between pt-2">
         <h2 className="font-medium">{cabin.name}</h2>
         <FilledHeart/>
