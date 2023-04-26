@@ -37,9 +37,7 @@ const Destinations = () => {
 
     }, [currentUser]);
 
-    useEffect(() => {
 
-    }, [])
 
     function guestsFilter(cabins, maxGuests) {
         if ((maxGuests !== null) && (maxGuests !== "undefined")) {
