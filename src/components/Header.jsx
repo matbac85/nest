@@ -49,20 +49,20 @@ const Header = () => {
           <li className="text-midGreen border-midGreen border-2 rounded-3xl py-0.5 px-1.5 relative" >
             <button className="flex items-center justify-center" type='button' onClick={handleLoginIconClick}>
               {currentUser
-                ? <div className='border-midGreen border-2 rounded-full w-8 h-8 flex items-center justify-center'>{loggedInIcon(currentUser)}</div>
+                ? <div className='border-midGreen bg-lightGreen text-white border-2 rounded-full w-8 h-8 flex items-center justify-center'>{loggedInIcon(currentUser)}</div>
                 : <User />
               }
-              <ArrowExpand toggleCallback={handleLoginIconClick} isExpanded={isExpanded} setIsExpanded={setIsExpanded}/>
+              <ArrowExpand toggleCallback={handleLoginIconClick} isExpanded={isExpanded} setIsExpanded={setIsExpanded} />
             </button>
           </li>
 
         </ul>
       </nav>
       {currentUser
-        ? <FormLogOut setVisible={setIsFormLogOutVisible} visible={isFormLogOutVisible} setIsExpanded={setIsExpanded}/>
-        : <FormLogin handleClick={handleRegistrationIconClick} visible={isLoginFormVisible} setVisible={setIsLoginFormVisible} setIsExpanded={setIsExpanded}/>
+        ? <FormLogOut setVisible={setIsFormLogOutVisible} visible={isFormLogOutVisible} setIsExpanded={setIsExpanded} />
+        : <FormLogin handleClick={handleRegistrationIconClick} visible={isLoginFormVisible} setVisible={setIsLoginFormVisible} setIsExpanded={setIsExpanded} />
       }
-      <FormRegistration handleClick={handleRegistrationIconClick} visible={isRegistrationFormVisible} setIsExpanded={setIsExpanded}/>
+      <FormRegistration handleClick={handleRegistrationIconClick} visible={isRegistrationFormVisible} setIsExpanded={setIsExpanded} />
     </header>
   )
 }

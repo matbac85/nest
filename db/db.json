@@ -14,14 +14,7 @@
         "/public/img/cabins/01/01-4.webp",
         "/public/img/cabins/01/01-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "2023-04-25",
-          "end_date": "2023-04-29",
-          "guests": "2"
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 3,
       "max_guests": 4
@@ -40,28 +33,8 @@
         "/public/img/cabins/02/02-4.webp",
         "/public/img/cabins/02/02-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        },
-        {
-          "booker_id": 1,
-          "start_date": "2023-04-28",
-          "end_date": "2023-04-29",
-          "guests": "4"
-        }
-      ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "Sérénité, je n'ai pas de meilleur mot pour décrire cette cabane. Magnifique, confortable, originale. La nature...",
-          "time_stamp": "24-04-2023",
-          "rating": 0
-        }
-      ],
+      "bookings": [],
+      "comments": [],
       "rating": 5,
       "max_guests": 6
     },
@@ -79,14 +52,7 @@
         "/img/cabins/03/03-4.webp",
         "/public/img/cabins/03/03-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 4,
       "max_guests": 4
@@ -105,20 +71,7 @@
         "/public/img/cabins/04/04-4.webp",
         "/public/img/cabins/04/04-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        },
-        {
-          "booker_id": 1,
-          "start_date": "2023-04-26",
-          "end_date": "2023-04-29",
-          "guests": "3"
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 5,
       "max_guests": 8
@@ -137,22 +90,8 @@
         "/public/img/cabins/05/05-4.webp",
         "/public/img/cabins/05/05-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
-      "comments": [
-        {
-          "commenter_id": 1,
-          "comment": "Mais quel merveilleux endroit ! Avec Dono, nous nous sommes sentis comme de vrais hobbits. Je recommande !!",
-          "time_stamp": "24-04-2023",
-          "rating": 3
-        }
-      ],
+      "bookings": [],
+      "comments": [],
       "rating": 3,
       "max_guests": 4
     },
@@ -170,14 +109,7 @@
         "/public/img/cabins/06/06-4.webp",
         "/public/img/cabins/06/06-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 2,
       "max_guests": 6
@@ -196,14 +128,7 @@
         "/public/img/cabins/07/07-4.webp",
         "/public/img/cabins/07/07-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 4,
       "max_guests": 4
@@ -222,14 +147,7 @@
         "/public/img/cabins/08/08-4.webp",
         "/public/img/cabins/08/08-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 5,
       "max_guests": 3
@@ -248,14 +166,7 @@
         "/public/img/cabins/09/09-4.webp",
         "/public/img/cabins/09/09-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 1,
       "max_guests": 4
@@ -274,14 +185,7 @@
         "/public/img/cabins/10/10-4.webp",
         "/public/img/cabins/10/10-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 3,
       "max_guests": 5
@@ -300,14 +204,7 @@
         "/public/img/cabins/11/11-4.webp",
         "/public/img/cabins/11/11-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 2,
       "max_guests": 2
@@ -326,14 +223,7 @@
         "/public/img/cabins/12/12-4.webp",
         "/public/img/cabins/12/12-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 4,
       "max_guests": 4
@@ -352,14 +242,7 @@
         "/public/img/cabins/13/13-4.webp",
         "/public/img/cabins/13/13-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 5,
       "max_guests": 2
@@ -378,14 +261,7 @@
         "/public/img/cabins/14/14-4.webp",
         "/public/img/cabins/14/14-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 0,
       "max_guests": 3
@@ -404,14 +280,7 @@
         "/public/img/cabins/15/15-4.webp",
         "/public/img/cabins/15/15-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 3,
       "max_guests": 5
@@ -430,14 +299,7 @@
         "/public/img/cabins/16/16-4.webp",
         "/public/img/cabins/16/16-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 3,
       "max_guests": 4
@@ -456,14 +318,7 @@
         "/public/img/cabins/17/17-4.webp",
         "/public/img/cabins/17/17-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 4,
       "max_guests": 1
@@ -482,14 +337,7 @@
         "/public/img/cabins/18/18-4.webp",
         "/public/img/cabins/18/18-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 1,
       "max_guests": 1
@@ -508,14 +356,7 @@
         "/public/img/cabins/19/19-4.webp",
         "/public/img/cabins/19/19-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 3,
       "max_guests": 4
@@ -534,14 +375,7 @@
         "/public/img/cabins/20/20-4.webp",
         "/public/img/cabins/20/20-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 2,
       "max_guests": 4
@@ -560,14 +394,7 @@
         "/public/img/cabins/21/21-4.webp",
         "/public/img/cabins/21/21-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 3,
       "max_guests": 3
@@ -586,14 +413,7 @@
         "/public/img/cabins/22/22-4.webp",
         "/public/img/cabins/22/22-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 5,
       "max_guests": 6
@@ -612,14 +432,7 @@
         "/public/img/cabins/23/23-4.webp",
         "/public/img/cabins/23/23-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 2
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 3,
       "max_guests": 3
@@ -638,31 +451,11 @@
         "/public/img/cabins/24/24-4.webp",
         "/public/img/cabins/24/24-5.webp"
       ],
-      "bookings": [
-        {
-          "booker_id": 1,
-          "start_date": "",
-          "end_date": "",
-          "guests": 5
-        }
-      ],
+      "bookings": [],
       "comments": [],
       "rating": 4,
       "max_guests": 8
     }
   ],
-  "users": [
-    {
-      "id": 1,
-      "name": "Doe",
-      "first_name": "Jane",
-      "email": "j.doe@email.com",
-      "password": "user1",
-      "current_bookings": [],
-      "past_bookings": [],
-      "posted_comments": [],
-      "favourites": [],
-      "time_stamp": "17-04-2023"
-    }
-  ]
+  "users": []
 }
