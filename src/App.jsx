@@ -9,6 +9,7 @@ import Cabin from './pages/Cabin';
 import Proposez from './pages/Proposez'
 import User from './pages/User'
 import Reservation from './pages/Reservation';
+import NotFound from './pages/NotFound';
 
 const App = () => {
   const [currentUser, setCurrentUser] = useState("")
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/proposez" element={<Proposez />} /> 
             <Route path="/utilisateur" element={<User />} />
             <Route path="/reservation" element={<Reservation />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
         <Footer />
