@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { format } from 'date-fns'
+import {supabase} from '../helpers.js'
 
 const FormRegistration = ({ handleClick, visible, setIsExpanded }) => {
         const [formData, setFormData] = useState({
@@ -66,7 +67,7 @@ const FormRegistration = ({ handleClick, visible, setIsExpanded }) => {
         }
 
 
-        const submitFormRegistration = (e) => {
+        const submitFormRegistration = async (e) => {
                 e.preventDefault();
 
                 const newErrors = validateForm();
@@ -85,13 +86,17 @@ const FormRegistration = ({ handleClick, visible, setIsExpanded }) => {
                                 favourites: [],
                                 time_stamp: format(new Date(), 'dd-MM-yyyy')
                         }
-                        fetch('http://localhost:3000/users', {
-                                method: 'POST',
-                                headers: {
-                                        'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify(dataBaseForm)
-                        })
+
+                        let { data, error } = await supabase.auth.signUp({
+                                email: formData.email,
+                                password: formData.password,
+                                options: {
+                                        data: {
+                                          first_name: formData.firstName,
+                                          last_name: formData.surname                                        },
+                                      }
+                              })
+                 
                         setIsExpanded(false)      
                         setFormData({
                                 surname: "",

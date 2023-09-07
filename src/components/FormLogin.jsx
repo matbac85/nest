@@ -1,5 +1,6 @@
 import { useState, useContext } from "react"
 import AuthContext from "../contexts/AuthContext";
+import {supabase} from '../helpers.js'
 
 const FormLogin = ({handleClick, visible, setVisible, setIsExpanded }) =>
         {
@@ -49,9 +50,13 @@ const FormLogin = ({handleClick, visible, setVisible, setIsExpanded }) =>
                 if(Object.values(newErrors).filter((value) => value !== "").length > 0){
                     setErrors(newErrors);
                 }else{
-                    const response = await fetch(`http://localhost:3000/users?email=${formData.email}&password=${formData.password}`)
-                    const user = await response.json()
-                    if(user.length === 0){
+                    
+                    let { data, error } = await supabase.auth.signInWithPassword({
+                        email: formData.email,
+                        password: formData.password
+                      })
+                    console.log(error)
+                    if(error !== null){
                         setConnexionError(`Votre email ou votre mot de passe n'est pas reconnu`)
                     }else{
                         setFormData({
@@ -60,8 +65,8 @@ const FormLogin = ({handleClick, visible, setVisible, setIsExpanded }) =>
                               });
                         setIsExpanded(false)      
                         setConnexionError(null)
-                        setCurrentUser(user[0])
-                        localStorage.setItem('currentUser', JSON.stringify(user[0]))
+                        setCurrentUser(data.user)
+                        localStorage.setItem('currentUser', JSON.stringify(data.user))
                         setVisible(false)
                     }
                 }

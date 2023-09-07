@@ -14,8 +14,8 @@ const CabinComment = ({ comment }) => {
 
     useEffect(() => {
         async function getData() {
-            const result = await fetchData();
-            setData(result);
+          //  const result = await fetchData();
+          //  setData(result);
         }
         getData();
     }, []);
@@ -35,7 +35,6 @@ const CabinComment = ({ comment }) => {
                             }
                         </div>
                         <div >
-                            <h2 className='font-bold'>{data.first_name} {data.name}</h2>
                             <p className='text-sm'>{comment.time_stamp}</p>
                         </div>
                     </div>
@@ -44,7 +43,7 @@ const CabinComment = ({ comment }) => {
                     </div>
                 </div>
 
-                <p>{comment.comment}</p>
+                <p>{comment.text}</p>
             </div>
         </div >
     )

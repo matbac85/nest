@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { FilledHeart } from "./Iconssvg";
+import {supabase, image} from '../helpers.js'
 
 const Favourite = ({favourite}) => {
     const [cabin, setCabin] = useState(null)
 
     async function fetchCabin() {
-        const response = await fetch(`http://localhost:3000/cabins/${favourite.cabin_id}`);
-        const Data = await response.json();
-        return Data;
+        let { data: cabin, error } = await supabase.from('cabins').select().eq("id", favourite.cabin_id)
+        return cabin[0];
     }
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const Favourite = ({favourite}) => {
 
     return(cabin &&
     <div className="w-40">
-        <img src={cabin.images[0]} alt="jjj" className="rounded-lg h-32"/>
+        <img src={image(cabin.id, 1)} alt="jjj" className="rounded-lg h-32"/>
         <div className="flex justify-between pt-2">
         <h2 className="font-medium">{cabin.name}</h2>
         <FilledHeart/>

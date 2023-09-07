@@ -27,7 +27,7 @@ const Header = () => {
     setIsLoginFormVisible(false);
   };
 
-  const loggedInIcon = (user) => `${user.first_name[0]}${user.name[0]}`.toUpperCase()
+  const loggedInIcon = (user) => `${user.user_metadata.first_name[0]}${user.user_metadata.last_name[0]}`
 
 
   return (

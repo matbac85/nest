@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { format } from 'date-fns'
+import {supabase} from '../helpers.js'
 
 
-const CommentForm = ({ close, user, data, postedComment }) => {
+const CommentForm = ({ close, user, cabin, postedComment }) => {
 
     const [activeIndex, setActiveIndex] = useState([]);
     const [userComment, setUserComment] = useState("");
@@ -31,37 +32,15 @@ const CommentForm = ({ close, user, data, postedComment }) => {
         event.preventDefault()
         if (userComment !== "") {
             setIsValidForm(true)
-            const userPostedComment = {
-                posted_comments: [
-                    ...user.posted_comments,
-                    {
-                        cabin_id: data.id,
-                        comment: userComment,
-                        time_stamp: format(new Date(), 'dd-MM-yyyy')
-                    }
-                ]
-            }
-            const validatedForm = {
-                comments: [...data.comments, {
-                    commenter_id: user.id,
-                    comment: userComment,
-                    time_stamp: format(new Date(), 'dd-MM-yyyy'),
-                    rating: userRating
-                }]
 
-            }
-            await fetch(`http://localhost:3000/users/${user.id}`, {
-                method: 'PATCH',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(userPostedComment)
-            });
-            // eslint-disable-next-line prefer-template
-            await fetch("http://localhost:3000/cabins/" + data.id, {
-                method: 'PATCH',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(validatedForm)
-            });
-            console.log("coucou")
+            const { data, error } = await supabase
+            .from('comments')
+            .insert(
+            { text: userComment,
+             rating: userRating ,
+             cabin_id: cabin.id})
+            .select()
+
             postedComment()
             close(false)
         } else {

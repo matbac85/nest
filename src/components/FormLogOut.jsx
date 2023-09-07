@@ -7,11 +7,12 @@ const FormLogOut = ({visible, setVisible, setIsExpanded}) => {
     const [currentUser, setCurrentUser] = useContext(AuthContext);
     const navigate = useNavigate()
     
-    const logOut = () => {
+    const logOut = async () => {
         setIsExpanded(false)      
         localStorage.clear()
         setCurrentUser(null)
         setVisible(false)
+        const { error } = await supabase.auth.signOut()
 
     }
 

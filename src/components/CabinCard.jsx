@@ -3,12 +3,15 @@ import { NavLink } from 'react-router-dom';
 import LikeButton from './LikeButton';
 
 
-const CabinCard = ({ cabin, user }) => (
+const CabinCard = ({ cabin, user }) => {
 
+    function image(cabinId, id){
+        return `https://keqametpuctibucnebxe.supabase.co/storage/v1/object/public/images/cabins/${cabinId}/${cabinId}-${id}.webp`;
+    }
 
-    <div className='card col-span-4  overflow-hidden  hover:scale-105 duration-75 hover:cursor-pointer' >
+    return <div className='card col-span-4 overflow-hidden hover:scale-105 duration-75 hover:cursor-pointer' >
         <NavLink to={`/cabin/${cabin.id}`}>
-            <img src={cabin.images[0]} alt="" className='h-80 w-full object-cover mb-4' />
+            <img src={image(cabin.id, 1)} alt="" className='h-80 w-full object-cover mb-4' />
             <div className='flex  justify-between p-4'>
                 <div>
                     <h2 className='text-xl font-bold'>{cabin.name}</h2>
@@ -19,13 +22,13 @@ const CabinCard = ({ cabin, user }) => (
                 </div>
             </div>
             <div className='p-4 flex justify-between items-center'>
-                <LikeButton data={cabin} user={user} />
+                <LikeButton cabin={cabin} user={user} />
 
                 <h2 className='text-xl text-black font-bold bg-lightGreen py-2 px-6 rounded-xl'>{cabin.price_per_night}€/nuit</h2>
             </div>
             <div />
         </NavLink>
     </div>
-);
+};
 
 export default CabinCard;

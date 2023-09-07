@@ -4,6 +4,7 @@ import { differenceInDays, format } from "date-fns";
 import AuthContext from "../contexts/AuthContext";
 import { BancontactLogo, MastercardLogo, PayPalLogo, VisaLogo } from "../components/PaymentLogo";
 import Reserved from "../components/Reserved";
+import {supabase} from '../helpers.js'
 
 
 const Reservation = () => {
@@ -33,9 +34,8 @@ const Reservation = () => {
 
 
     async function fetchData() {
-        const response = await fetch(`http://localhost:3000/cabins/${urlCabinID}`);
-        const Data = await response.json();
-        return Data;
+        let { data: cabin, error } = await supabase.from('cabins').select().eq("id", urlCabinID)
+        return cabin[0];
     }
 
     useEffect(() => {
@@ -109,38 +109,18 @@ const Reservation = () => {
         if (payment === '' || persNumber === 0) {
             setIsDisabled(true)
         } else {
-            const reservationsData = {
-                bookings: [
-                    ...data.bookings,
-                    {
-                        booker_id: currentUser.id,
-                        start_date: `${isDateStartChanged ? newDateStart : urlDateStart}`,
-                        end_date: `${isDateEndChanged ? newDateEnd : urlDateEnd}`,
-                        guests: persNumber
-                    }
-                ]
-            }
-            await fetch(`http://localhost:3000/cabins/${data.id}`, {
-                method: 'PATCH',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(reservationsData)
-            });
-            const userReservation = {
-                current_bookings: [
-                    ...currentUser.current_bookings,
-                    {
-                        cabin_id: data.id,
-                        start_date: `${isDateStartChanged ? newDateStart : urlDateStart}`,
-                        end_date: `${isDateEndChanged ? newDateEnd : urlDateEnd}`,
-                        guests: persNumber
-                    }
-                ]
-            }
-            await fetch(`http://localhost:3000/users/${currentUser.id}`, {
-                method: 'PATCH',
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(userReservation)
-            });
+  
+            const { data, error } = await supabase
+            .from('bookings')
+            .insert({
+              start_date: isDateStartChanged ? newDateStart : urlDateStart,
+              end_date: isDateEndChanged ? newDateEnd : urlDateEnd,
+              guests: persNumber,
+              cabin_id: urlCabinID})
+            .select()
+
+
+
             const globalInfos = {
                 start_date: `${isDateStartChanged ? newDateStart : urlDateStart}`,
                 end_date: `${isDateEndChanged ? newDateEnd : urlDateEnd}`,

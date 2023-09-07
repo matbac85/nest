@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import CabinCard from '../components/CabinCard';
 import AuthContext from "../contexts/AuthContext";
+import {supabase} from '../helpers.js'
 
 const Destinations = () => {
 
@@ -11,11 +12,16 @@ const Destinations = () => {
     const [activeIndex, setActiveIndex] = useState(1)
     const [currentUser, setCurrentUser] = useContext(AuthContext);
 
+    
 
     async function fetchData() {
-        const response = await fetch('http://localhost:3000/cabins');
-        const Data = await response.json();
-        return Data;
+        //const response = await fetch('http://localhost:3000/cabins');
+        //const Data = await response.json();
+
+        let { data: cabins, error } = await supabase.from('cabins').select()
+        console.log(cabins)
+        return cabins
+      //  return Data;
     }
 
     function locationFilter(cabins, location) {
@@ -46,11 +52,11 @@ const Destinations = () => {
             let result = await fetchData();
             setData(result);
             setFilteredData(result)
-            result = locationFilter(result, searchParams.get('location'));
-            result = guestsFilter(result, searchParams.get('maxGuests'));
+        //    result = locationFilter(result, searchParams.get('location'));
+        //    result = guestsFilter(result, searchParams.get('maxGuests'));
         }
         getData();
-    }, [currentUser]);
+      }, [currentUser]);
 
     function displayAll() {
         setFilteredData(data)
