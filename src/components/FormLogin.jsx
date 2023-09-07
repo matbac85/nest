@@ -1,34 +1,98 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
+import AuthContext from "../contexts/AuthContext";
+import {supabase} from '../helpers.js'
 
-const FormLogin = ({handleClick, visible }) =>
+const FormLogin = ({handleClick, visible, setVisible, setIsExpanded }) =>
         {
-            const [email, setEmail] = useState("")
-            const [password, setPassword] = useState("") 
+            const [currentUser, setCurrentUser] = useContext(AuthContext);
+            const [connexionError, setConnexionError] = useState(null);
+
+            const [formData, setFormData] = useState({
+                email: "",
+                password: "",
+              });
+
+            const [errors, setErrors] = useState({})
+
+            const handleChange = (e) => {
+                const { name, value } = e.target;
+                setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+            };
             
-            const submit = (e) => {
-                e.preventDefault()
-                console.log(email)
-                console.log(password)
-                fetch('http://localhost:3000/users', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        'email': email,
-                        'password': password
-                    })
-                })
+            const validateRequiredField = (fieldValue) => {
+                if (!fieldValue) {
+                  return `Ce champ est obligatoire.`;
+                }
+                return "";
             }
 
-            return (visible && <form onSubmit={submit} className='z-50 flex flex-col bg-formBackground w-72 absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20'>
-            <label htmlFor="email" className='px-2 mb-1'>E-mail<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
-            <input id="email" name="email" type="email" className='input opacity-100 focus:ring-transparent focus:outline-none px-4 mb-5 required' value={email} onChange={(e) =>setEmail(e.target.value)}/>
-            <label htmlFor="password" className='px-2 mb-1'>Mot de passe<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
+            const validateEmail = (fieldValue) => {
+                if (fieldValue && !/^([\w-\.]+@([\w-]+\.)+[\w-]{2,})?$/.test(fieldValue)) {
+                  return `Le format de votre email n'est pas correct`;
+                }
+                return "";
+            }
+
+            const validateForm = () => {
+                const newErrors = {};
+
+                newErrors.email = validateRequiredField(formData.email);
+                newErrors.password = validateRequiredField(formData.password);
+                newErrors.email += validateEmail(formData.email);
+
+                return newErrors
+            }
+
+            const submit = async (e) => {
+                e.preventDefault()
+
+                const newErrors = validateForm();
+                if(Object.values(newErrors).filter((value) => value !== "").length > 0){
+                    setErrors(newErrors);
+                }else{
+                    
+                    let { data, error } = await supabase.auth.signInWithPassword({
+                        email: formData.email,
+                        password: formData.password
+                      })
+                    console.log(error)
+                    if(error !== null){
+                        setConnexionError(`Votre email ou votre mot de passe n'est pas reconnu`)
+                    }else{
+                        setFormData({
+                                email: "",
+                                password: "",
+                              });
+                        setIsExpanded(false)      
+                        setConnexionError(null)
+                        setCurrentUser(data.user)
+                        localStorage.setItem('currentUser', JSON.stringify(data.user))
+                        setVisible(false)
+                    }
+                }
+            }
+
+            return (visible && <form onSubmit={submit} className='z-50 flex flex-col bg-formBackground w-72 absolute top-20 right-0 p-8 rounded-xl border-2 border-midGreen mr-20 gap-4'>
+            <div className="flex flex-col gap-1">
+                <label htmlFor="email" className='px-2'>E-mail<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
+                <input id="email" type="text" name="email" value={formData.email} className='input opacity-100 focus:ring-transparent focus:outline-none px-4' onChange={handleChange }/>
+                {errors.email && (
+                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.email}</div>
+                )}
+            </div>
+
+            <div className="flex flex-col gap-1">
+                <label htmlFor="password" className='px-2'>Mot de passe<sup className="text-red-500 font-medium ml-0.5">*</sup></label>
+                <input id="password" name="password" value={formData.password} type="password" className='input opacity-100 focus:ring-transparent focus:outline-none px-4' onChange={handleChange}/>
+                {errors.password && (
+                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{errors.password}</div>
+                )}
+                {connexionError && (
+                <div className="text-red-500 text-sm ml-2 mt-1 w-full">{connexionError}</div>
+                )}
+            </div>
             
-            <input id="password" name="password" type="password" className='input opacity-100 focus:ring-transparent focus:outline-none px-4 mb-5 required'  value={password} onChange={(e) =>setPassword(e.target.value)}/>
-            
-            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 mb-3'>Se connecter</button>
+            <button type="submit" className='hover:bg-darkGreen cursor-pointer bg-midGreen text-white rounded-lg font-medium py-3 text-center w-full'>Se connecter</button>
             
             <button type="button" className='cursor-pointer text-midGreen font-medium underline text-sm' onClick={handleClick}>Pas de Compte ? Inscrivez vous !</button>
         </form>)

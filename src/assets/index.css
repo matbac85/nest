@@ -36,7 +36,17 @@
   font-size: 14px;
 }
 
+.activeFilter {
+  border: 1px solid #467971;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: #2E4C48;
+  font-size: 14px;
+}
+
 h1,
+h2,
 h1>span {
   font-family: 'Dosis', sans-serif;
 }
@@ -46,6 +56,8 @@ h1>span {
   color: #2E4C48;
   cursor: pointer
 }
+
+
 
 /* .background{
  height: 83vh; 
@@ -76,7 +88,7 @@ h1>span {
 }
 
 .home-background {
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - 4rem - var(--header-height));
 }
 
 .input {
@@ -90,9 +102,39 @@ h1>span {
 }
 
 .picture-upload {
-  height: 5rem;
-  width: 5rem;
+  height: 4.5rem;
+  width: 4.5rem;
   border: #467971 solid 1px;
   background-color: white;
   border-radius: 5px;
+}
+
+.active {
+  color: #2E4C48;
+  font-weight: 500;
+  border-bottom: #2E4C48 solid 2px;
+  padding-bottom: 4px;
+}
+
+.user-box {
+  background-color: white;
+  border: #467971 1px solid;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.ratingButton {
+  border: 1px solid #467971;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: white;
+
+}
+
+.activeRatingButton {
+  border: 1px solid #467971;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: #467971;
+  font-size: 14px;
 }

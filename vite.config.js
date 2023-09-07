@@ -7,4 +7,5 @@ export default defineConfig({
   //   port: 4200
   // },
   plugins: [react()],
+  base: '/nest/',
 });
