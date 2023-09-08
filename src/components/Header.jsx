@@ -39,7 +39,6 @@ const Header = () => {
           className="w-auto h-full text-slate-100"
         />
       </div>
-      :q
       <nav className="flex flex-row justify-between">
         <ul className="flex flex-row items-center gap-x-20">
           <li className="text-xl font-light text-midGreen">
