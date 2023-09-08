@@ -34,11 +34,12 @@ const Header = () => {
     <header className="flex flex-row items-center justify-between h-24 px-20 bg-white border-b-2 z-1 border-beige absolu">
       <div className="w-auto h-4/5">
         <img
-          src="nest/logo/logo-nest.svg"
+          src="/nest/logo/logo-nest.svg"
           alt="Logo"
           className="w-auto h-full text-slate-100"
         />
       </div>
+      :q
       <nav className="flex flex-row justify-between">
         <ul className="flex flex-row items-center gap-x-20">
           <li className="text-xl font-light text-midGreen">
