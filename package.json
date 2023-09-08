@@ -1,6 +1,7 @@
 {
   "name": "react-base",
   "version": "0.0.0",
+  "homepage": "https://matbac85.github.io/nest/",
   "scripts": {
     "dev": "vite --port 3006",
     "build": "vite build",
